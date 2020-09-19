@@ -1,19 +1,46 @@
 import React from "react"
 import { Link } from "gatsby"
+import headerStyles from "./header.module.scss"
+import Logo from "../images/rubberman.png"
 
-const header = () => {
+const Header = () => {
   return (
-    <header>
+    <header className={headerStyles.header}>
       <nav>
-        <ul>
+        <Link to="/">
+          <img
+            className={headerStyles.logo}
+            src={Logo}
+            alt="Rubberman Logo"
+          ></img>
+        </Link>
+        <ul className={headerStyles.navList}>
           <li>
-            <Link to="/">Home</Link>
+            <Link
+              className={headerStyles.navItem}
+              activeClassName={headerStyles.activeNavItem}
+              to="/"
+            >
+              Services
+            </Link>
           </li>
           <li>
-            <Link to="/about">About</Link>
+            <Link
+              className={headerStyles.navItem}
+              activeClassName={headerStyles.activeNavItem}
+              to="/about"
+            >
+              About
+            </Link>
           </li>
           <li>
-            <Link to="/contact">Contact</Link>
+            <Link
+              className={headerStyles.navItem}
+              activeClassName={headerStyles.activeNavItem}
+              to="/contact"
+            >
+              Contact
+            </Link>
           </li>
         </ul>
       </nav>
@@ -21,4 +48,4 @@ const header = () => {
   )
 }
 
-export default header
+export default Header
