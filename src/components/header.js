@@ -1,50 +1,45 @@
-import React from "react"
+import React, { useState } from "react"
 import { Link } from "gatsby"
-import headerStyles from "./header.module.scss"
 import Logo from "../images/rubberman.png"
 
 const Header = () => {
+  const links = [
+    {
+      id: 1,
+      path: "/",
+      text: "home",
+    },
+    {
+      id: 2,
+      path: "/about",
+      text: "about",
+    },
+    {
+      id: 3,
+      path: "/contact",
+      text: "contact",
+    },
+  ]
+
+  const [navbarOpen, setNavBarOpen] = useState("false")
+  const [navbarClass, setNavbarClass] = useState("collapse navbar-collapse")
+
+  const navbarHandler = () => {
+    console.log("hello")
+  }
+
   return (
-    <header className={headerStyles.header}>
-      <nav>
-        <Link to="/">
-          <img
-            className={headerStyles.logo}
-            src={Logo}
-            alt="Rubberman Logo"
-          ></img>
-        </Link>
-        <ul className={headerStyles.navList}>
-          <li>
-            <Link
-              className={headerStyles.navItem}
-              activeClassName={headerStyles.activeNavItem}
-              to="/"
-            >
-              Services
-            </Link>
-          </li>
-          <li>
-            <Link
-              className={headerStyles.navItem}
-              activeClassName={headerStyles.activeNavItem}
-              to="/about"
-            >
-              About
-            </Link>
-          </li>
-          <li>
-            <Link
-              className={headerStyles.navItem}
-              activeClassName={headerStyles.activeNavItem}
-              to="/contact"
-            >
-              Contact
-            </Link>
-          </li>
-        </ul>
-      </nav>
-    </header>
+    <nav className="navbar navbar-expand-sm bg-light navbar-light">
+      <Link to="/" className="navbar-brand">
+        <img className="img-thumbnail" src={Logo} alt="rubberman logo"></img>
+      </Link>
+      <button className="navbar-toggler" type="button" onClick={navbarHandler}>
+        <span className="navbar-toggler-icon"></span>
+      </button>
+      <div className={navbarClass}>
+        <ul className="navbar-nav mx-auto"></ul>
+      </div>
+    </nav>
   )
 }
 

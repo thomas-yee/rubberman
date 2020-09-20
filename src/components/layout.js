@@ -1,14 +1,13 @@
 import React from "react"
 import Header from "../components/header"
-import layoutStyles from "./layout.module.scss"
 
-const Layout = props => {
+import "./bootstrap.min.css"
+
+const Layout = ({ children }) => {
   return (
-    <div className={layoutStyles.container}>
-      <div className={layoutStyles.content}>
-        <Header />
-        {props.children}
-      </div>
+    <div>
+      <Header />
+      {children}
     </div>
   )
 }
