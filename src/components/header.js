@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+import { css } from "@emotion/core"
 import { Link } from "gatsby"
 import Logo from "../images/rubberman.png"
 
@@ -25,19 +26,41 @@ const Header = () => {
   const [navbarClass, setNavbarClass] = useState("collapse navbar-collapse")
 
   const navbarHandler = () => {
-    console.log("hello")
+    if (navbarOpen === "true") {
+      setNavBarOpen("false")
+      setNavbarClass("collapse navbar-collapse")
+    } else {
+      setNavBarOpen("true")
+      setNavbarClass("collapse navbar-collapse show")
+    }
   }
 
   return (
     <nav className="navbar navbar-expand-sm bg-light navbar-light">
       <Link to="/" className="navbar-brand">
-        <img className="img-thumbnail" src={Logo} alt="rubberman logo"></img>
+        <img
+          className="img-thumbnail"
+          src={Logo}
+          alt="rubberman logo"
+          css={css`
+            max-height: 100px;
+            width: auto;
+          `}
+        ></img>
       </Link>
       <button className="navbar-toggler" type="button" onClick={navbarHandler}>
         <span className="navbar-toggler-icon"></span>
       </button>
       <div className={navbarClass}>
-        <ul className="navbar-nav mx-auto"></ul>
+        <ul className="navbar-nav mr-sm-3">
+          {links.map(link => (
+            <li key={link.id} className="nav-item">
+              <Link to={link.path} className="nav-link text-capitalize">
+                {link.text}
+              </Link>
+            </li>
+          ))}
+        </ul>
       </div>
     </nav>
   )
