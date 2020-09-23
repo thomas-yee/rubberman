@@ -32,9 +32,9 @@ const Footer = () => {
         <div className="row">
           <div className="col text-white">
             <h4>Contact Us</h4>
-            <Link to="/about">
+            <a href="https://www.linkedin.com/company/tire-discounters-inc-/">
               <FontAwesomeIcon icon={faLinkedin} className="fa-3x" />
-            </Link>
+            </a>
           </div>
           <div className="col text-white"></div>
         </div>
