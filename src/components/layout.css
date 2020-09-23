@@ -27,20 +27,20 @@ h6 {
 }
 
 .default-background {
-  min-height: 100vh;
+  min-height: 90vh;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .btn-yellow {
-  color: var(--mainYellow);
-  border-color: var(--mainYellow);
+  color: var(--mainBlue);
+  border-color: var(--mainBlue);
 }
 
 .btn-yellow:hover {
-  background: var(--mainYellow);
-  color: var(--mainBrown);
+  background: var(--mainBlue);
+  color: var(--mainWhite);
 }
 
 .footer {
