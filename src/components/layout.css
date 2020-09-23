@@ -1,5 +1,5 @@
 :root {
-  --mainBrown: #Brown;
+  --mainBlue: #191970;
   --mainYellow: #ff9e09;
   --mainGrey: #ece8dc;
   --mainWhite: #fff;
@@ -22,8 +22,8 @@ h6 {
   letter-spacing: 0.25rem !important;
 }
 
-.text-yellow {
-  color: var(--mainYellow);
+.text-white {
+  color: var(--mainWhite);
 }
 
 .default-background {
@@ -41,4 +41,8 @@ h6 {
 .btn-yellow:hover {
   background: var(--mainYellow);
   color: var(--mainBrown);
+}
+
+.footer {
+  background: var(--mainDark);
 }
