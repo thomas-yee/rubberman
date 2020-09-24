@@ -10,7 +10,7 @@ const IndexPage = props => {
       <Layout>
         <BackgroundSection
           img={props.data.image.childImageSharp.fluid}
-          title=""
+          title="Rubberman"
           styleClass="default-background"
         />
         <Info />
@@ -23,7 +23,7 @@ export default IndexPage
 
 export const pageQuery = graphql`
   query {
-    image: file(relativePath: { eq: "Rubberman-logo-new1.jpg" }) {
+    image: file(relativePath: { eq: "ondrej-trnak-96g20qMIb1A-unsplash.jpg" }) {
       childImageSharp {
         fluid {
           ...GatsbyImageSharpFluid_tracedSVG

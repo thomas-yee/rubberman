@@ -1,9 +1,9 @@
 :root {
-  --mainBlue: #191970;
+  --mainBlue: #0152a0;
   --mainYellow: #ff9e09;
-  --mainGrey: #ece8dc;
+  --mainGrey: #50595f;
   --mainWhite: #fff;
-  --mainDark: #222;
+  --mainDark: #000;
 }
 
 body {
@@ -25,12 +25,18 @@ h6 {
 .text-white {
   color: var(--mainWhite);
 }
-
+/* Background Section on index page */
 .default-background {
   min-height: 90vh;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.title {
+  color: var(--mainDark);
+  padding-right: 55%;
+  padding-bottom: 25%;
 }
 
 .btn-yellow {
