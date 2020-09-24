@@ -1,12 +1,12 @@
 import React from "react"
 import Layout from "../components/layout"
+import Info from "../components/About/info"
 
 const AboutPage = () => {
   return (
     <div>
       <Layout>
-        <h1>About Us</h1>
-        <p>What we do</p>
+        <Info />
       </Layout>
     </div>
   )
