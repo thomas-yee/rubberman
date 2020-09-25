@@ -39,12 +39,12 @@ h6 {
   padding-bottom: 25%;
 }
 
-.btn-yellow {
+.btn-blue {
   color: var(--mainBlue);
   border-color: var(--mainBlue);
 }
 
-.btn-yellow:hover {
+.btn-blue:hover {
   background: var(--mainBlue);
   color: var(--mainWhite);
 }
