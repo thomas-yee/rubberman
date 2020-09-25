@@ -19,7 +19,7 @@ const Info = () => {
               sunt in culpa qui officia deserunt mollit anim id est laborum.
             </p>
             <Link to="/about/">
-              <button className="btn text-uppercase btn-yellow">
+              <button className="btn text-uppercase btn-blue">
                 About Page
               </button>
             </Link>
