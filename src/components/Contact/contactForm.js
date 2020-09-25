@@ -55,7 +55,7 @@ const ContactForm = () => {
                 type="submit"
                 className="btn btn-blue text-capitalize bt-5"
               >
-                submit
+                send message
               </button>
             </form>
           </div>
