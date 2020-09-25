@@ -1,11 +1,12 @@
 import React from "react"
 import Layout from "../components/layout"
+import Info from "../components/Products/info"
 
 const ProductsPage = () => {
   return (
     <div>
       <Layout>
-        <h1>Here are our products</h1>
+        <Info />
       </Layout>
     </div>
   )
