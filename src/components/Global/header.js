@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import { css } from "@emotion/core"
 import { Link } from "gatsby"
-import Logo from "../images/rubberman.png"
+import Logo from "../../images/rubberman.png"
 
 const Header = () => {
   const links = [

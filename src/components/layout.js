@@ -1,6 +1,6 @@
 import React from "react"
-import Header from "../components/header"
-import Footer from "../components/footer"
+import Header from "../components/Global/header"
+import Footer from "../components/Global/footer"
 
 import "./bootstrap.min.css"
 import "./layout.css"
