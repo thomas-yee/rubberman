@@ -41,33 +41,39 @@ const Header = () => {
   }
 
   return (
-    <nav className="navbar sticky-top navbar-expand-sm bg-light navbar-light">
-      <Link to="/" className="navbar-brand">
-        <img
-          className="img-thumbnail"
-          src={Logo}
-          alt="rubberman logo"
-          css={css`
-            max-height: 100px;
-            width: auto;
-          `}
-        ></img>
-      </Link>
-      <button className="navbar-toggler" type="button" onClick={navbarHandler}>
-        <span className="navbar-toggler-icon"></span>
-      </button>
-      <div className={navbarClass}>
-        <ul className="navbar-nav mr-sm-3">
-          {links.map(link => (
-            <li key={link.id} className="nav-item">
-              <Link to={link.path} className="nav-link text-capitalize">
-                {link.text}
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </div>
-    </nav>
+    <div className="container">
+      <nav className="navbar sticky-top navbar-expand-sm bg-light navbar-light">
+        <Link to="/" className="navbar-brand">
+          <img
+            className="img-thumbnail"
+            src={Logo}
+            alt="rubberman logo"
+            css={css`
+              max-height: 80px;
+              width: auto;
+            `}
+          ></img>
+        </Link>
+        <button
+          className="navbar-toggler"
+          type="button"
+          onClick={navbarHandler}
+        >
+          <span className="navbar-toggler-icon"></span>
+        </button>
+        <div className={navbarClass}>
+          <ul className="navbar-nav mr-sm-3">
+            {links.map(link => (
+              <li key={link.id} className="nav-item">
+                <Link to={link.path} className="nav-link text-capitalize">
+                  {link.text}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </nav>
+    </div>
   )
 }
 
