@@ -1,0 +1,11 @@
+:root {
+  --mainBlue: #0152a0;
+  --mainYellow: #ff9e09;
+  --mainGrey: #50595f;
+  --mainWhite: #fff;
+  --mainDark: #000;
+}
+
+.location-icon {
+  color: var(--mainBlue);
+}
