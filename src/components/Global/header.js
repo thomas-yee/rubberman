@@ -42,10 +42,9 @@ const Header = () => {
 
   return (
     <div className="container">
-      <nav className="navbar sticky-top navbar-expand-sm bg-light navbar-light">
+      <nav className="navbar sticky-top navbar-expand-sm navbar-light no-padding-sides">
         <Link to="/" className="navbar-brand">
           <img
-            className="img-thumbnail"
             src={Logo}
             alt="rubberman logo"
             css={css`
@@ -62,7 +61,7 @@ const Header = () => {
           <span className="navbar-toggler-icon"></span>
         </button>
         <div className={navbarClass}>
-          <ul className="navbar-nav mr-sm-3">
+          <ul className="navbar-nav ml-auto">
             {links.map(link => (
               <li key={link.id} className="nav-item">
                 <Link to={link.path} className="nav-link text-capitalize">
