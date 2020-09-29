@@ -18,19 +18,17 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Courier New", Courier, monospace !important;
+  font-family: Verdana, Geneva, Tahoma, sans-serif !important;
   letter-spacing: 0.25rem !important;
+}
+
+.no-padding-sides {
+  padding-right: 0 !important;
+  padding-left: 0 !important;
 }
 
 .text-white {
   color: var(--mainWhite);
-}
-/* Background Section on index page */
-.default-background {
-  min-height: 90vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .title {
