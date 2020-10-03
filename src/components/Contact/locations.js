@@ -37,9 +37,10 @@ const Locations = () => {
           <div className="col-3">
             <h4 className="font-weight-bold">Calgary </h4>
             <text>
-              2000 Street NW <br />
-              Calgary, AB, 3K6 L0D <br />
-              Canada <br />
+              T: +62-21-4584-4781
+              <br />
+              F: +62-21-4584-4785
+              <br />
             </text>
           </div>
           <div className="col">
