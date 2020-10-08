@@ -1,15 +1,26 @@
 import React from "react"
-import { Link } from "gatsby"
+import { Link, graphql, useStaticQuery } from "gatsby"
 import Img from "gatsby-image"
 
-const Intro = img => {
+const Intro = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      image: file(relativePath: { eq: "example-picture.jpg" }) {
+        childImageSharp {
+          fixed(width: 300) {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
+    }
+  `)
+
   return (
     <div>
-      {console.log(img)}
       <section className="py-5 bg-light">
         <div className="container">
           <div className="row">
-            <div className="col-2 col-sm-8 mx-auto">
+            <div className="col col-sm-8 mx-auto">
               <h4>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
@@ -23,7 +34,10 @@ const Intro = img => {
               </Link>
             </div>
             <div className="col">
-              <Img fixed={img} />
+              <Img
+                fixed={data.image.childImageSharp.fixed}
+                alt="Intro picture"
+              />
             </div>
           </div>
         </div>
