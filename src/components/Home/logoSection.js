@@ -10,7 +10,7 @@ const Intro = () => {
         nodes {
           id
           childImageSharp {
-            fixed(width: 400, height: 200) {
+            fixed(width: 175) {
               ...GatsbyImageSharpFixed
             }
           }

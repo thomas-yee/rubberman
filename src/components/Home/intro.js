@@ -33,7 +33,7 @@ const Intro = () => {
                 </button>
               </Link>
             </div>
-            <div className="col">
+            <div className="col float-right">
               <Img
                 fixed={data.image.childImageSharp.fixed}
                 alt="Intro picture"
