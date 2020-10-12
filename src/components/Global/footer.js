@@ -33,7 +33,7 @@ const Footer = () => {
             <hr className="mt-0 mb-2 horizontal-bar" />
             <div className="row">
               <div className="col">
-                <a href="https://www.linkedin.com/company/tire-discounters-inc-/">
+                <a href="https://www.linkedin.com/company/pt-rubberman-indonesia/">
                   <FontAwesomeIcon icon={faLinkedin} className="fa-3x" />
                 </a>
               </div>
