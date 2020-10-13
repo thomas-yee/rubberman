@@ -3,7 +3,7 @@ import { css } from "@emotion/core"
 import { Link } from "gatsby"
 import Logo from "../../images/rubberman.png"
 
-const Header = () => {
+const Header = props => {
   const links = [
     {
       id: 1,
@@ -62,6 +62,14 @@ const Header = () => {
         </button>
         <div className={navbarClass}>
           <ul className="navbar-nav ml-auto">
+            <select
+              className="custom-select"
+              value={props.language}
+              onChange={e => props.handleSetLanguage(e.target.value)}
+            >
+              <option value="English">English</option>
+              <option value="Indonesian">Indonesian</option>
+            </select>
             {links.map(link => (
               <li key={link.id} className="nav-item">
                 <Link to={link.path} className="nav-link text-capitalize">

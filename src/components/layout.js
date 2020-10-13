@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState, createContext } from "react"
 import Header from "../components/Global/header"
 import Footer from "../components/Global/footer"
 
@@ -6,11 +6,26 @@ import "./bootstrap.min.css"
 import "./layout.css"
 
 const Layout = ({ children }) => {
+  const languageStoredInLocalStorage = localStorage.getItem("language")
+  const [language, setLanguage] = useState(
+    languageStoredInLocalStorage ? languageStoredInLocalStorage : "English"
+  )
+
+  const storeLanguageInLocalStorage = language => {
+    localStorage.setItem("language", language)
+  }
+
   return (
     <div>
-      <Header />
+      <Header
+        language={language}
+        handleSetLanguage={language => {
+          setLanguage(language)
+          storeLanguageInLocalStorage(language)
+        }}
+      />
       {children}
-      <Footer />
+      <Footer language={language} />
     </div>
   )
 }
