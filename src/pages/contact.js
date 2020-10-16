@@ -4,10 +4,11 @@ import Contact from "../components/Contact/contactForm"
 import Locations from "../components/Contact/locations"
 
 const ContactPage = () => {
+  const languageStoredInLocalStorage = localStorage.getItem("language")
   return (
     <div>
       <Layout>
-        <Contact />
+        <Contact language={languageStoredInLocalStorage} />
         <Locations />
       </Layout>
     </div>

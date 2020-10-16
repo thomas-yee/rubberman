@@ -1,26 +1,52 @@
 import React from "react"
 import Title from "../title"
 
-const ContactForm = () => {
+const ContactForm = props => {
+  let content = {
+    English: {
+      intro:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor",
+      firstName: "First Name",
+      lastName: "Last Name",
+      emailAddress: "Email Address",
+      phone: "Phone",
+      company: "Company",
+      message: "Message",
+      button: "Send Message",
+    },
+    Indonesian: {
+      intro: "XXX",
+      firstName: "XXX",
+      lastName: "XXX",
+      emailAddress: "XXX",
+      phone: "XXX",
+      company: "XXX",
+      message: "XXX",
+      button: "XXX",
+    },
+  }
+
+  const checkLanguage = () => {
+    props.language === "English"
+      ? (content = content.English)
+      : (content = content.Indonesian)
+  }
+
   return (
     <section className="py-5 bg-light">
+      {checkLanguage()}
       <div className="container">
         <Title title="Let's Talk" />
         <div className="row">
           <div className="col-10 col-sm-8 mx-auto text-center">
-            <p className="lead text-muted mb-5">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat.
-            </p>
+            <p className="lead text-muted mb-5">{content.intro}</p>
           </div>
         </div>
         <form action="https://formspree.io/xrgogjke" method="POST">
           <div className="form-row">
             {/*name*/}
             <div className="form-group col-10 col-sm-8 col-md-6">
-              <label htmlFor="name">First Name</label>
+              <label htmlFor="name">{content.firstName}</label>
               <input
                 type="text"
                 className="form-control"
@@ -29,7 +55,7 @@ const ContactForm = () => {
               ></input>
             </div>
             <div className="form-group col-10 col-sm-8 col-md-6">
-              <label htmlFor="name">Last Name</label>
+              <label htmlFor="name">{content.lastName}</label>
               <input
                 type="text"
                 className="form-control"
@@ -41,7 +67,7 @@ const ContactForm = () => {
           <div className="form-row">
             {/*Email*/}
             <div className="form-group col-10 col-sm-8 col-md-6">
-              <label htmlFor="email">Email Address</label>
+              <label htmlFor="email">{content.emailAddress}</label>
               <input
                 type="text"
                 className="form-control"
@@ -52,7 +78,7 @@ const ContactForm = () => {
             </div>
             {/*Phone number*/}
             <div className="form-group col-10 col-sm-8 col-md-6">
-              <label htmlFor="phone">Phone</label>
+              <label htmlFor="phone">{content.phone}</label>
               <input
                 type="text"
                 className="form-control"
@@ -64,7 +90,7 @@ const ContactForm = () => {
           </div>
           <div className="form-group">
             {/*Company*/}
-            <label htmlFor="company">Company</label>
+            <label htmlFor="company">{content.company}</label>
             <input
               type="text"
               className="form-control"
@@ -75,7 +101,7 @@ const ContactForm = () => {
           <div className="form-group">
             {/*Message*/}
             <div className="form-group">
-              <label htmlFor="message">Message</label>
+              <label htmlFor="message">{content.message}</label>
               <textarea
                 type="text"
                 className="form-control"
@@ -87,7 +113,7 @@ const ContactForm = () => {
           </div>
           {/*Submit*/}
           <button type="submit" className="btn btn-blue text-capitalize btn-lg">
-            send message
+            {content.button}
           </button>
         </form>
       </div>
