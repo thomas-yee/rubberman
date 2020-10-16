@@ -2,27 +2,36 @@ import React from "react"
 import { Link } from "gatsby"
 import Title from "../title"
 
-const Info = () => {
+const Info = props => {
+  let content = {
+    English: {
+      mainSection: {
+        information:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
+      },
+    },
+    Indonesian: {
+      mainSection: {
+        information: "XXX",
+      },
+    },
+  }
+
+  const checkLanguage = () => {
+    props.language === "English"
+      ? (content = content.English)
+      : (content = content.Indonesian)
+  }
   return (
-    <section className="py-5">
+    <section className="py-5 bg-light">
+      {checkLanguage()}
       <div className="container">
         <Title title="Our Story" />
         <div className="row">
           <div className="col-10 col-sm-8 mx-auto text-center">
             <p className="lead text-muted mb-5">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-              sunt in culpa qui officia deserunt mollit anim id est laborum.
+              {content.mainSection.information}
             </p>
-            <Link to="/about/">
-              <button className="btn text-uppercase btn-blue">
-                About Page
-              </button>
-            </Link>
           </div>
         </div>
       </div>
