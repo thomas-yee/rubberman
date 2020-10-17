@@ -1,4 +1,4 @@
-import React, { useState, createContext } from "react"
+import React, { useState } from "react"
 import Header from "../components/Global/header"
 import Footer from "../components/Global/footer"
 
@@ -20,7 +20,7 @@ const Layout = ({ children }) => {
       <Header
         language={language}
         handleSetLanguage={language => {
-          setLanguage(language)
+          window.location.reload()
           storeLanguageInLocalStorage(language)
         }}
       />
