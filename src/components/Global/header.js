@@ -9,23 +9,28 @@ const Header = props => {
 
   let links = {
     English: {
-      home: {
+      language: {
         id: 1,
+        english: "English",
+        indonesian: "Indonesian",
+      },
+      home: {
+        id: 2,
         path: "/",
         text: "home",
       },
       products: {
-        id: 2,
+        id: 3,
         path: "/products",
         text: "our products",
       },
       about: {
-        id: 3,
+        id: 4,
         path: "/about",
         text: "about",
       },
       contact: {
-        id: 4,
+        id: 5,
         path: "/contact",
         text: "contact",
       },
@@ -73,7 +78,7 @@ const Header = props => {
   return (
     <div className="container">
       {checkLanguage()}
-      <nav className="navbar sticky-top navbar-expand-sm navbar-light no-padding-sides">
+      <nav className="navbar navbar-expand-lg navbar-light no-padding-sides sticky-top">
         <Link to="/" className="navbar-brand">
           <img
             src={Logo}
@@ -92,15 +97,17 @@ const Header = props => {
           <span className="navbar-toggler-icon"></span>
         </button>
         <div className={navbarClass}>
-          <ul className="navbar-nav ml-auto">
-            <select
-              className="custom-select"
-              value={props.language}
-              onChange={e => props.handleSetLanguage(e.target.value)}
-            >
-              <option value="English">English</option>
-              <option value="Indonesian">Indonesian</option>
-            </select>
+          <ul className="navbar-nav ml-auto sm-2">
+            <li key={links.language.id} className="nav=item">
+              <select
+                className="custom-select"
+                value={props.language}
+                onChange={e => props.handleSetLanguage(e.target.value)}
+              >
+                <option value="English">{links.language.english}</option>
+                <option value="Indonesian">{links.language.indonesian}</option>
+              </select>
+            </li>
             <li key={links.home.id} className="nav-item">
               <Link to={links.home.path} className="nav-link text-capitalize">
                 {links.home.text}
