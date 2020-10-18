@@ -36,23 +36,28 @@ const Header = props => {
       },
     },
     Indonesian: {
-      home: {
+      language: {
         id: 1,
+        english: "English",
+        indonesian: "Indonesian",
+      },
+      home: {
+        id: 2,
         path: "/",
         text: "XXX",
       },
       products: {
-        id: 2,
+        id: 3,
         path: "/products",
         text: "XXX",
       },
       about: {
-        id: 3,
+        id: 4,
         path: "/about",
         text: "XXX",
       },
       contact: {
-        id: 4,
+        id: 5,
         path: "/contact",
         text: "XXX",
       },
