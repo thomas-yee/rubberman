@@ -8,12 +8,12 @@ const Footer = props => {
   let content = {
     English: {
       companySection: {
-        title: "Rubberman",
-        information:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor",
+        title: "Who We Are",
+        aboutLink: "About Us",
+        referralLink: "Referral Program",
       },
       productSection: {
-        title: "Our Products",
+        title: "Our Services",
         linkTitle: "Link To Products",
       },
       contactSection: {
@@ -21,15 +21,12 @@ const Footer = props => {
         phoneNumber: "T: +62-21-4584-4781",
         faxNumber: "F: +62-21-4584-4785",
       },
-      referralSection: {
-        title: "Referral Program",
-        linkTitle: "Link to Referral",
-      },
     },
     Indonesian: {
       companySection: {
-        title: "XXXX",
-        information: "XXXX",
+        title: "XXX",
+        aboutLink: "XXX",
+        referralLink: "Referral Program",
       },
       productSection: {
         title: "XXX",
@@ -39,10 +36,6 @@ const Footer = props => {
         title: "XXXX",
         phoneNumber: "T: +62-21-4584-4781",
         faxNumber: "F: +62-21-4584-4785",
-      },
-      referralSection: {
-        title: "XXX",
-        linkTitle: "XXX",
       },
     },
   }
@@ -70,16 +63,16 @@ const Footer = props => {
       {checkLanguage()}
       <div className="container">
         <div className="row">
-          <div className="col">
+          <div className="col-4">
             <Img fixed={data.image.childImageSharp.fixed} alt="Intro picture" />
           </div>
           <div className="col">
-            <h4>{content.companySection.title}</h4>
+            <h6>{content.companySection.title}</h6>
             <hr className="mt-0 mb-2 horizontal-bar" />
             <p>{content.companySection.information}</p>
           </div>
           <div className="col">
-            <h4>{content.productSection.title}</h4>
+            <h6>{content.productSection.title}</h6>
             <hr className="mt-0 mb-0 horizontal-bar" />
             <Link
               to="/about"
@@ -89,26 +82,21 @@ const Footer = props => {
             </Link>
           </div>
           <div className="col">
-            <h4>{content.contactSection.title}</h4>
+            <h6>{content.contactSection.title}</h6>
             <hr className="mt-0 mb-2 horizontal-bar" />
             <div className="row">
-              <div className="col">
-                <a href="https://www.linkedin.com/company/pt-rubberman-indonesia/">
-                  <FontAwesomeIcon icon={faLinkedin} className="fa-3x" />
-                </a>
-              </div>
               <div className="col-10">
                 {content.contactSection.phoneNumber}
                 <br />
                 {content.contactSection.faxNumber}
                 <br />
               </div>
+              <div className="col">
+                <a href="https://www.linkedin.com/company/pt-rubberman-indonesia/">
+                  <FontAwesomeIcon icon={faLinkedin} className="fa-2x" />
+                </a>
+              </div>
             </div>
-          </div>
-          <div className="col">
-            <h4>{content.referralSection.title}</h4>
-            <hr className="mt-0 mb-2 horizontal-bar" />
-            <p>{content.referralSection.linkTitle}</p>
           </div>
         </div>
       </div>
