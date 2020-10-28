@@ -1,7 +1,8 @@
 import React from "react"
-import { Link } from "gatsby"
+import { Link, graphql, useStaticQuery } from "gatsby"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faLinkedin } from "@fortawesome/free-brands-svg-icons"
+import Img from "gatsby-image"
 
 const Footer = props => {
   let content = {
@@ -19,10 +20,6 @@ const Footer = props => {
         title: "Contact Us",
         phoneNumber: "T: +62-21-4584-4781",
         faxNumber: "F: +62-21-4584-4785",
-      },
-      processSection: {
-        title: "The Process",
-        information: "Lorem ipsum dolor sit amet, consectetur adipisc",
       },
       referralSection: {
         title: "Referral Program",
@@ -43,16 +40,24 @@ const Footer = props => {
         phoneNumber: "T: +62-21-4584-4781",
         faxNumber: "F: +62-21-4584-4785",
       },
-      processSection: {
-        title: "XXX",
-        information: "XXX",
-      },
       referralSection: {
         title: "XXX",
         linkTitle: "XXX",
       },
     },
   }
+
+  const data = useStaticQuery(graphql`
+    query {
+      image: file(relativePath: { eq: "rubberman.png" }) {
+        childImageSharp {
+          fixed(width: 300) {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
+    }
+  `)
 
   const checkLanguage = () => {
     props.language === "English"
@@ -64,7 +69,10 @@ const Footer = props => {
     <footer className="footer py-3">
       {checkLanguage()}
       <div className="container">
-        <div className="row pt-1 text-white">
+        <div className="row">
+          <div className="col">
+            <Img fixed={data.image.childImageSharp.fixed} alt="Intro picture" />
+          </div>
           <div className="col">
             <h4>{content.companySection.title}</h4>
             <hr className="mt-0 mb-2 horizontal-bar" />
@@ -97,19 +105,11 @@ const Footer = props => {
               </div>
             </div>
           </div>
-        </div>
-        <div className="row pt-3 text-white">
-          <div className="col">
-            <h4>{content.processSection.title}</h4>
-            <hr className="mt-0 mb-2 horizontal-bar" />
-            <p>{content.processSection.information}</p>
-          </div>
           <div className="col">
             <h4>{content.referralSection.title}</h4>
             <hr className="mt-0 mb-2 horizontal-bar" />
             <p>{content.referralSection.linkTitle}</p>
           </div>
-          <div className="col"></div>
         </div>
       </div>
     </footer>
