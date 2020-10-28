@@ -1,20 +1,19 @@
 import React from "react"
 import { Link } from "gatsby"
-import Title from "../title"
 
 const ContactUs = props => {
   let content = {
     English: {
       mainSection: {
-        title: "About Rubberman",
         information:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
+          "Interested in partnering with us? Become part of the Rubberman team!",
+        contactLink: "Contact Us",
       },
     },
     Indonesian: {
       mainSection: {
-        title: "XXXX",
-        information: "XXX",
+        information: "XXXX",
+        contactLink: "XXXX",
       },
     },
   }
@@ -25,24 +24,17 @@ const ContactUs = props => {
       : (content = content.Indonesian)
   }
   return (
-    <section className="py-5">
+    <section className="py-6 contact-us contact-us-padding">
       {checkLanguage()}
       <div className="container">
-        <Title title="Our Story" />
         <div className="row">
-          <div className="col-10 col-sm-8 mx-auto text-center">
-            <p className="lead text-muted mb-5">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-              sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </p>
+          <div className="col-7">
+            <h4>{content.mainSection.information}</h4>
+          </div>
+          <div className="col-md-3 ml-auto contact-us-button-padding">
             <Link to="/contact/">
-              <button className="btn text-uppercase btn-blue">
-                About Page
+              <button className="btn text-uppercase contact-us-button">
+                {content.mainSection.contactLink}
               </button>
             </Link>
           </div>

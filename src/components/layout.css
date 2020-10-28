@@ -27,6 +27,11 @@ h6 {
   padding-left: 0 !important;
 }
 
+.py-6 {
+  padding-top: 6rem !important;
+  padding-bottom: 6rem !important;
+}
+
 .text-white {
   color: var(--mainWhite);
 }
@@ -47,6 +52,24 @@ h6 {
   color: var(--mainWhite);
 }
 
+/**Contact Section on Index Page */
+
+.contact-us {
+  background: var(--mainBlue);
+  color: var(--mainWhite);
+}
+
+.contact-us-button-padding {
+  padding-top: 0.5rem;
+}
+
+.contact-us-button {
+  background-color: var(--mainGrey);
+  color: var(--mainWhite);
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+/**FOOTER */
 .footer {
   background: var(--mainWhite);
 }
