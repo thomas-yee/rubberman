@@ -1,19 +1,28 @@
 import React from "react"
 import { Link } from "gatsby"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faHandshake } from "@fortawesome/free-solid-svg-icons"
+import { faIndustry } from "@fortawesome/free-solid-svg-icons"
+import { faCheck } from "@fortawesome/free-solid-svg-icons"
 
 const Info = props => {
   let content = {
     English: {
       mainSection: {
-        title: "About Rubberman",
-        information:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
+        experience: "38+ Years Experience",
+        operationsLineOne: "30+ Tire Retreading",
+        operationsLineTwo: "Plants",
+        certificationLineOne: "Certified",
+        certificationLineTwo: "ISO 9001:2015",
       },
     },
     Indonesian: {
       mainSection: {
-        title: "XXXX",
-        information: "XXX",
+        experience: "35 Years Experience",
+        operationsLineOne: "30+ Tire Retreading",
+        operationsLineTwo: "Plants",
+        certificationLineOne: "Certified",
+        certificationLineTwo: "ISO 9001:2015",
       },
     },
   }
@@ -27,15 +36,33 @@ const Info = props => {
     <section className="py-5">
       {checkLanguage()}
       <div className="container">
-        <div className="row">
-          <div className="col-10 col-sm-8 mx-auto">
-            <h4>{content.mainSection.title}</h4>
-            <hr className="mt-0 mb-2 horizontal-bar" />
-            <p className="lead text-muted mb-5">
-              {content.mainSection.information}
-            </p>
+        <div className="row text-center">
+          <div className="col">
+            <div className="blue">
+              <FontAwesomeIcon icon={faHandshake} className="fa-5x" />
+            </div>
+            <div className="pt-4">
+              <h4>{content.mainSection.experience}</h4>
+            </div>
           </div>
-          <div className="col"></div>
+          <div className="col">
+            <div className="blue">
+              <FontAwesomeIcon icon={faIndustry} className="fa-5x" />
+            </div>
+            <div className="pt-4">
+              <h4>{content.mainSection.operationsLineOne}</h4>
+              <h4>{content.mainSection.operationsLineTwo}</h4>
+            </div>
+          </div>
+          <div className="col">
+            <div className="blue">
+              <FontAwesomeIcon icon={faCheck} className="fa-5x" />
+            </div>
+            <div className="pt-4">
+              <h4>{content.mainSection.certificationLineOne}</h4>
+              <h4>{content.mainSection.certificationLineTwo}</h4>
+            </div>
+          </div>
         </div>
       </div>
     </section>
