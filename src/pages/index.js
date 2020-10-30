@@ -4,6 +4,7 @@ import Info from "../components/Home/info"
 import Intro from "../components/Home/intro"
 import LogoSection from "../components/Home/logoSection"
 import ContactUs from "../components/Global/contactUs"
+import IconSection from "../components/Home/iconSection"
 
 const IndexPage = () => {
   const languageStoredInLocalStorage = localStorage.getItem("language")
@@ -27,6 +28,7 @@ const IndexPage = () => {
     <div>
       <Layout>
         <Intro language={languageStoredInLocalStorage} />
+        <IconSection language={languageStoredInLocalStorage} />
         <Info language={languageStoredInLocalStorage} />
         <LogoSection language={languageStoredInLocalStorage} />
         <ContactUs
