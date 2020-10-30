@@ -36,6 +36,10 @@ h6 {
   color: var(--mainWhite);
 }
 
+.blue {
+  color: var(--mainBlue);
+}
+
 .title {
   color: var(--mainDark);
   padding-right: 55%;
