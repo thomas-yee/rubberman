@@ -4,7 +4,7 @@ import Title from "../title"
 
 const Info = () => {
   return (
-    <section className="py-5">
+    <section className="py-5 bg-light">
       <div className="container">
         <Title title="Our Story" />
         <div className="row">
