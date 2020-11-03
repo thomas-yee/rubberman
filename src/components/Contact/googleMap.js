@@ -19,6 +19,7 @@ const GoogleMap = props => {
         width: props.location.style.width,
       }}
     >
+      {console.log(props)}
       <Map
         bootstrapURLKeys={{ key: APIKEY }}
         defaultZoom={props.location.defaultZoom}
@@ -26,6 +27,7 @@ const GoogleMap = props => {
           lat: props.location.defaultCenter.lat,
           lng: props.location.defaultCenter.lng,
         }}
+        options={props.location.options}
       >
         <AnyReactComponent
           lat={props.location.defaultCenter.lat}

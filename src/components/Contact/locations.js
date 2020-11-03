@@ -9,7 +9,7 @@ import "./contact.css"
 const locations = [
   {
     name: "location1",
-    defaultZoom: 15,
+    defaultZoom: 10,
     defaultCenter: {
       lat: 50.414361,
       lng: -105.531109,
@@ -17,6 +17,10 @@ const locations = [
     style: {
       height: "40vh",
       width: "85%",
+    },
+    options: {
+      minZoom: 4,
+      maxZoom: 10,
     },
   },
 ]
@@ -44,7 +48,7 @@ const Locations = () => {
             </text>
           </div>
           <div className="col">
-            <Map location={locations[0]} />
+            <Map location={locations[0]} options={locations.options} />
           </div>
         </div>
         <div className="row"></div>
