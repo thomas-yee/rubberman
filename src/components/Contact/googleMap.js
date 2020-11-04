@@ -15,25 +15,34 @@ const GoogleMap = props => {
   return (
     <div
       style={{
-        height: props.location.style.height,
-        width: props.location.style.width,
+        height: props.style.height,
+        width: props.style.width,
       }}
     >
-      {console.log(props)}
+      {console.log(props.location)}
       <Map
         bootstrapURLKeys={{ key: APIKEY }}
-        defaultZoom={props.location.defaultZoom}
+        defaultZoom={props.options.defaultZoom}
         defaultCenter={{
-          lat: props.location.defaultCenter.lat,
-          lng: props.location.defaultCenter.lng,
+          lat: props.options.defaultCenter.lat,
+          lng: props.options.defaultCenter.lng,
         }}
         options={props.location.options}
       >
-        <AnyReactComponent
-          lat={props.location.defaultCenter.lat}
-          lng={props.location.defaultCenter.lng}
+        {/* {props.location.map((location) => {
+          return (
+            <AnyReactComponent
+              lat={location.coordinates.lat}
+              lng={location.coordinates.lng}
+              text="my marker"
+            />
+          )
+        })} */}
+        {/* <AnyReactComponent
+          lat={props.location.location1.coordinates.lat}
+          lng={props.location.location1.coordinates.lng}
           text="my marker"
-        />
+        /> */}
       </Map>
     </div>
   )
