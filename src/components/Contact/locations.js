@@ -9,6 +9,7 @@ import "./contact.css"
 const locations = [
   {
     location1: {
+      id: 1,
       name: "location1",
       coordinates: {
         lat: -4.391102,
@@ -16,8 +17,9 @@ const locations = [
       },
     },
     location2: {
-      name: "location1",
-      cooridnates: {
+      id: 2,
+      name: "location2",
+      coordinates: {
         lat: -5.293221,
         lng: 122.861457,
       },
@@ -32,13 +34,13 @@ const locationSettings = [
       width: "85%",
     },
     options: {
-      minZoom: 4,
+      minZoom: 3,
       maxZoom: 15,
       defaultCenter: {
         lat: -4.391102,
         lng: 122.085345,
       },
-      defaultZoom: 2,
+      defaultZoom: 4,
     },
   },
 ]
