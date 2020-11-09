@@ -37,7 +37,7 @@ const locationSettings = [
         lat: -4.391102,
         lng: 122.085345,
       },
-      defaultZoom: 4,
+      defaultZoom: 3.7,
     },
   },
 ]
