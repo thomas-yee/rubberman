@@ -1,7 +1,4 @@
 import React from "react"
-import Title from "../title"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faLocationArrow } from "@fortawesome/free-solid-svg-icons"
 import Map from "./googleMap"
 
 import "./contact.css"
@@ -31,7 +28,7 @@ const locationSettings = [
   {
     style: {
       height: "40vh",
-      width: "85%",
+      width: "100%",
     },
     options: {
       minZoom: 3,
@@ -49,24 +46,7 @@ const Locations = () => {
   return (
     <section className="py-5">
       <div className="container">
-        <Title title="Office Locations" />
-
         <div className="row">
-          <div className="col-1 pt-4">
-            <FontAwesomeIcon
-              icon={faLocationArrow}
-              className="location-icon fa-3x"
-            />
-          </div>
-          <div className="col-3">
-            <h4 className="font-weight-bold">Calgary </h4>
-            <text>
-              T: +62-21-4584-4781
-              <br />
-              F: +62-21-4584-4785
-              <br />
-            </text>
-          </div>
           <div className="col">
             <Map
               location={locations[0]}
