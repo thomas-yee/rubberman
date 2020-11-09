@@ -10,7 +10,6 @@ const ContactForm = props => {
       lastName: "Last Name",
       emailAddress: "Email Address",
       phone: "Phone",
-      company: "Company",
       message: "Message",
       button: "Send Message",
     },
@@ -20,7 +19,6 @@ const ContactForm = props => {
       lastName: "XXX",
       emailAddress: "XXX",
       phone: "XXX",
-      company: "XXX",
       message: "XXX",
       button: "XXX",
     },
@@ -87,16 +85,6 @@ const ContactForm = props => {
                 placeholder="(000)-203-2039"
               ></input>
             </div>
-          </div>
-          <div className="form-group">
-            {/*Company*/}
-            <label htmlFor="company">{content.company}</label>
-            <input
-              type="text"
-              className="form-control"
-              name="company"
-              id="company"
-            ></input>
           </div>
           <div className="form-group">
             {/*Message*/}
