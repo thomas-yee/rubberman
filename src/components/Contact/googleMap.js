@@ -7,7 +7,7 @@ const APIKEY = "AIzaSyC_3Lk9znbSQICmGjqXO5YEIhTPnOWCVAc"
 
 const AnyReactComponent = () => (
   <div>
-    <FontAwesomeIcon icon={faMapMarkerAlt} className="location-icon fa-3x" />
+    <FontAwesomeIcon icon={faMapMarkerAlt} className="location-icon fa-2x" />
   </div>
 )
 
@@ -39,11 +39,6 @@ const GoogleMap = props => {
             />
           )
         })}
-        {/* <AnyReactComponent
-          lat={props.location.location1.coordinates.lat}
-          lng={props.location.location1.coordinates.lng}
-          text="my marker"
-        /> */}
       </Map>
     </div>
   )
