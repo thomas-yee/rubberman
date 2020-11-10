@@ -197,6 +197,166 @@ const locations = [
         lng: 112.007639,
       },
     },
+    location25: {
+      id: 25,
+      name: "Jombang",
+      coordinates: {
+        lat: -7.55533,
+        lng: 112.236564,
+      },
+    },
+    location26: {
+      id: 26,
+      name: "Surabaya",
+      coordinates: {
+        lat: -7.264469,
+        lng: 112.748271,
+      },
+    },
+    location27: {
+      id: 27,
+      name: "Malang",
+      coordinates: {
+        lat: -7.965724,
+        lng: 112.630581,
+      },
+    },
+    location28: {
+      id: 28,
+      name: "Probolinggo",
+      coordinates: {
+        lat: -7.779114,
+        lng: 113.201304,
+      },
+    },
+    location29: {
+      id: 29,
+      name: "Jember",
+      coordinates: {
+        lat: -8.21804,
+        lng: 113.678862,
+      },
+    },
+    location30: {
+      id: 30,
+      name: "Banyuwangi",
+      coordinates: {
+        lat: -8.222871,
+        lng: 114.36864,
+      },
+    },
+    location31: {
+      id: 31,
+      name: "Bali",
+      coordinates: {
+        lat: -8.354105,
+        lng: 115.089364,
+      },
+    },
+    location32: {
+      id: 32,
+      name: "Lombok",
+      coordinates: {
+        lat: -8.656334,
+        lng: 116.315537,
+      },
+    },
+    location33: {
+      id: 33,
+      name: "Sumbawa",
+      coordinates: {
+        lat: -8.770911,
+        lng: 118.134984,
+      },
+    },
+    location34: {
+      id: 34,
+      name: "Kupang",
+      coordinates: {
+        lat: -10.179173,
+        lng: 123.604247,
+      },
+    },
+    location35: {
+      id: 35,
+      name: "Makasar",
+      coordinates: {
+        lat: -5.154913,
+        lng: 119.429061,
+      },
+    },
+    location36: {
+      id: 36,
+      name: "Palu",
+      coordinates: {
+        lat: -0.905249,
+        lng: 119.883479,
+      },
+    },
+    location37: {
+      id: 37,
+      name: "Kendari",
+      coordinates: {
+        lat: -3.995152,
+        lng: 122.520393,
+      },
+    },
+    location38: {
+      id: 38,
+      name: "Manado",
+      coordinates: {
+        lat: 1.470801,
+        lng: 124.843879,
+      },
+    },
+    location39: {
+      id: 39,
+      name: "Pontianak",
+      coordinates: {
+        lat: -0.028872,
+        lng: 109.327945,
+      },
+    },
+    location40: {
+      id: 40,
+      name: "Banjarmasin",
+      coordinates: {
+        lat: -3.31962,
+        lng: 114.585972,
+      },
+    },
+    location41: {
+      id: 41,
+      name: "Pangkalan Bun",
+      coordinates: {
+        lat: -2.690119,
+        lng: 111.622098,
+      },
+    },
+    location42: {
+      id: 42,
+      name: "Samarinda",
+      coordinates: {
+        lat: -0.506251,
+        lng: 117.140501,
+      },
+    },
+    location43: {
+      id: 43,
+      name: "Balikpapan",
+      coordinates: {
+        lat: -1.250803,
+        lng: 116.857882,
+      },
+    },
+    location44: {
+      id: 44,
+      name: "Ambon",
+      coordinates: {
+        lat: -3.647151,
+        lng: 128.128808,
+      },
+    },
   },
 ]
 
@@ -208,12 +368,20 @@ const locationSettings = [
     },
     options: {
       minZoom: 3.7,
-      maxZoom: 8,
+      maxZoom: 9,
       defaultCenter: {
         lat: -4.391102,
         lng: 122.085345,
       },
       defaultZoom: 3.7,
+      restriction: {
+        latLngBounds: {
+          north: 10,
+          south: -15,
+          east: 140,
+          west: 90,
+        },
+      },
     },
   },
 ]

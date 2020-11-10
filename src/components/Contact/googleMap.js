@@ -7,7 +7,7 @@ const APIKEY = "AIzaSyC_3Lk9znbSQICmGjqXO5YEIhTPnOWCVAc"
 
 const AnyReactComponent = () => (
   <div>
-    <FontAwesomeIcon icon={faMapMarkerAlt} className="location-icon fa-2x" />
+    <FontAwesomeIcon icon={faMapMarkerAlt} className="location-icon fa-1x" />
   </div>
 )
 
@@ -19,7 +19,7 @@ const GoogleMap = props => {
         width: props.style.width,
       }}
     >
-      {console.log(Object.keys(props.location))}
+      {console.log(props)}
       <Map
         bootstrapURLKeys={{ key: APIKEY }}
         defaultZoom={props.options.defaultZoom}
@@ -27,11 +27,13 @@ const GoogleMap = props => {
           lat: props.options.defaultCenter.lat,
           lng: props.options.defaultCenter.lng,
         }}
-        options={props.location.options}
+        options={props.options}
       >
         {Object.keys(props.location).map((location, i) => {
           return (
             <AnyReactComponent
+              onMouseOver={() => console.log("hover")}
+              onMouseOut={() => console.log("gone")}
               key={i}
               lat={props.location[location].coordinates.lat}
               lng={props.location[location].coordinates.lng}
