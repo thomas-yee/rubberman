@@ -8,13 +8,24 @@ const Footer = props => {
   let content = {
     English: {
       companySection: {
-        title: "Who We Are",
-        aboutLink: "About Us",
-        referralLink: "Referral Program",
+        information:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris",
+      },
+      aboutSection: {
+        title: "About",
+        processLink: "Process",
+        mythsLink: "Myths",
+        whyRetreadLink: "Why Retread?",
+        historyLink: "Our History",
       },
       productSection: {
-        title: "Our Services",
+        title: "Products",
         linkTitle: "Link To Products",
+      },
+      referralSection: {
+        title: "Referral Program",
+        text:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris",
       },
       contactSection: {
         title: "Contact Us",
@@ -24,13 +35,24 @@ const Footer = props => {
     },
     Indonesian: {
       companySection: {
-        title: "XXX",
-        aboutLink: "XXX",
-        referralLink: "Referral Program",
+        information:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris",
+      },
+      aboutSection: {
+        title: "About",
+        processLink: "Process",
+        mythsLink: "Myths",
+        whyRetreadLink: "Why Retread?",
+        historyLink: "Our History",
       },
       productSection: {
         title: "XXX",
         linkTitle: "XXXX",
+      },
+      referralSection: {
+        title: "Referral Program",
+        text:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris",
       },
       contactSection: {
         title: "XXXX",
@@ -63,17 +85,40 @@ const Footer = props => {
       {checkLanguage()}
       <div className="container">
         <div className="row">
-          <div className="col-4">
+          <div className="col-4 pt-4">
             <Img fixed={data.image.childImageSharp.fixed} alt="Intro picture" />
-          </div>
-          <div className="col">
-            <h6>{content.companySection.title}</h6>
-            <hr className="mt-0 mb-2 horizontal-bar" />
             <p>{content.companySection.information}</p>
           </div>
-          <div className="col">
-            <h6>{content.productSection.title}</h6>
-            <hr className="mt-0 mb-0 horizontal-bar" />
+          <div className="col pt-5">
+            <h6 className="headerFont">{content.aboutSection.title}</h6>
+            <p>{content.aboutSection.information}</p>
+            <Link
+              to="/about"
+              className="nav-link text-capitalize link-blue-footer"
+            >
+              {content.aboutSection.processLink}
+            </Link>
+            <Link
+              to="/about"
+              className="nav-link text-capitalize link-blue-footer"
+            >
+              {content.aboutSection.mythsLink}
+            </Link>
+            <Link
+              to="/about"
+              className="nav-link text-capitalize link-blue-footer"
+            >
+              {content.aboutSection.whyRetreadLink}
+            </Link>
+            <Link
+              to="/about"
+              className="nav-link text-capitalize link-blue-footer"
+            >
+              {content.aboutSection.historyLink}
+            </Link>
+          </div>
+          <div className="col pt-5">
+            <h6 className="headerFont">{content.productSection.title}</h6>
             <Link
               to="/about"
               className="nav-link text-capitalize link-blue-footer"
@@ -81,9 +126,11 @@ const Footer = props => {
               {content.productSection.linkTitle}
             </Link>
           </div>
-          <div className="col">
-            <h6>{content.contactSection.title}</h6>
-            <hr className="mt-0 mb-2 horizontal-bar" />
+          <div className="col pt-5">
+            <h6 className="headerFont">{content.referralSection.title}</h6>
+          </div>
+          <div className="col pt-5">
+            <h6 className="headerFont">{content.contactSection.title}</h6>
             <div className="row">
               <div className="col-10">
                 {content.contactSection.phoneNumber}

@@ -83,7 +83,7 @@ const Header = props => {
   return (
     <div className="container">
       {checkLanguage()}
-      <nav className="navbar navbar-expand-lg navbar-light no-padding-sides sticky-top">
+      <nav className="navbar navbar-expand-lg navbar-light no-padding-sides sticky-top headerFont">
         <Link to="/" className="navbar-brand">
           <img
             src={Logo}
