@@ -382,6 +382,7 @@ const locationSettings = [
           west: 90,
         },
       },
+      scrollWheelZoom: "center",
     },
   },
 ]
