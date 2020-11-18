@@ -1,10 +1,14 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import Layout from "../components/layout"
 import Info from "../components/About/info"
 import ContactUs from "../components/Global/contactUs"
 
 const AboutPage = () => {
-  const languageStoredInLocalStorage = localStorage.getItem("language")
+  const [language, setLanguage] = useState(undefined)
+
+  useEffect(() => {
+    setLanguage(localStorage.getItem("language"))
+  }, [])
 
   let contactContent = {
     English: {
@@ -24,11 +28,8 @@ const AboutPage = () => {
   return (
     <div>
       <Layout>
-        <Info language={languageStoredInLocalStorage} />
-        <ContactUs
-          language={languageStoredInLocalStorage}
-          content={contactContent}
-        />
+        <Info language={language} />
+        <ContactUs language={language} content={contactContent} />
       </Layout>
     </div>
   )

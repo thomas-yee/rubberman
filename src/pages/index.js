@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import Layout from "../components/layout"
 import Info from "../components/Home/info"
 import Intro from "../components/Home/intro"
@@ -7,7 +7,11 @@ import ContactUs from "../components/Global/contactUs"
 import IconSection from "../components/Home/iconSection"
 
 const IndexPage = () => {
-  const languageStoredInLocalStorage = localStorage.getItem("language")
+  const [language, setLanguage] = useState(undefined)
+
+  useEffect(() => {
+    setLanguage(localStorage.getItem("language"))
+  }, [])
 
   let contactContent = {
     English: {
@@ -27,14 +31,11 @@ const IndexPage = () => {
   return (
     <div>
       <Layout>
-        <Intro language={languageStoredInLocalStorage} />
-        <IconSection language={languageStoredInLocalStorage} />
-        <Info language={languageStoredInLocalStorage} />
-        <LogoSection language={languageStoredInLocalStorage} />
-        <ContactUs
-          language={languageStoredInLocalStorage}
-          content={contactContent}
-        />
+        <Intro language={language} />
+        <IconSection language={language} />
+        <Info language={language} />
+        <LogoSection language={language} />
+        <ContactUs language={language} content={contactContent} />
       </Layout>
     </div>
   )
