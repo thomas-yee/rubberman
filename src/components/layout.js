@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import Header from "../components/Global/header"
 import Footer from "../components/Global/footer"
 
@@ -6,27 +6,18 @@ import "./bootstrap.min.css"
 import "./layout.css"
 
 const Layout = ({ children }) => {
-  const [
-    languageStoredInLocalStorage,
-    setLanguageStoredInLocalStorage,
-  ] = useState(undefined)
-  const grabLanguage = () => {
-    if (window) {
-      setLanguageStoredInLocalStorage(localStorage.getItem("language"))
-    }
-  }
-
-  const [language, setLanguage] = useState(
-    languageStoredInLocalStorage ? languageStoredInLocalStorage : "English"
-  )
+  const [language, setLanguage] = useState(undefined)
 
   const storeLanguageInLocalStorage = language => {
     localStorage.setItem("language", language)
   }
 
+  useEffect(() => {
+    setLanguage(localStorage.getItem("language"))
+  }, [])
+
   return (
     <div>
-      {grabLanguage}
       <Header
         language={language}
         handleSetLanguage={language => {
