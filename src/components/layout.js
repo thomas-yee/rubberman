@@ -6,7 +6,16 @@ import "./bootstrap.min.css"
 import "./layout.css"
 
 const Layout = ({ children }) => {
-  const languageStoredInLocalStorage = localStorage.getItem("language")
+  const [
+    languageStoredInLocalStorage,
+    setLanguageStoredInLocalStorage,
+  ] = useState(undefined)
+  const grabLanguage = () => {
+    if (window) {
+      setLanguageStoredInLocalStorage(localStorage.getItem("language"))
+    }
+  }
+
   const [language, setLanguage] = useState(
     languageStoredInLocalStorage ? languageStoredInLocalStorage : "English"
   )
@@ -17,6 +26,7 @@ const Layout = ({ children }) => {
 
   return (
     <div>
+      {grabLanguage}
       <Header
         language={language}
         handleSetLanguage={language => {
