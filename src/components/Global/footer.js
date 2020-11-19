@@ -2,7 +2,7 @@ import React from "react"
 import { Link, graphql, useStaticQuery } from "gatsby"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faLinkedin } from "@fortawesome/free-brands-svg-icons"
-import Img from "gatsby-image"
+import logo from "../../images/rubberman.png"
 
 const Footer = props => {
   let content = {
@@ -62,18 +62,6 @@ const Footer = props => {
     },
   }
 
-  const data = useStaticQuery(graphql`
-    query {
-      image: file(relativePath: { eq: "rubberman.png" }) {
-        childImageSharp {
-          fixed(width: 300) {
-            ...GatsbyImageSharpFixed
-          }
-        }
-      }
-    }
-  `)
-
   const checkLanguage = () => {
     props.language === "English"
       ? (content = content.English)
@@ -86,7 +74,8 @@ const Footer = props => {
       <div className="container">
         <div className="row">
           <div className="col-4 pt-4">
-            <Img fixed={data.image.childImageSharp.fixed} alt="Intro picture" />
+            {/* <Img fixed={data.image.childImageSharp.fixed} alt="Intro picture" /> */}
+            <img className="img-fluid" src={logo} />
             <p>{content.companySection.information}</p>
           </div>
           <div className="col pt-5">
