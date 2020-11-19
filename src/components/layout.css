@@ -3,8 +3,8 @@
 :root {
   --mainBlue: #0152a0;
   --mainYellow: #ff9e09;
-  --mainGrey: #50595f;
-  --mainWhite: #fff;
+  --mainGrey: #d4d5d7;
+  --mainWhite: rgb(255, 255, 255);
   --mainDark: #000;
 }
 
@@ -12,6 +12,20 @@ body {
   background: var(--mainWhite);
   color: var(--mainDark);
   font-family: Verdana, Geneva, Tahoma, sans-serif !important;
+}
+
+/**FOOTER */
+.footer {
+  background: var(--mainWhite);
+}
+
+.footerFont {
+  font-size: 80%;
+}
+
+.link-footer {
+  color: var(--mainDark);
+  padding-left: 0;
 }
 
 .headerFont {
@@ -68,22 +82,4 @@ body {
   background-color: var(--mainGrey);
   color: var(--mainWhite);
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
-/**FOOTER */
-.footer {
-  background: var(--mainWhite);
-}
-
-.link-blue-footer {
-  color: var(--mainDark);
-  padding-left: 0;
-}
-
-.link-blue-footer:hover {
-  color: var(--mainBlue);
-}
-
-.horizontal-bar {
-  border-top: 1px solid var(--mainBlue);
 }

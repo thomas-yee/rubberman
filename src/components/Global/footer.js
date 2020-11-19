@@ -73,55 +73,53 @@ const Footer = props => {
       {checkLanguage()}
       <div className="container">
         <div className="row">
-          <div className="col-4 pt-4">
-            {/* <Img fixed={data.image.childImageSharp.fixed} alt="Intro picture" /> */}
+          <div className="col-3 pt-4 mr-4">
             <img className="img-fluid" src={logo} />
-            <p>{content.companySection.information}</p>
+            <p className="footerFont mt-3">
+              {content.companySection.information}
+            </p>
           </div>
-          <div className="col pt-5">
+          <div className="col-2 pt-5">
             <h6 className="headerFont">{content.aboutSection.title}</h6>
-            <p>{content.aboutSection.information}</p>
-            <Link
-              to="/about"
-              className="nav-link text-capitalize link-blue-footer"
-            >
+
+            <Link to="/about" className="nav-link link-footer pb-0 mt-4">
               {content.aboutSection.processLink}
             </Link>
             <Link
               to="/about"
-              className="nav-link text-capitalize link-blue-footer"
+              className="nav-link text-capitalize link-footer pb-0"
             >
               {content.aboutSection.mythsLink}
             </Link>
             <Link
               to="/about"
-              className="nav-link text-capitalize link-blue-footer"
+              className="nav-link text-capitalize link-footer pb-0"
             >
               {content.aboutSection.whyRetreadLink}
             </Link>
-            <Link
-              to="/about"
-              className="nav-link text-capitalize link-blue-footer"
-            >
+            <Link to="/about" className="nav-link text-capitalize link-footer">
               {content.aboutSection.historyLink}
             </Link>
           </div>
-          <div className="col pt-5">
+          <div className="col-2 pt-5">
             <h6 className="headerFont">{content.productSection.title}</h6>
             <Link
               to="/about"
-              className="nav-link text-capitalize link-blue-footer"
+              className="nav-link text-capitalize link-footer mt-4"
             >
               {content.productSection.linkTitle}
             </Link>
           </div>
-          <div className="col pt-5">
+          <div className="col mr-4 pt-5">
             <h6 className="headerFont">{content.referralSection.title}</h6>
+            <p className="footerFont mt-4 pt-2">
+              {content.referralSection.text}
+            </p>
           </div>
           <div className="col pt-5">
             <h6 className="headerFont">{content.contactSection.title}</h6>
             <div className="row">
-              <div className="col-10">
+              <div className="col-10 footerFont mt-4">
                 {content.contactSection.phoneNumber}
                 <br />
                 {content.contactSection.faxNumber}
