@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react"
 import Layout from "../components/layout"
-import Info from "../components/Home/info"
 import Intro from "../components/Home/intro"
-import LogoSection from "../components/Home/logoSection"
+
 import ContactUs from "../components/Global/contactUs"
 import IconSection from "../components/Home/iconSection"
 
@@ -33,8 +32,6 @@ const IndexPage = () => {
       <Layout>
         <Intro language={language} />
         <IconSection language={language} />
-        <Info language={language} />
-        <LogoSection language={language} />
         <ContactUs language={language} content={contactContent} />
       </Layout>
     </div>
