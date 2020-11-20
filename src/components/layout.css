@@ -33,6 +33,14 @@ body {
   letter-spacing: 4px;
 }
 
+/**HOME */
+
+.homeBackground {
+  background-image: url("../images/home_1.jpg") !important;
+  background-size: 100% auto;
+  height: 85vh;
+}
+
 .no-padding-sides {
   padding-right: 0 !important;
   padding-left: 0 !important;
