@@ -22,7 +22,7 @@ const Header = props => {
       products: {
         id: 3,
         path: "/products",
-        text: "our products",
+        text: "products",
       },
       about: {
         id: 4,
