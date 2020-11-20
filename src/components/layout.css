@@ -13,6 +13,20 @@ body {
   color: var(--mainDark);
   font-family: Verdana, Geneva, Tahoma, sans-serif !important;
 }
+/**More Padding styling */
+.no-padding-sides {
+  padding-right: 0 !important;
+  padding-left: 0 !important;
+}
+
+.py-6 {
+  padding-top: 6rem !important;
+  padding-bottom: 6rem !important;
+}
+
+.pt-10 {
+  padding-top: 10rem !important;
+}
 
 /**FOOTER */
 .footer {
@@ -36,19 +50,15 @@ body {
 /**HOME */
 
 .homeBackground {
-  background-image: url("../images/home_1.jpg") !important;
+  background-image: url("../images/home_1.jpg");
   background-size: 100% auto;
   height: 85vh;
 }
 
-.no-padding-sides {
-  padding-right: 0 !important;
-  padding-left: 0 !important;
-}
-
-.py-6 {
-  padding-top: 6rem !important;
-  padding-bottom: 6rem !important;
+.iconBackground {
+  background-image: url("../images/home_2.jpg");
+  background-size: 100% auto;
+  height: 95vh;
 }
 
 .text-white {

@@ -1,9 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faHandshake } from "@fortawesome/free-solid-svg-icons"
-import { faIndustry } from "@fortawesome/free-solid-svg-icons"
-import { faCheck } from "@fortawesome/free-solid-svg-icons"
+import hexagon from "../../images/Hexagon.png"
 
 const Info = props => {
   let content = {
@@ -33,38 +30,24 @@ const Info = props => {
       : (content = content.Indonesian)
   }
   return (
-    <section className="py-5">
+    <section className="bg-light">
       {checkLanguage()}
-      <div className="container">
-        <div className="row text-center">
-          <div className="col">
-            <div className="blue">
-              <FontAwesomeIcon icon={faHandshake} className="fa-5x" />
-            </div>
-            <div className="pt-4">
-              <h4>{content.mainSection.experience}</h4>
-            </div>
+      <div className="container iconBackground">
+        <div className="row justify-content-md-center pt-10">
+          <div className="col-md-2 col-md-offset-3">
+            <img className="img-fluid pt-5 position-relative" src={hexagon} />
+            <div class="position-absolute">Hello</div>
           </div>
-          <div className="col">
-            <div className="blue">
-              <FontAwesomeIcon icon={faIndustry} className="fa-5x" />
-            </div>
-            <div className="pt-4">
-              <h4>{content.mainSection.operationsLineOne}</h4>
-              <h4>{content.mainSection.operationsLineTwo}</h4>
-            </div>
+          <div className="col-md-2">
+            <img className="img-fluid pt-5" src={hexagon} />
           </div>
-          <div className="col">
-            <div className="blue">
-              <FontAwesomeIcon icon={faCheck} className="fa-5x" />
-            </div>
-            <div className="pt-4">
-              <h4>{content.mainSection.certificationLineOne}</h4>
-              <h4>{content.mainSection.certificationLineTwo}</h4>
-            </div>
+          <div className="col-md-2">
+            <img className="img-fluid pt-5" src={hexagon} />
           </div>
         </div>
+        <div className="row"></div>
       </div>
+      <div className="row"></div>
     </section>
   )
 }
