@@ -52,7 +52,8 @@ body {
 .homeBackground {
   background-image: url("../images/home_1.jpg");
   background-size: 100% auto;
-  height: 85vh;
+  background-position: center bottom;
+  height: 67vh;
 }
 
 .iconBackground {
@@ -61,11 +62,20 @@ body {
   height: 95vh;
 }
 
+/**PRODUCTS */
+.productsBackground {
+  background-image: url("../images/products_1.jpg");
+  background-size: 100% auto;
+  background-position: center bottom;
+  height: 90vh;
+}
+
 /**ABOUT */
 .aboutBackground {
   background-image: url("../images/about_1.jpg");
   background-size: 100% auto;
-  height: 80vh;
+  background-position: center bottom;
+  height: 61vh;
 }
 
 .text-white {

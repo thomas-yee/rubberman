@@ -1,6 +1,4 @@
 import React from "react"
-import { Link } from "gatsby"
-import Title from "../title"
 
 const Info = props => {
   let content = {
@@ -23,18 +21,9 @@ const Info = props => {
       : (content = content.Indonesian)
   }
   return (
-    <section className="py-5 bg-light">
+    <section className="bg-light">
       {checkLanguage()}
-      <div className="container">
-        <Title title="Our Story" />
-        <div className="row">
-          <div className="col-10 col-sm-8 mx-auto text-center">
-            <p className="lead text-muted mb-5">
-              {content.mainSection.information}
-            </p>
-          </div>
-        </div>
-      </div>
+      <div className="container productsBackground"></div>
     </section>
   )
 }
