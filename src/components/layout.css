@@ -61,6 +61,13 @@ body {
   height: 95vh;
 }
 
+/**ABOUT */
+.aboutBackground {
+  background-image: url("../images/about_1.jpg");
+  background-size: 100% auto;
+  height: 80vh;
+}
+
 .text-white {
   color: var(--mainWhite);
 }

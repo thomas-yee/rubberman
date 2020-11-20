@@ -25,19 +25,10 @@ const Info = props => {
       : (content = content.Indonesian)
   }
   return (
-    <section className="py-5 bg-light">
+    <section className="bg-light">
       {checkLanguage()}
-      <div className="container">
-        <div className="row">
-          <div className="col-10 col-sm-8 mx-auto">
-            <h4>{content.mainSection.title}</h4>
-            <hr className="mt-0 mb-2 horizontal-bar" />
-            <p className="lead text-muted mb-5">
-              {content.mainSection.information}
-            </p>
-          </div>
-          <div className="col"></div>
-        </div>
+      <div className="container aboutBackground">
+        <div className="row"></div>
       </div>
     </section>
   )
