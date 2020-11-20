@@ -36,7 +36,6 @@ const Info = props => {
         <div className="row justify-content-md-center pt-10">
           <div className="col-md-2 col-md-offset-3">
             <img className="img-fluid pt-5 position-relative" src={hexagon} />
-            <div class="position-absolute">Hello</div>
           </div>
           <div className="col-md-2">
             <img className="img-fluid pt-5" src={hexagon} />
