@@ -103,7 +103,7 @@ const Header = props => {
         </button>
         <div className={navbarClass}>
           <ul className="navbar-nav ml-auto sm-2">
-            <li key={links.language.id} className="nav=item">
+            <li key={links.language.id} className="nav=item mr-5 pt-5">
               <select
                 className="custom-select"
                 value={props.language}
@@ -113,12 +113,12 @@ const Header = props => {
                 <option value="Indonesian">{links.language.indonesian}</option>
               </select>
             </li>
-            <li key={links.home.id} className="nav-item">
+            <li key={links.home.id} className="nav-item mr-5 pt-5">
               <Link to={links.home.path} className="nav-link text-capitalize">
                 {links.home.text}
               </Link>
             </li>
-            <li key={links.products.id} className="nav-item">
+            <li key={links.products.id} className="nav-item mr-5 pt-5">
               <Link
                 to={links.products.path}
                 className="nav-link text-capitalize"
@@ -126,12 +126,12 @@ const Header = props => {
                 {links.products.text}
               </Link>
             </li>
-            <li key={links.about.id} className="nav-item">
+            <li key={links.about.id} className="nav-item mr-5 pt-5">
               <Link to={links.about.path} className="nav-link text-capitalize">
                 {links.about.text}
               </Link>
             </li>
-            <li key={links.contact.id} className="nav-item">
+            <li key={links.contact.id} className="nav-item mr-5 pt-5">
               <Link
                 to={links.contact.path}
                 className="nav-link text-capitalize"
