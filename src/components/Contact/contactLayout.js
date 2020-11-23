@@ -4,17 +4,17 @@ import Locations from "../Contact/locations"
 
 const ContactLayout = props => {
   return (
-    <section className="py-5">
+    <section className="">
       <div className="container">
-        <div className="row">
+        <div className="row contactMapBackground pt-3">
           <div className="col">
             <Contact language={props.language} />
           </div>
-          <div className="col">
+          <div className="col pt-5">
             <Locations />
           </div>
         </div>
-        <div className="row"></div>
+        <div className="row contactReferralBackground"></div>
       </div>
     </section>
   )
