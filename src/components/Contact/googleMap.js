@@ -19,7 +19,6 @@ const GoogleMap = props => {
         width: props.style.width,
       }}
     >
-      {console.log(props)}
       <Map
         bootstrapURLKeys={{ key: APIKEY }}
         defaultZoom={props.options.defaultZoom}
