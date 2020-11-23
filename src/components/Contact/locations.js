@@ -400,41 +400,71 @@ const Locations = () => {
             />
           </div>
         </div>
-        <div className="row">
+        <div className="row listFont">
           <div className="col">
-            {Object.keys(locations[0])
-              .slice(0, 9)
-              .map((location, i) => {
-                return <h6 key={i}>{locations[0][location].name}</h6>
-              })}
+            <ul className="list-unstyled">
+              {Object.keys(locations[0])
+                .slice(0, 9)
+                .map((location, i) => {
+                  return (
+                    <li key={i} className="pt-2">
+                      {locations[0][location].name}
+                    </li>
+                  )
+                })}
+            </ul>
           </div>
           <div className="col">
-            {Object.keys(locations[0])
-              .slice(9, 18)
-              .map((location, i) => {
-                return <h6 key={i}>{locations[0][location].name}</h6>
-              })}
+            <ul className="list-unstyled">
+              {Object.keys(locations[0])
+                .slice(9, 18)
+                .map((location, i) => {
+                  return (
+                    <li key={i} className="pt-2">
+                      {locations[0][location].name}
+                    </li>
+                  )
+                })}
+            </ul>
           </div>
           <div className="col">
-            {Object.keys(locations[0])
-              .slice(18, 27)
-              .map((location, i) => {
-                return <h6 key={i}>{locations[0][location].name}</h6>
-              })}
+            <ul className="list-unstyled">
+              {Object.keys(locations[0])
+                .slice(18, 27)
+                .map((location, i) => {
+                  return (
+                    <li key={i} className="pt-2">
+                      {locations[0][location].name}
+                    </li>
+                  )
+                })}
+            </ul>
           </div>
           <div className="col">
-            {Object.keys(locations[0])
-              .slice(27, 36)
-              .map((location, i) => {
-                return <h6 key={i}>{locations[0][location].name}</h6>
-              })}
+            <ul className="list-unstyled">
+              {Object.keys(locations[0])
+                .slice(27, 36)
+                .map((location, i) => {
+                  return (
+                    <li key={i} className="pt-2">
+                      {locations[0][location].name}
+                    </li>
+                  )
+                })}
+            </ul>
           </div>
           <div className="col">
-            {Object.keys(locations[0])
-              .slice(36, 45)
-              .map((location, i) => {
-                return <h6 key={i}>{locations[0][location].name}</h6>
-              })}
+            <ul className="list-unstyled">
+              {Object.keys(locations[0])
+                .slice(36, 45)
+                .map((location, i) => {
+                  return (
+                    <li key={i} className="pt-2">
+                      {locations[0][location].name}
+                    </li>
+                  )
+                })}
+            </ul>
           </div>
         </div>
       </div>

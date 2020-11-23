@@ -129,7 +129,7 @@ body {
   background-image: url("../images/contact_1.jpg");
   background-size: 100% auto;
   background-position: center top;
-  height: 70vh;
+  height: 80vh;
   background-repeat: no-repeat;
 }
 
@@ -139,4 +139,8 @@ body {
   background-position: center top;
   height: 70vh;
   background-repeat: no-repeat;
+}
+
+.listFont {
+  font-size: 80% !important;
 }
