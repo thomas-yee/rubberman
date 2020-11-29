@@ -20,7 +20,7 @@ const Footer = props => {
       },
       productSection: {
         title: "Products",
-        linkTitle: "Link To Products",
+        linkTitle: "Tires",
       },
       referralSection: {
         title: "Referral Program",
@@ -104,7 +104,7 @@ const Footer = props => {
           <div className="col-2 pt-5">
             <h6 className="headerFont">{content.productSection.title}</h6>
             <Link
-              to="/about"
+              to="/products"
               className="nav-link text-capitalize link-footer mt-4"
             >
               {content.productSection.linkTitle}
