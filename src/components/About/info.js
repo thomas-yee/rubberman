@@ -3,6 +3,9 @@ import { Link } from "gatsby"
 import Title from "../title"
 import Accordion from "react-bootstrap/Accordion"
 import Card from "react-bootstrap/Card"
+import { useAccordionToggle } from "react-bootstrap/AccordionToggle"
+
+const decoratedOnClick = useAccordionToggle(eventKey, onClick)
 
 const Info = props => {
   let content = {
@@ -50,83 +53,123 @@ const Info = props => {
       <div className="container">
         <Accordion defaultActiveKey="0">
           <Card>
-            <Accordion.Toggle as={Card.Header} eventKey="0">
+            <Accordion.Toggle
+              as={Card.Header}
+              eventKey="0"
+              className="stepHeaderFont btn-step"
+            >
               {content.steps.stepOne}
             </Accordion.Toggle>
             <Accordion.Collapse eventKey="0">
-              <Card.Body></Card.Body>
+              <Card.Body>TBA</Card.Body>
             </Accordion.Collapse>
           </Card>
           <Card>
-            <Accordion.Toggle as={Card.Header} eventKey="1">
+            <Accordion.Toggle
+              as={Card.Header}
+              eventKey="1"
+              className="stepHeaderFont"
+            >
               {content.steps.stepTwo}
             </Accordion.Toggle>
             <Accordion.Collapse eventKey="1">
-              <Card.Body>Hello! I'm another body</Card.Body>
+              <Card.Body>TBA</Card.Body>
             </Accordion.Collapse>
           </Card>
           <Card>
-            <Accordion.Toggle as={Card.Header} eventKey="2">
+            <Accordion.Toggle
+              as={Card.Header}
+              eventKey="2"
+              className="stepHeaderFont"
+            >
               {content.steps.stepThree}
             </Accordion.Toggle>
             <Accordion.Collapse eventKey="2">
-              <Card.Body>Hello! I'm another body</Card.Body>
+              <Card.Body>TBA</Card.Body>
             </Accordion.Collapse>
           </Card>
           <Card>
-            <Accordion.Toggle as={Card.Header} eventKey="3">
+            <Accordion.Toggle
+              as={Card.Header}
+              eventKey="3"
+              className="stepHeaderFont"
+            >
               {content.steps.stepFour}
             </Accordion.Toggle>
             <Accordion.Collapse eventKey="3">
-              <Card.Body>Hello! I'm another body</Card.Body>
+              <Card.Body>TBA</Card.Body>
             </Accordion.Collapse>
           </Card>
           <Card>
-            <Accordion.Toggle as={Card.Header} eventKey="4">
+            <Accordion.Toggle
+              as={Card.Header}
+              eventKey="4"
+              className="stepHeaderFont"
+            >
               {content.steps.stepFive}
             </Accordion.Toggle>
             <Accordion.Collapse eventKey="4">
-              <Card.Body>Hello! I'm another body</Card.Body>
+              <Card.Body>TBA</Card.Body>
             </Accordion.Collapse>
           </Card>
           <Card>
-            <Accordion.Toggle as={Card.Header} eventKey="5">
+            <Accordion.Toggle
+              as={Card.Header}
+              eventKey="5"
+              className="stepHeaderFont"
+            >
               {content.steps.stepSix}
             </Accordion.Toggle>
             <Accordion.Collapse eventKey="5">
-              <Card.Body>Hello! I'm another body</Card.Body>
+              <Card.Body>TBA</Card.Body>
             </Accordion.Collapse>
           </Card>
           <Card>
-            <Accordion.Toggle as={Card.Header} eventKey="6">
+            <Accordion.Toggle
+              as={Card.Header}
+              eventKey="6"
+              className="stepHeaderFont"
+            >
               {content.steps.stepSeven}
             </Accordion.Toggle>
             <Accordion.Collapse eventKey="6">
-              <Card.Body>Hello! I'm another body</Card.Body>
+              <Card.Body>TBA</Card.Body>
             </Accordion.Collapse>
           </Card>
           <Card>
-            <Accordion.Toggle as={Card.Header} eventKey="7">
+            <Accordion.Toggle
+              as={Card.Header}
+              eventKey="7"
+              className="stepHeaderFont"
+            >
               {content.steps.stepEight}
             </Accordion.Toggle>
             <Accordion.Collapse eventKey="7">
-              <Card.Body>Hello! I'm another body</Card.Body>
+              <Card.Body>TBA</Card.Body>
             </Accordion.Collapse>
           </Card>
           <Card>
-            <Accordion.Toggle as={Card.Header} eventKey="8">
+            <Accordion.Toggle
+              as={Card.Header}
+              eventKey="8"
+              className="stepHeaderFont"
+            >
               {content.steps.stepNine}
             </Accordion.Toggle>
             <Accordion.Collapse eventKey="8">
-              <Card.Body>Hello! I'm another body</Card.Body>
+              <Card.Body>TBA</Card.Body>
             </Accordion.Collapse>
           </Card>
           <Card>
-            <Accordion.Toggle as={Card.Header} eventKey="9">
+            <Accordion.Toggle
+              as={Card.Header}
+              eventKey="9"
+              className="stepHeaderFont"
+            >
               {content.steps.stepTen}
             </Accordion.Toggle>
             <Accordion.Collapse eventKey="9">
-              <Card.Body>Hello! I'm another body</Card.Body>
+              <Card.Body>TBA</Card.Body>
             </Accordion.Collapse>
           </Card>
         </Accordion>
