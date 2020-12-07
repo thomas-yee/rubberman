@@ -106,6 +106,18 @@ body {
   color: var(--mainWhite);
 }
 
+.stepHeaderFont {
+  font-family: "Bebas Neue" !important;
+  letter-spacing: 4px;
+  font-size: 140%;
+  color: var(--mainWhite);
+  background-color: var(--mainGrey);
+}
+
+.btn-step:focus {
+  color: var(--mainBlue);
+}
+
 /**Contact Section on Index Page */
 
 .contact-us {
