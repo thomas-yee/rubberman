@@ -1,11 +1,6 @@
 import React from "react"
-import { Link } from "gatsby"
-import Title from "../title"
 import Accordion from "react-bootstrap/Accordion"
 import Card from "react-bootstrap/Card"
-import { useAccordionToggle } from "react-bootstrap/AccordionToggle"
-
-const decoratedOnClick = useAccordionToggle(eventKey, onClick)
 
 const Info = props => {
   let content = {
