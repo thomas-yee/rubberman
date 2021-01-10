@@ -27,7 +27,7 @@ const Intro = props => {
     <div>
       <section className="bg-light">
         {checkLanguage()}
-        <div className="container homeBackground">
+        <div className="container-fluid homeBackground">
           <div className="row"></div>
         </div>
       </section>

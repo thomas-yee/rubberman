@@ -34,7 +34,7 @@ const ContactForm = props => {
   return (
     <section className="py-5">
       {checkLanguage()}
-      <div className="container">
+      <div className="container-fluid">
         <div className="row">
           <div className="col-10 col-sm-8 mb-2">
             <h3>{content.title}</h3>

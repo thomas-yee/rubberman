@@ -42,10 +42,10 @@ const Info = props => {
   return (
     <section className="bg-light">
       {checkLanguage()}
-      <div className="container aboutBackground">
+      <div className="container-fluid aboutBackground">
         <div className="row"></div>
       </div>
-      <div className="container">
+      <div className="container-fluid">
         <Accordion defaultActiveKey="0">
           <Card>
             <Accordion.Toggle

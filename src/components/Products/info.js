@@ -23,7 +23,7 @@ const Info = props => {
   return (
     <section className="bg-light">
       {checkLanguage()}
-      <div className="container productsBackground"></div>
+      <div className="container-fluid productsBackground"></div>
     </section>
   )
 }

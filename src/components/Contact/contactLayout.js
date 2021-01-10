@@ -5,7 +5,7 @@ import Locations from "../Contact/locations"
 const ContactLayout = props => {
   return (
     <section className="">
-      <div className="container">
+      <div className="container-fluid">
         <div className="row contactMapBackground pt-3">
           <div className="col">
             <Contact language={props.language} />

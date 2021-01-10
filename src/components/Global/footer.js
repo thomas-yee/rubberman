@@ -71,7 +71,7 @@ const Footer = props => {
   return (
     <footer className="footer py-3">
       {checkLanguage()}
-      <div className="container">
+      <div className="container-fluid">
         <div className="row">
           <div className="col-3 pt-4 mr-4">
             <img className="img-fluid" src={logo} />

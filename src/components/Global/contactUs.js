@@ -4,7 +4,7 @@ import { Link } from "gatsby"
 const ContactUs = props => {
   return (
     <section className="py-6 contact-us">
-      <div className="container">
+      <div className="container-fluid">
         <div className="row">
           <div className="col-7">
             {props.language === "English" ? (
