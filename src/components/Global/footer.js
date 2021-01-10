@@ -13,13 +13,14 @@ const Footer = props => {
       },
       aboutSection: {
         title: "About",
-        processLink: "Process",
+
         mythsLink: "Myths",
         whyRetreadLink: "Why Retread?",
       },
       productSection: {
         title: "Products",
-        linkTitle: "Tires",
+        productLink: "Tires",
+        processLink: "Process",
       },
       referralSection: {
         title: "Referral Program",
@@ -39,13 +40,14 @@ const Footer = props => {
       },
       aboutSection: {
         title: "About",
-        processLink: "Process",
+
         mythsLink: "Myths",
         whyRetreadLink: "Why Retread?",
       },
       productSection: {
-        title: "XXX",
-        linkTitle: "XXXX",
+        title: "Products",
+        productLink: "Tires",
+        processLink: "Process",
       },
       referralSection: {
         title: "Referral Program",
@@ -71,18 +73,14 @@ const Footer = props => {
       {checkLanguage()}
       <div className="container-fluid">
         <div className="row">
-          <div className="col-3 pt-4 mr-4">
+          <div className="col-sm-3 pt-3 mr-5">
             <img className="img-fluid" src={logo} />
             <p className="footerFont mt-3 ml-2">
               {content.companySection.information}
             </p>
           </div>
-          <div className="col-2 pt-5">
+          <div className="col-sm-2 pt-5">
             <h6 className="headerFont">{content.aboutSection.title}</h6>
-
-            <Link to="/about" className="nav-link link-footer pb-0 mt-4">
-              {content.aboutSection.processLink}
-            </Link>
             <Link
               to="/about"
               className="nav-link text-capitalize link-footer pb-0"
@@ -96,22 +94,25 @@ const Footer = props => {
               {content.aboutSection.whyRetreadLink}
             </Link>
           </div>
-          <div className="col-2 pt-5">
+          <div className="col-sm-2 pt-5">
             <h6 className="headerFont">{content.productSection.title}</h6>
             <Link
               to="/products"
               className="nav-link text-capitalize link-footer mt-4"
             >
-              {content.productSection.linkTitle}
+              {content.productSection.productLink}
+            </Link>
+            <Link to="/about" className="nav-link link-footer pb-0 mt-4">
+              {content.productSection.processLink}
             </Link>
           </div>
-          <div className="col mr-4 pt-5">
+          <div className="col-sm-2 mr-4 pt-5">
             <h6 className="headerFont">{content.referralSection.title}</h6>
             <p className="footerFont mt-4 pt-2">
               {content.referralSection.text}
             </p>
           </div>
-          <div className="col pt-5">
+          <div className="col-sm-2 pt-5">
             <h6 className="headerFont">{content.contactSection.title}</h6>
             <div className="row">
               <div className="col-10 footerFont mt-4">
