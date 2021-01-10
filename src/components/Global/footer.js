@@ -16,7 +16,6 @@ const Footer = props => {
         processLink: "Process",
         mythsLink: "Myths",
         whyRetreadLink: "Why Retread?",
-        historyLink: "Our History",
       },
       productSection: {
         title: "Products",
@@ -43,7 +42,6 @@ const Footer = props => {
         processLink: "Process",
         mythsLink: "Myths",
         whyRetreadLink: "Why Retread?",
-        historyLink: "Our History",
       },
       productSection: {
         title: "XXX",
@@ -75,7 +73,7 @@ const Footer = props => {
         <div className="row">
           <div className="col-3 pt-4 mr-4">
             <img className="img-fluid" src={logo} />
-            <p className="footerFont mt-3">
+            <p className="footerFont mt-3 ml-2">
               {content.companySection.information}
             </p>
           </div>
@@ -96,9 +94,6 @@ const Footer = props => {
               className="nav-link text-capitalize link-footer pb-0"
             >
               {content.aboutSection.whyRetreadLink}
-            </Link>
-            <Link to="/about" className="nav-link text-capitalize link-footer">
-              {content.aboutSection.historyLink}
             </Link>
           </div>
           <div className="col-2 pt-5">
