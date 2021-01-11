@@ -1,12 +1,12 @@
-import React, { useState } from "react"
+import React from "react"
 import { css } from "@emotion/core"
 import { Link } from "gatsby"
 import Logo from "../../images/rubberman.png"
+import Navbar from "react-bootstrap/Navbar"
+import Nav from "react-bootstrap/Nav"
+import { NavDropdown } from "react-bootstrap"
 
 const Header = props => {
-  const [navbarOpen, setNavBarOpen] = useState("false")
-  const [navbarClass, setNavbarClass] = useState("collapse navbar-collapse")
-
   let links = {
     English: {
       language: {
@@ -21,8 +21,15 @@ const Header = props => {
       },
       products: {
         id: 3,
-        path: "/products",
         text: "products",
+        tires: {
+          path: "/products",
+          text: "tires",
+        },
+        process: {
+          path: "/process",
+          text: "the process",
+        },
       },
       about: {
         id: 4,
@@ -48,18 +55,25 @@ const Header = props => {
       },
       products: {
         id: 3,
-        path: "/products",
-        text: "XXX",
+        text: "products",
+        tires: {
+          path: "/products",
+          text: "tires",
+        },
+        process: {
+          path: "/process",
+          text: "the process",
+        },
       },
       about: {
         id: 4,
         path: "/about",
-        text: "XXX",
+        text: "about",
       },
       contact: {
         id: 5,
         path: "/contact",
-        text: "XXX",
+        text: "contact",
       },
     },
   }
@@ -70,40 +84,31 @@ const Header = props => {
       : (links = links.Indonesian)
   }
 
-  const navbarHandler = () => {
-    if (navbarOpen === "true") {
-      setNavBarOpen("false")
-      setNavbarClass("collapse navbar-collapse")
-    } else {
-      setNavBarOpen("true")
-      setNavbarClass("collapse navbar-collapse show")
-    }
-  }
-
   return (
     <div className="container-fluid">
       {checkLanguage()}
-      <nav className="navbar navbar-expand-lg navbar-light no-padding-sides sticky-top headerFont">
-        <Link to="/" className="navbar-brand">
-          <img
-            src={Logo}
-            alt="rubberman logo"
-            css={css`
-              max-height: 80px;
-              width: auto;
-            `}
-          ></img>
-        </Link>
-        <button
-          className="navbar-toggler"
-          type="button"
-          onClick={navbarHandler}
-        >
-          <span className="navbar-toggler-icon"></span>
-        </button>
-        <div className={navbarClass}>
-          <ul className="navbar-nav ml-auto sm-2">
-            <li key={links.language.id} className="nav=item mr-5 pt-5">
+      <Navbar
+        collapseOnSelect
+        expand="lg"
+        className="navbar navbar-light headerFont"
+        sticky="top"
+      >
+        <Navbar.Brand>
+          <Link to="/" className="navbar-brand">
+            <img
+              src={Logo}
+              alt="rubberman logo"
+              css={css`
+                max-height: 80px;
+                width: auto;
+              `}
+            ></img>
+          </Link>
+        </Navbar.Brand>
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        <Navbar.Collapse id="responsive-navbar-nav">
+          <Nav className="ml-auto sm-2">
+            <Nav.Link key={links.language.id} className="nav-item mr-5 pt-5">
               <select
                 className="custom-select"
                 value={props.language}
@@ -112,36 +117,50 @@ const Header = props => {
                 <option value="English">{links.language.english}</option>
                 <option value="Indonesian">{links.language.indonesian}</option>
               </select>
-            </li>
-            <li key={links.home.id} className="nav-item mr-5 pt-5">
+            </Nav.Link>
+            <Nav.Link key={links.home.id} className="nav-item mr-5 pt-5">
               <Link to={links.home.path} className="nav-link text-capitalize">
                 {links.home.text}
               </Link>
-            </li>
-            <li key={links.products.id} className="nav-item mr-5 pt-5">
-              <Link
-                to={links.products.path}
-                className="nav-link text-capitalize"
-              >
-                {links.products.text}
-              </Link>
-            </li>
-            <li key={links.about.id} className="nav-item mr-5 pt-5">
+            </Nav.Link>
+            <NavDropdown
+              title={links.products.text}
+              id="basic-nav-dropdown"
+              className="mr-5 pt-5"
+            >
+              <NavDropdown.Item>
+                <Link
+                  to={links.products.tires.path}
+                  className="dropdown-item text-capitalize"
+                >
+                  {links.products.tires.text}
+                </Link>
+              </NavDropdown.Item>
+              <NavDropdown.Item>
+                <Link
+                  to={links.products.process.path}
+                  className="dropdown-item text-capitalize"
+                >
+                  {links.products.process.text}
+                </Link>
+              </NavDropdown.Item>
+            </NavDropdown>
+            <Nav.Link key={links.about.id} className="nav-item mr-5 pt-5">
               <Link to={links.about.path} className="nav-link text-capitalize">
                 {links.about.text}
               </Link>
-            </li>
-            <li key={links.contact.id} className="nav-item mr-5 pt-5">
+            </Nav.Link>
+            <Nav.Link key={links.contact.id} className="nav-item mr-5 pt-5">
               <Link
                 to={links.contact.path}
                 className="nav-link text-capitalize"
               >
                 {links.contact.text}
               </Link>
-            </li>
-          </ul>
-        </div>
-      </nav>
+            </Nav.Link>
+          </Nav>
+        </Navbar.Collapse>
+      </Navbar>
     </div>
   )
 }
