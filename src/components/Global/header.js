@@ -5,6 +5,8 @@ import Logo from "../../images/rubberman.png"
 import Navbar from "react-bootstrap/Navbar"
 import Nav from "react-bootstrap/Nav"
 import { NavDropdown } from "react-bootstrap"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faChevronDown } from "@fortawesome/free-solid-svg-icons"
 
 const Header = props => {
   let links = {
@@ -90,7 +92,7 @@ const Header = props => {
       <Navbar
         collapseOnSelect
         expand="lg"
-        className="navbar navbar-light headerFont"
+        className="navbar-light headerFont"
         sticky="top"
       >
         <Navbar.Brand>
@@ -116,6 +118,9 @@ const Header = props => {
               >
                 <option value="English">{links.language.english}</option>
                 <option value="Indonesian">{links.language.indonesian}</option>
+                <span className="input-group-btn">
+                  <FontAwesomeIcon icon={faChevronDown} className="fa-2x" />
+                </span>
               </select>
             </Nav.Link>
             <Nav.Link key={links.home.id} className="nav-item mr-5 pt-5">
