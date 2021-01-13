@@ -7,7 +7,6 @@ import Nav from "react-bootstrap/Nav"
 import { NavDropdown } from "react-bootstrap"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons"
-import { faLinkedin } from "@fortawesome/free-brands-svg-icons"
 
 const Header = props => {
   let links = {
@@ -153,7 +152,6 @@ const Header = props => {
                 </Link>
               </NavDropdown.Item>
             </NavDropdown>
-
             <Nav.Link key={links.about.id} className="nav-item mr-5 pt-5">
               <Link to={links.about.path} className="nav-link text-capitalize">
                 {links.about.text}
