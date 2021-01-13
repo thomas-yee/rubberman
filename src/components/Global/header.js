@@ -7,14 +7,15 @@ import Nav from "react-bootstrap/Nav"
 import { NavDropdown } from "react-bootstrap"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons"
+import { faLinkedin } from "@fortawesome/free-brands-svg-icons"
 
 const Header = props => {
   let links = {
     English: {
       language: {
         id: 1,
-        english: "English",
-        indonesian: "Indonesian",
+        english: "EN",
+        indonesian: "ID",
       },
       home: {
         id: 2,
@@ -47,8 +48,8 @@ const Header = props => {
     Indonesian: {
       language: {
         id: 1,
-        english: "English",
-        indonesian: "Indonesian",
+        english: "EN",
+        indonesian: "ID",
       },
       home: {
         id: 2,
@@ -109,7 +110,7 @@ const Header = props => {
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="ml-auto sm-2">
+          <Nav className="noCaret ml-auto sm-2">
             <Nav.Link key={links.language.id} className="nav-item mr-5 pt-5">
               <select
                 className="custom-select"
@@ -118,9 +119,6 @@ const Header = props => {
               >
                 <option value="English">{links.language.english}</option>
                 <option value="Indonesian">{links.language.indonesian}</option>
-                <span className="input-group-btn">
-                  <FontAwesomeIcon icon={faChevronDown} className="fa-2x" />
-                </span>
               </select>
             </Nav.Link>
             <Nav.Link key={links.home.id} className="nav-item mr-5 pt-5">
@@ -129,7 +127,12 @@ const Header = props => {
               </Link>
             </Nav.Link>
             <NavDropdown
-              title={links.products.text}
+              title={
+                <span>
+                  {links.products.text}
+                  <FontAwesomeIcon icon={faChevronDown} className="fa-1x" />
+                </span>
+              }
               id="basic-nav-dropdown"
               className="mr-5 pt-5"
             >
@@ -150,6 +153,7 @@ const Header = props => {
                 </Link>
               </NavDropdown.Item>
             </NavDropdown>
+
             <Nav.Link key={links.about.id} className="nav-item mr-5 pt-5">
               <Link to={links.about.path} className="nav-link text-capitalize">
                 {links.about.text}
