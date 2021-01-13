@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react"
 import Layout from "../components/layout"
-import Info from "../components/Products/info"
+import Products from "../components/Products/theProducts"
 import ContactUs from "../components/Global/contactUs"
 
 let contactContent = {
@@ -28,7 +28,7 @@ const ProductsPage = () => {
   return (
     <div>
       <Layout>
-        <Info language={language} />
+        <Products language={language} />
         <ContactUs language={language} content={contactContent} />
       </Layout>
     </div>
