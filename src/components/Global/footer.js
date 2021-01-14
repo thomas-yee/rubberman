@@ -69,7 +69,7 @@ const Footer = props => {
   }
 
   return (
-    <footer className="footer py-3">
+    <footer className="footer py-3 bg-light">
       {checkLanguage()}
       <div className="container-fluid">
         <div className="row">
@@ -121,11 +121,11 @@ const Footer = props => {
                 {content.contactSection.faxNumber}
                 <br />
               </div>
-              <div className="col">
-                <a href="https://www.linkedin.com/company/pt-rubberman-indonesia/">
-                  <FontAwesomeIcon icon={faLinkedin} className="fa-2x" />
-                </a>
-              </div>
+            </div>
+            <div className="row pt-3 pl-3">
+              <a href="https://www.linkedin.com/company/pt-rubberman-indonesia/">
+                <FontAwesomeIcon icon={faLinkedin} className="fa-2x" />
+              </a>
             </div>
           </div>
         </div>
