@@ -1,4 +1,6 @@
 import React from "react"
+import Background from "../../images/home_1.jpg"
+import Image from "react-bootstrap/Image"
 
 const Intro = props => {
   let content = {
@@ -27,8 +29,10 @@ const Intro = props => {
     <div>
       <section className="bg-light">
         {checkLanguage()}
-        <div className="container-fluid homeBackground">
-          <div className="row"></div>
+        <div className="container-fluid">
+          <div className="row">
+            <Image src={Background} fluid></Image>
+          </div>
         </div>
       </section>
     </div>

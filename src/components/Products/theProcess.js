@@ -1,6 +1,8 @@
 import React from "react"
 import Accordion from "react-bootstrap/Accordion"
 import Card from "react-bootstrap/Card"
+import Background from "../../images/theProcess.jpg"
+import Image from "react-bootstrap/Image"
 
 const Info = props => {
   let content = {
@@ -42,8 +44,10 @@ const Info = props => {
   return (
     <section className="bg-light">
       {checkLanguage()}
-      <div className="container-fluid aboutBackground">
-        <div className="row"></div>
+      <div className="container-fluid">
+        <div className="row">
+          <Image src={Background} fluid></Image>
+        </div>
       </div>
       <div className="container-fluid">
         <Accordion defaultActiveKey="0">

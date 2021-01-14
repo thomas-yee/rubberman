@@ -178,7 +178,9 @@ const Info = () => {
 
   return (
     <section className="bg-light">
-      <div className="container-fluid productsBackground"></div>
+      <div className="container-fluid">
+        <Image src={Background} fluid></Image>
+      </div>
       <Container className="pt-4">
         <Row>
           <Col>

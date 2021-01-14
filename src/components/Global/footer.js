@@ -13,7 +13,6 @@ const Footer = props => {
       },
       aboutSection: {
         title: "About",
-
         mythsLink: "Myths",
         whyRetreadLink: "Why Retread?",
       },
@@ -40,7 +39,6 @@ const Footer = props => {
       },
       aboutSection: {
         title: "About",
-
         mythsLink: "Myths",
         whyRetreadLink: "Why Retread?",
       },

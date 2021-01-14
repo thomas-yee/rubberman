@@ -1,5 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
+import Background from "../../images/home_2.jpg"
+import Image from "react-bootstrap/Image"
 import hexagon from "../../images/Hexagon.png"
 
 const Info = props => {
@@ -32,7 +34,8 @@ const Info = props => {
   return (
     <section className="bg-light">
       {checkLanguage()}
-      <div className="container-fluid iconBackground">
+      <div className="container-fluid">
+        <Image src={Background} fluid></Image>
         <div className="row justify-content-md-center pt-10">
           <div className="col-md-2 col-md-offset-3">
             <img className="img-fluid pt-5" src={hexagon} />
