@@ -165,6 +165,7 @@ const Header = props => {
                 {links.contact.text}
               </Link>
             </Nav.Link>
+            <Nav.Link></Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Navbar>
