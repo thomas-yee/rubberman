@@ -34,8 +34,7 @@ const Info = props => {
     <section className="bg-light">
       {checkLanguage()}
       <div className="container-fluid">
-        <Image src={Background} fluid></Image>
-        <div className="row justify-content-md-center pt-10">
+        <div className="row justify-content-md-center pt-10 iconBackground">
           <div className="col-md-2 col-md-offset-3">
             <img className="img-fluid pt-5" src={hexagon} />
           </div>
