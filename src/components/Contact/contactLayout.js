@@ -14,7 +14,6 @@ const ContactLayout = props => {
             <Locations />
           </div>
         </div>
-        <div className="row contactReferralBackground"></div>
       </div>
     </section>
   )
