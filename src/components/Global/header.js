@@ -110,7 +110,7 @@ const Header = props => {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="ml-auto sm-2">
-            <Nav.Link key={links.language.id} className="nav-item mr-5 pt-5">
+            <Nav.Link key={links.language.id} className="mr-5 pt-5">
               <select
                 className="custom-select"
                 value={props.language}
@@ -120,7 +120,7 @@ const Header = props => {
                 <option value="Indonesian">{links.language.indonesian}</option>
               </select>
             </Nav.Link>
-            <Nav.Link key={links.home.id} className="nav-item mr-5 pt-5">
+            <Nav.Link key={links.home.id} className="mr-5 pt-5">
               <Link to={links.home.path} className="nav-link text-capitalize">
                 {links.home.text}
               </Link>
@@ -152,12 +152,12 @@ const Header = props => {
                 </Link>
               </NavDropdown.Item>
             </NavDropdown>
-            <Nav.Link key={links.about.id} className="nav-item mr-5 pt-5">
+            <Nav.Link key={links.about.id} className="mr-5 pt-5">
               <Link to={links.about.path} className="nav-link text-capitalize">
                 {links.about.text}
               </Link>
             </Nav.Link>
-            <Nav.Link key={links.contact.id} className="nav-item mr-5 pt-5">
+            <Nav.Link key={links.contact.id} className="mr-5 pt-5">
               <Link
                 to={links.contact.path}
                 className="nav-link text-capitalize"
