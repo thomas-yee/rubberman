@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from "react"
 import Layout from "../components/layout"
-import Contact from "../components/Contact/contactForm"
-import Locations from "../components/Contact/locations"
 import ContactLayout from "../components/Contact/contactLayout"
 
 const ContactPage = () => {

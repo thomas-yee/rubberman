@@ -1,5 +1,4 @@
 import React from "react"
-import { Link } from "gatsby"
 import Background from "../../images/home_2.jpg"
 import Image from "react-bootstrap/Image"
 import hexagon from "../../images/Hexagon.png"
