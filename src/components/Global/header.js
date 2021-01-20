@@ -109,7 +109,7 @@ const Header = props => {
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="noCaret ml-auto sm-2">
+          <Nav className="ml-auto sm-2">
             <Nav.Link key={links.language.id} className="nav-item mr-5 pt-5">
               <select
                 className="custom-select"
