@@ -4,6 +4,7 @@ import Intro from "../components/Home/intro"
 
 import ContactUs from "../components/Global/contactUs"
 import IconSection from "../components/Home/iconSection"
+import HowItWorks from "../components/Home/howItWorks"
 
 const IndexPage = () => {
   const [language, setLanguage] = useState(undefined)
@@ -32,6 +33,7 @@ const IndexPage = () => {
       <Layout>
         <Intro language={language} />
         <IconSection language={language} />
+        <HowItWorks language={language} />
         <ContactUs language={language} content={contactContent} />
       </Layout>
     </div>
