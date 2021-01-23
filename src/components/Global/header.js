@@ -35,8 +35,15 @@ const Header = props => {
       },
       about: {
         id: 4,
-        path: "/about",
         text: "about",
+        retread: {
+          path: "/whyRetread",
+          text: "why retread",
+        },
+        myths: {
+          path: "/myths",
+          text: "myths",
+        },
       },
       contact: {
         id: 5,
@@ -69,8 +76,15 @@ const Header = props => {
       },
       about: {
         id: 4,
-        path: "/about",
         text: "about",
+        retread: {
+          path: "/whyRetread",
+          text: "why retread",
+        },
+        myths: {
+          path: "/myths",
+          text: "myths",
+        },
       },
       contact: {
         id: 5,
@@ -152,11 +166,33 @@ const Header = props => {
                 </Link>
               </NavDropdown.Item>
             </NavDropdown>
-            <Nav.Link key={links.about.id} className="mr-5 pt-5">
-              <Link to={links.about.path} className="nav-link text-capitalize">
-                {links.about.text}
-              </Link>
-            </Nav.Link>
+            <NavDropdown
+              title={
+                <span>
+                  {links.about.text}
+                  <FontAwesomeIcon icon={faChevronDown} className="fa-1x" />
+                </span>
+              }
+              id="basic-nav-dropdown"
+              className="mr-5 pt-5"
+            >
+              <NavDropdown.Item>
+                <Link
+                  to={links.about.retread.path}
+                  className="dropdown-item text-capitalize"
+                >
+                  {links.about.retread.text}
+                </Link>
+              </NavDropdown.Item>
+              <NavDropdown.Item>
+                <Link
+                  to={links.about.myths.path}
+                  className="dropdown-item text-capitalize"
+                >
+                  {links.about.myths.text}
+                </Link>
+              </NavDropdown.Item>
+            </NavDropdown>
             <Nav.Link key={links.contact.id} className="mr-5 pt-5">
               <Link
                 to={links.contact.path}
