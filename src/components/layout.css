@@ -57,6 +57,23 @@ body {
   letter-spacing: 4px;
 }
 
+.iconFont {
+  font-family: "Bebas Neue" !important;
+  letter-spacing: 4px;
+  font-size: 120%;
+}
+
+.iconSize {
+  height: 50%;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* .homeImage {
+  margin-top: -40%;
+} */
+
 /**HOME */
 
 .homeBackground {

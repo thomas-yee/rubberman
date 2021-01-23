@@ -1,26 +1,25 @@
 import React from "react"
-import Background from "../../images/home_2.jpg"
+import Years from "../../images/35_Years.png"
+import Plants from "../../images/Factories.png"
+import ISO from "../../images/ISO_Certified_Logo.png"
 import Image from "react-bootstrap/Image"
-import hexagon from "../../images/Hexagon.png"
+import Row from "react-bootstrap/Row"
+import Col from "react-bootstrap/Col"
 
 const Info = props => {
   let content = {
     English: {
       mainSection: {
-        experience: "38+ Years Experience",
-        operationsLineOne: "30+ Tire Retreading",
-        operationsLineTwo: "Plants",
-        certificationLineOne: "Certified",
-        certificationLineTwo: "ISO 9001:2015",
+        experience: "35 Years Experience",
+        operations: "30+ Tire Retreading Plants",
+        certification: "ISO 9001:2015 Certified",
       },
     },
     Indonesian: {
       mainSection: {
         experience: "35 Years Experience",
-        operationsLineOne: "30+ Tire Retreading",
-        operationsLineTwo: "Plants",
-        certificationLineOne: "Certified",
-        certificationLineTwo: "ISO 9001:2015",
+        operations: "30+ Tire Retreading Plants",
+        certification: "ISO 9001:2015 Certified",
       },
     },
   }
@@ -33,21 +32,36 @@ const Info = props => {
   return (
     <section className="bg-light">
       {checkLanguage()}
-      <div className="container-fluid">
-        <div className="row justify-content-md-center pt-10 iconBackground">
-          <div className="col-md-2 col-md-offset-3">
-            <img className="img-fluid pt-5" src={hexagon} />
-          </div>
-          <div className="col-md-2">
-            <img className="img-fluid pt-5" src={hexagon} />
-          </div>
-          <div className="col-md-2">
-            <img className="img-fluid pt-5" src={hexagon} />
-          </div>
-        </div>
-        <div className="row"></div>
+      <div className="container-fluid text-center pt-5 pb-5">
+        <Row>
+          <Col>
+            <Row>
+              <Image className="iconSize" src={Years} fluid></Image>
+            </Row>
+          </Col>
+          <Col>
+            <Row>
+              <Image className="iconSize" src={Plants} fluid></Image>
+            </Row>
+          </Col>
+          <Col>
+            <Row>
+              <Image className="iconSize" src={ISO} fluid></Image>
+            </Row>
+          </Col>
+        </Row>
+        <Row>
+          <Col>
+            <h2 className="iconFont">{content.mainSection.experience}</h2>
+          </Col>
+          <Col>
+            <h2 className="iconFont">{content.mainSection.operations}</h2>
+          </Col>
+          <Col>
+            <h2 className="iconFont">{content.mainSection.certification}</h2>
+          </Col>
+        </Row>
       </div>
-      <div className="row"></div>
     </section>
   )
 }
