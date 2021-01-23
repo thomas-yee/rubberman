@@ -1,7 +1,7 @@
 import React from "react"
 import Accordion from "react-bootstrap/Accordion"
 import Card from "react-bootstrap/Card"
-import Background from "../../images/theProcess.jpg"
+import Background from "../../images/process_1.jpg"
 import Image from "react-bootstrap/Image"
 
 const Info = props => {
