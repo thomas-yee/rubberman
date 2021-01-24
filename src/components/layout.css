@@ -70,41 +70,6 @@ body {
   margin-right: auto;
 }
 
-/**HOME */
-
-.homeBackground {
-  background-image: url("../images/home_1.jpg");
-  background-size: 100% auto;
-  background-position: center bottom;
-  height: 100%;
-  background-repeat: no-repeat;
-}
-
-.iconBackground {
-  background-image: url("../images/home_2.jpg");
-  background-size: 100% auto;
-  height: 90vh;
-  background-repeat: no-repeat;
-}
-
-/**PRODUCTS */
-.productsBackground {
-  background-image: url("../images/products_1.jpg");
-  background-size: 100% auto;
-  background-position: center bottom;
-  height: 90vh;
-  background-repeat: no-repeat;
-}
-
-/**ABOUT */
-.aboutBackground {
-  /* background-image: url("../images/about_1.jpg"); */
-  background-size: 100% auto;
-  background-position: center bottom;
-  height: 61vh;
-  background-repeat: no-repeat;
-}
-
 .text-white {
   color: var(--mainWhite);
 }
@@ -159,22 +124,6 @@ body {
 }
 
 /**CONTACT */
-
-.contactMapBackground {
-  background-image: url("../images/contact_1.jpg");
-  background-size: 100% auto;
-  background-position: center top;
-  height: 80vh;
-  background-repeat: no-repeat;
-}
-
-.contactReferralBackground {
-  background-image: url("../images/contact_2.jpg");
-  background-size: 100% auto;
-  background-position: center top;
-  height: 70vh;
-  background-repeat: no-repeat;
-}
 
 .listFont {
   font-size: 80% !important;

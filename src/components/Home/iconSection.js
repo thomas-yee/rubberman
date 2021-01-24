@@ -50,7 +50,7 @@ const Info = props => {
             </Row>
           </Col>
         </Row>
-        <Row>
+        <Row className="pt-3">
           <Col>
             <h2 className="iconFont">{content.mainSection.experience}</h2>
           </Col>
