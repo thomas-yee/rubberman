@@ -7,6 +7,11 @@ import Image from "react-bootstrap/Image"
 const Info = props => {
   let content = {
     English: {
+      title: "why retread?",
+      informationLine1:
+        "For over 35 years, Rubberman has provided world-class retreads to customers that operate trucks and buses regularly. Our retreads perform like new tires but cost much less.",
+      informationLine2: "Wondering how much you can save?",
+      informationLine3: "Try using our savings calculator below!",
       steps: {
         stepOne: "savings from price and quality",
         stepTwo: "savings from inner tube",
@@ -18,6 +23,11 @@ const Info = props => {
       },
     },
     Indonesian: {
+      title: "why retread?",
+      informationLine1:
+        "For over 35 years, Rubberman has provided world-class retreads to customers that operate trucks and buses regularly. Our retreads perform like new tires but cost much less.",
+      informationLine2: "Wondering how much you can save?",
+      informationLine3: "Try using our savings calculator below!",
       steps: {
         stepOne: "savings from price and quality",
         stepTwo: "savings from inner tube",
@@ -38,9 +48,11 @@ const Info = props => {
   return (
     <section className="bg-light">
       {checkLanguage()}
-      <div className="container-fluid">
+      <div className="container-fluid containerStyle">
         <div className="row">
           <Image src={Background} fluid></Image>
+          <h1 className="retreadTitle text-capitalize">{content.title}</h1>
+          <div className="retreadLine1">{content.informationLine1}</div>
         </div>
       </div>
       <div className="container-fluid">

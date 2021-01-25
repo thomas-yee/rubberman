@@ -106,6 +106,29 @@ body {
   color: var(--mainBlue);
 }
 
+/** RETREAD PAGE **/
+.retreadTitle {
+  font-family: "Bebas Neue" !important;
+  letter-spacing: 8px;
+  position: absolute;
+  top: 3.5rem;
+  left: 3.5rem;
+  font-size: 3.5vw;
+}
+
+.retreadLine1 {
+  position: absolute;
+  top: 11rem;
+  left: 3.5rem;
+  width: 520px;
+  font-size: 0.85vw;
+}
+
+.containerStyle {
+  position: relative;
+  color: var(--mainWhite);
+}
+
 /**Contact Section on Index Page */
 
 .contact-us {
@@ -124,6 +147,22 @@ body {
 }
 
 /**CONTACT */
+
+.contactMapBackground {
+  background-image: url("../images/contact_1.jpg");
+  background-size: 100% auto;
+  background-position: center top;
+  height: 80vh;
+  background-repeat: no-repeat;
+}
+
+.contactReferralBackground {
+  background-image: url("../images/contact_2.jpg");
+  background-size: 100% auto;
+  background-position: center top;
+  height: 70vh;
+  background-repeat: no-repeat;
+}
 
 .listFont {
   font-size: 80% !important;
