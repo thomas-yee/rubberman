@@ -29,6 +29,11 @@ body {
   padding-left: 0 !important;
 }
 
+.no-border-sides {
+  border-left: 0 !important;
+  border-right: 0 !important;
+}
+
 .py-6 {
   padding-top: 6rem !important;
   padding-bottom: 6rem !important;
@@ -97,9 +102,11 @@ body {
 .stepHeaderFont {
   font-family: "Bebas Neue" !important;
   letter-spacing: 4px;
-  font-size: 140%;
+  font-size: 200%;
   color: var(--mainWhite);
-  background-color: var(--mainGrey);
+  background-color: var(--mainBlue);
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
 }
 
 .btn-step:focus {
@@ -127,6 +134,21 @@ body {
 .containerStyle {
   position: relative;
   color: var(--mainWhite);
+}
+
+.retreadQualitiesTitle {
+  font-family: "Bebas Neue" !important;
+  letter-spacing: 8px;
+  color: var(--mainWhite);
+  padding-top: 1.5rem;
+  padding-left: 1.5rem;
+  padding-bottom: 1rem;
+  background: var(--mainBlue);
+}
+
+.retreadTitleTwo {
+  font-family: "Bebas Neue" !important;
+  letter-spacing: 5px;
 }
 
 /**Contact Section on Index Page */

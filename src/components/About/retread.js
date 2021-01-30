@@ -2,7 +2,14 @@ import React from "react"
 import Accordion from "react-bootstrap/Accordion"
 import Card from "react-bootstrap/Card"
 import Background from "../../images/retread_1.jpg"
+import Crown from "../../images/logo_crown.png"
+import Classic from "../../images/logo_classic.png"
+import Super from "../../images/logo_super.png"
+import Green from "../../images/logo_green.png"
+import Blackbelt from "../../images/logo_blackbelt.png"
 import Image from "react-bootstrap/Image"
+import Row from "react-bootstrap/Row"
+import Col from "react-bootstrap/Col"
 
 const Info = props => {
   let content = {
@@ -12,6 +19,14 @@ const Info = props => {
         "For over 35 years, Rubberman has provided world-class retreads to customers that operate trucks and buses regularly. Our retreads perform like new tires but cost much less.",
       informationLine2: "Wondering how much you can save?",
       informationLine3: "Try using our savings calculator below!",
+      quality: {
+        title: "Types of qualities",
+        crown: "supreme quality",
+        super: "super quality",
+        classic: "standard quality",
+        green: "economical quality",
+        blackbelt: "economical quality",
+      },
       steps: {
         stepOne: "savings from price and quality",
         stepTwo: "savings from inner tube",
@@ -28,6 +43,14 @@ const Info = props => {
         "For over 35 years, Rubberman has provided world-class retreads to customers that operate trucks and buses regularly. Our retreads perform like new tires but cost much less.",
       informationLine2: "Wondering how much you can save?",
       informationLine3: "Try using our savings calculator below!",
+      quality: {
+        title: "Types of qualities",
+        crown: "supreme quality",
+        super: "super quality",
+        classic: "standard quality",
+        green: "economical quality",
+        blackbelt: "economical quality",
+      },
       steps: {
         stepOne: "savings from price and quality",
         stepTwo: "savings from inner tube",
@@ -49,13 +72,36 @@ const Info = props => {
     <section className="bg-light">
       {checkLanguage()}
       <div className="container-fluid containerStyle">
-        <div className="row">
+        <Row>
           <Image src={Background} fluid></Image>
           <h1 className="retreadTitle text-capitalize">{content.title}</h1>
           <div className="retreadLine1">{content.informationLine1}</div>
-        </div>
+        </Row>
       </div>
       <div className="container-fluid">
+        <Row className="retreadQualitiesTitle">
+          <h2>{content.quality.title}</h2>
+        </Row>
+        <Row>
+          <Col className="pt-10">
+            <Image src={Crown} fluid></Image>
+            <h5 className="retreadTitleTwo">Supreme Quality</h5>
+          </Col>
+          <Col>
+            <Image src={Super} fluid></Image>
+          </Col>
+          <Col>
+            <Image src={Classic} fluid></Image>
+          </Col>
+          <Col>
+            <Image src={Green} fluid></Image>
+          </Col>
+          <Col>
+            <Image src={Blackbelt} fluid></Image>
+          </Col>
+        </Row>
+      </div>
+      <div className="container-fluid no-padding-sides no-border-sides">
         <Accordion defaultActiveKey="0">
           <Card>
             <Accordion.Toggle
