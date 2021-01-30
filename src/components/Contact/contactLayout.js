@@ -1,18 +1,19 @@
 import React from "react"
 import Contact from "../Contact/contactForm"
 import Locations from "../Contact/locations"
+import Col from "react-bootstrap/Col"
 
 const ContactLayout = props => {
   return (
     <section className="">
       <div className="container-fluid">
         <div className="row contactMapBackground pt-3">
-          <div className="col">
+          <Col className="col-sm-6">
             <Contact language={props.language} />
-          </div>
-          <div className="col pt-5">
+          </Col>
+          <Col className="col-sm-6 pt-5">
             <Locations />
-          </div>
+          </Col>
         </div>
       </div>
     </section>
