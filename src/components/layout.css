@@ -39,6 +39,26 @@ body {
   padding-bottom: 6rem !important;
 }
 
+.pt-6 {
+  padding-top: 6rem !important;
+}
+
+.pt-6-5 {
+  padding-top: 6.5rem !important;
+}
+
+.pt-7 {
+  padding-top: 7rem !important;
+}
+
+.pt-8 {
+  padding-top: 8rem !important;
+}
+
+.pt-9 {
+  padding-top: 9rem !important;
+}
+
 .pt-10 {
   padding-top: 10rem !important;
 }
@@ -149,8 +169,32 @@ body {
 .retreadTitleTwo {
   font-family: "Bebas Neue" !important;
   letter-spacing: 5px;
+  color: var(--mainGrey);
 }
 
+.logoSize {
+  height: 80%;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.logoSizeTwo {
+  height: 85%;
+  width: 85%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.logoSizeThree {
+  height: 100%;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.centerHorizon {
+  width: 100%;
+}
 /**Contact Section on Index Page */
 
 .contact-us {

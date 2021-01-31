@@ -8,10 +8,10 @@ const ContactLayout = props => {
     <section className="">
       <div className="container-fluid">
         <div className="row contactMapBackground pt-3">
-          <Col className="col-sm-6">
+          <Col>
             <Contact language={props.language} />
           </Col>
-          <Col className="col-sm-6 pt-5">
+          <Col className="col pt-5">
             <Locations />
           </Col>
         </div>

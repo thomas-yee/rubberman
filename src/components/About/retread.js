@@ -83,21 +83,45 @@ const Info = props => {
           <h2>{content.quality.title}</h2>
         </Row>
         <Row>
-          <Col className="pt-10">
-            <Image src={Crown} fluid></Image>
-            <h5 className="retreadTitleTwo">Supreme Quality</h5>
+          <Col className="col-sm-6 pt-10 col-12 col-md-6 col-lg pr-5 pl-5 text-center">
+            <Row>
+              <Image src={Crown} fluid></Image>
+              <h5 className="retreadTitleTwo pt-5 centerHorizon">
+                {content.quality.crown}
+              </h5>
+            </Row>
           </Col>
-          <Col>
-            <Image src={Super} fluid></Image>
+          <Col className="col-sm-6 pt-10 col-12 col-md-6 col-lg pr-5 pl-5 text-center">
+            <Row>
+              <Image className="logoSize" src={Super} fluid></Image>
+              <h5 className="retreadTitleTwo pt-3 centerHorizon">
+                {content.quality.super}
+              </h5>
+            </Row>
           </Col>
-          <Col>
-            <Image src={Classic} fluid></Image>
+          <Col className="col-sm-6 pt-9 col-12 col-md-6 col-lg pr-5 pl-5 text-center">
+            <Row>
+              <Image className="logoSizeTwo" src={Classic} fluid></Image>
+              <h5 className="retreadTitleTwo pt-4 centerHorizon">
+                {content.quality.classic}
+              </h5>
+            </Row>
           </Col>
-          <Col>
-            <Image src={Green} fluid></Image>
+          <Col className="col-sm-6 pt-10 col-12 col-md-6 col-lg pr-5 pl-5 text-center">
+            <Row>
+              <Image className="logoSize" src={Green} fluid></Image>
+              <h5 className="retreadTitleTwo pt-4 centerHorizon">
+                {content.quality.green}
+              </h5>
+            </Row>
           </Col>
-          <Col>
-            <Image src={Blackbelt} fluid></Image>
+          <Col className="col-sm-12 pt-5 col-12 col-md-12 col-lg pr-5 pl-5 text-center">
+            <Row>
+              <Image className="logoSizeThree" src={Blackbelt} fluid></Image>
+              <h5 className="retreadTitleTwo pt-4 centerHorizon">
+                {content.quality.blackbelt}
+              </h5>
+            </Row>
           </Col>
         </Row>
       </div>
