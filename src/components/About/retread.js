@@ -7,6 +7,12 @@ import Classic from "../../images/logo_classic.png"
 import Super from "../../images/logo_super.png"
 import Green from "../../images/logo_green.png"
 import Blackbelt from "../../images/logo_blackbelt.png"
+import Price from "../../images/savings_price_quality.png"
+import InnerTube from "../../images/savings_inner_tube.png"
+import Flap from "../../images/savings_flap.png"
+import Maintenance from "../../images/savings_maintenance.png"
+import Bolts from "../../images/savings_bolts.png"
+import Downtime from "../../images/savings_downtime.png"
 import Image from "react-bootstrap/Image"
 import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
@@ -136,7 +142,14 @@ const Info = props => {
               {content.steps.stepOne}
             </Accordion.Toggle>
             <Accordion.Collapse eventKey="0">
-              <Card.Body>TBA</Card.Body>
+              <Card.Body>
+                <Row>
+                  <Col className="col-md-8"></Col>
+                  <Col className="col-md-4">
+                    <Image src={Price} fluid></Image>
+                  </Col>
+                </Row>
+              </Card.Body>
             </Accordion.Collapse>
           </Card>
           <Card>
@@ -148,7 +161,14 @@ const Info = props => {
               {content.steps.stepTwo}
             </Accordion.Toggle>
             <Accordion.Collapse eventKey="1">
-              <Card.Body>TBA</Card.Body>
+              <Card.Body>
+                <Row>
+                  <Col className="col-md-8"></Col>
+                  <Col className="col-md-4">
+                    <Image src={InnerTube} fluid></Image>
+                  </Col>
+                </Row>
+              </Card.Body>
             </Accordion.Collapse>
           </Card>
           <Card>
@@ -160,7 +180,14 @@ const Info = props => {
               {content.steps.stepThree}
             </Accordion.Toggle>
             <Accordion.Collapse eventKey="2">
-              <Card.Body>TBA</Card.Body>
+              <Card.Body>
+                <Row>
+                  <Col className="col-md-8"></Col>
+                  <Col className="col-md-4">
+                    <Image src={Flap} fluid></Image>
+                  </Col>
+                </Row>
+              </Card.Body>
             </Accordion.Collapse>
           </Card>
           <Card>
@@ -172,7 +199,14 @@ const Info = props => {
               {content.steps.stepFour}
             </Accordion.Toggle>
             <Accordion.Collapse eventKey="3">
-              <Card.Body>TBA</Card.Body>
+              <Card.Body>
+                <Row>
+                  <Col className="col-md-8"></Col>
+                  <Col className="col-md-4">
+                    <Image src={Maintenance} fluid></Image>
+                  </Col>
+                </Row>
+              </Card.Body>
             </Accordion.Collapse>
           </Card>
           <Card>
@@ -184,7 +218,14 @@ const Info = props => {
               {content.steps.stepFive}
             </Accordion.Toggle>
             <Accordion.Collapse eventKey="4">
-              <Card.Body>TBA</Card.Body>
+              <Card.Body>
+                <Row>
+                  <Col className="col-md-8"></Col>
+                  <Col className="col-md-4">
+                    <Image src={Bolts} fluid></Image>
+                  </Col>
+                </Row>
+              </Card.Body>
             </Accordion.Collapse>
           </Card>
           <Card>
@@ -196,7 +237,14 @@ const Info = props => {
               {content.steps.stepSix}
             </Accordion.Toggle>
             <Accordion.Collapse eventKey="5">
-              <Card.Body>TBA</Card.Body>
+              <Card.Body>
+                <Row>
+                  <Col className="col-md-8"></Col>
+                  <Col className="col-md-4">
+                    <Image src={Downtime} fluid></Image>
+                  </Col>
+                </Row>
+              </Card.Body>
             </Accordion.Collapse>
           </Card>
           <Card>
@@ -208,7 +256,12 @@ const Info = props => {
               {content.steps.stepSeven}
             </Accordion.Toggle>
             <Accordion.Collapse eventKey="6">
-              <Card.Body>TBA</Card.Body>
+              <Card.Body>
+                <Row>
+                  <Col className="col-md-8"></Col>
+                  <Col className="col-md-4"></Col>
+                </Row>
+              </Card.Body>
             </Accordion.Collapse>
           </Card>
         </Accordion>
