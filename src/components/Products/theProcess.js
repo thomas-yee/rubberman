@@ -49,7 +49,7 @@ const Info = props => {
           <Image src={Background} fluid></Image>
         </div>
       </div>
-      <div className="container-fluid">
+      <div className="container-fluid no-padding-sides">
         <Accordion defaultActiveKey="0">
           <Card>
             <Accordion.Toggle
