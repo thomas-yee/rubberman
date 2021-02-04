@@ -2,8 +2,8 @@
 
 :root {
   --mainBlue: #0152a0;
-  --mainYellow: #ff9e09;
-  --mainGrey: #d4d5d7;
+  --mainOrange: #f5b26a;
+  --mainGrey: #a8acaf;
   --mainWhite: rgb(255, 255, 255);
   --mainDark: #000;
 }
@@ -195,6 +195,32 @@ body {
 .centerHorizon {
   width: 100%;
 }
+
+/** MYTH PAGE **/
+
+.mythTitle {
+  font-family: "Bebas Neue" !important;
+  letter-spacing: 5px;
+  color: var(--mainGrey);
+}
+
+.mythSubtitle {
+  font-family: "Bebas Neue" !important;
+  letter-spacing: 3px;
+  color: var(--mainWhite);
+}
+
+.mythBackground {
+  background: linear-gradient(0deg, var(--mainBlue), var(--mainWhite) 85%);
+}
+
+.mythSize {
+  height: 35%;
+  width: 35%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 /**Contact Section on Index Page */
 
 .contact-us {
