@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react"
 import Layout from "../components/layout"
 import Intro from "../components/Home/intro"
 
-import ContactUs from "../components/Global/contactUs"
+// import ContactUs from "../components/Global/contactUs"
 import IconSection from "../components/Home/iconSection"
 import HowItWorks from "../components/Home/howItWorks"
 
@@ -34,7 +34,7 @@ const IndexPage = () => {
         <Intro language={language} />
         <IconSection language={language} />
         <HowItWorks language={language} />
-        <ContactUs language={language} content={contactContent} />
+        {/* <ContactUs language={language} content={contactContent} /> */}
       </Layout>
     </div>
   )
