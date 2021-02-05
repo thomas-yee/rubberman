@@ -133,6 +133,12 @@ body {
   color: var(--mainBlue);
 }
 
+/** INDEX PAGE **/
+.indexPagePicture {
+  overflow-x: hidden !important;
+  overflow-y: scroll !important;
+}
+
 /** RETREAD PAGE **/
 .retreadTitle {
   font-family: "Bebas Neue" !important;
