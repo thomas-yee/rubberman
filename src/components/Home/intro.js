@@ -32,7 +32,7 @@ const Intro = props => {
         {checkLanguage()}
         <div className="container-fluid">
           <Row>
-            <Image src={Background} fluid></Image>
+            <Image className="indexPagePicture" src={Background} fluid></Image>
           </Row>
         </div>
       </section>

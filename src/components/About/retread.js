@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import Accordion from "react-bootstrap/Accordion"
 import Card from "react-bootstrap/Card"
 import Background from "../../images/retread_1.jpg"
@@ -16,6 +16,7 @@ import Downtime from "../../images/savings_downtime.png"
 import Image from "react-bootstrap/Image"
 import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
+import Form from "react-bootstrap/Form"
 
 const Info = props => {
   let content = {
@@ -34,7 +35,22 @@ const Info = props => {
         blackbelt: "economical quality",
       },
       steps: {
-        stepOne: "savings from price and quality",
+        stepOne: {
+          title: "savings from price and quality",
+          crown: {
+            title: "crown",
+            mileage: "Mileage = 70000 km",
+            price: "Price = 1,000,000",
+            rp: "Rp/km = Rp 1,000,000/70,000",
+          },
+          otherBrand: {
+            title: "Other brand",
+            mileage: "Mileage =",
+            price: "Price =",
+            rp: "Rp/km =",
+            realPrice: "Real Price =",
+          },
+        },
         stepTwo: "savings from inner tube",
         stepThree: "savings from flap",
         stepFour: "savings from maintenance",
@@ -58,7 +74,22 @@ const Info = props => {
         blackbelt: "economical quality",
       },
       steps: {
-        stepOne: "savings from price and quality",
+        stepOne: {
+          title: "savings from price and quality",
+          crown: {
+            title: "crown",
+            mileage: "Mileage = 70000 km",
+            price: "Price = 1,000,000",
+            rp: "Rp/km = Rp 1,000,000/70,000",
+          },
+          otherBrand: {
+            title: "Other brand",
+            mileage: "Mileage =",
+            price: "Price =",
+            rp: "Rp/km =",
+            realPrice: "Real Price =",
+          },
+        },
         stepTwo: "savings from inner tube",
         stepThree: "savings from flap",
         stepFour: "savings from maintenance",
@@ -68,6 +99,9 @@ const Info = props => {
       },
     },
   }
+
+  const [mileage, setMileage] = useState(0)
+  const [price, setPrice] = useState(0)
 
   const checkLanguage = () => {
     props.language === "English"
@@ -139,12 +173,54 @@ const Info = props => {
               eventKey="0"
               className="stepHeaderFont btn-step"
             >
-              {content.steps.stepOne}
+              {content.steps.stepOne.title}
             </Accordion.Toggle>
             <Accordion.Collapse eventKey="0">
               <Card.Body>
                 <Row>
-                  <Col className="col-md-8"></Col>
+                  <Col className="col-md-8">
+                    <Row>
+                      <Col className="col-md-5">
+                        <h4>{content.steps.stepOne.crown.title}</h4>
+                        <p>{content.steps.stepOne.crown.mileage}</p>
+                        <p>{content.steps.stepOne.crown.price}</p>
+                        <p>{content.steps.stepOne.crown.rp}</p>
+                      </Col>
+                      <Col className="col-md-7">
+                        <h4>{content.steps.stepOne.otherBrand.title}</h4>
+                        <Form>
+                          <Form.Group as={Row} controlId="mileage">
+                            <Form.Label column sm="4">
+                              {content.steps.stepOne.otherBrand.mileage}
+                            </Form.Label>
+                            <Col sm="8">
+                              <Form.Control
+                                type="mileage"
+                                placeholder="Mileage"
+                                onChange={e => setMileage(e.target.value)}
+                              />
+                            </Col>
+                          </Form.Group>
+                          <Form.Group as={Row} controlId="price">
+                            <Form.Label column sm="4">
+                              {content.steps.stepOne.otherBrand.price}
+                            </Form.Label>
+                            <Col sm="8">
+                              <Form.Control
+                                type="price"
+                                placeholder="Price"
+                                onChange={e => setPrice(e.target.value)}
+                              />
+                            </Col>
+                          </Form.Group>
+                        </Form>
+                        <p>{mileage}</p>
+                        <p>{price}</p>
+                        <p>{content.steps.stepOne.otherBrand.rp}</p>
+                        <p>{content.steps.stepOne.otherBrand.realPrice}</p>
+                      </Col>
+                    </Row>
+                  </Col>
                   <Col className="col-md-4">
                     <Image src={Price} fluid></Image>
                   </Col>
