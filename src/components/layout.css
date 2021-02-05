@@ -196,6 +196,11 @@ body {
   width: 100%;
 }
 
+.paddingSides {
+  padding-left: 100px;
+  padding-right: 100px;
+}
+
 /** MYTH PAGE **/
 
 .mythTitle {

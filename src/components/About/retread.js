@@ -84,7 +84,7 @@ const Info = props => {
           <div className="retreadLine1">{content.informationLine1}</div>
         </Row>
       </div>
-      <div className="container-fluid">
+      <div className="container-fluid paddingSides">
         <Row className="retreadQualitiesTitle">
           <h2>{content.quality.title}</h2>
         </Row>
@@ -131,7 +131,7 @@ const Info = props => {
           </Col>
         </Row>
       </div>
-      <div className="container-fluid no-padding-sides no-border-sides">
+      <div className="container-fluid paddingSides no-border-sides">
         <Accordion defaultActiveKey="0">
           <Card>
             <Accordion.Toggle
