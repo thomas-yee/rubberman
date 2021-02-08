@@ -17,6 +17,7 @@ import Image from "react-bootstrap/Image"
 import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
 import Form from "react-bootstrap/Form"
+import Button from "react-bootstrap/Button"
 
 const Info = props => {
   let content = {
@@ -102,12 +103,22 @@ const Info = props => {
 
   const [mileage, setMileage] = useState(0)
   const [price, setPrice] = useState(0)
+  const [rpkm, setRpKm] = useState(0)
+  const [realPrice, setRealPrice] = useState(0)
 
   const checkLanguage = () => {
     props.language === "English"
       ? (content = content.English)
       : (content = content.Indonesian)
   }
+
+  const calculateRpKm = () => {
+    const rpkm = price / mileage
+    setRpKm(rpkm)
+    const newPrice = 70000 * rpkm
+    setRealPrice(newPrice)
+  }
+
   return (
     <section className="bg-light">
       {checkLanguage()}
@@ -209,15 +220,49 @@ const Info = props => {
                               <Form.Control
                                 type="price"
                                 placeholder="Price"
-                                onChange={e => setPrice(e.target.value)}
+                                onChange={e => {
+                                  setPrice(e.target.value)
+                                }}
                               />
                             </Col>
                           </Form.Group>
                         </Form>
-                        <p>{mileage}</p>
-                        <p>{price}</p>
-                        <p>{content.steps.stepOne.otherBrand.rp}</p>
-                        <p>{content.steps.stepOne.otherBrand.realPrice}</p>
+                        <Form>
+                          <Form.Group as={Row} controlId="formPlainRpkm">
+                            <Form.Label column sm="4">
+                              {content.steps.stepOne.otherBrand.rp}
+                            </Form.Label>
+                            <Col sm="8">
+                              <Form.Label column sm="8">
+                                {rpkm}
+                              </Form.Label>
+                            </Col>
+                          </Form.Group>
+                        </Form>
+                        <Form>
+                          <Form.Group
+                            as={Row}
+                            controlId="formPlaintextRealprice"
+                          >
+                            <Form.Label column sm="4">
+                              {content.steps.stepOne.otherBrand.realPrice}
+                            </Form.Label>
+                            <Col sm="8">
+                              <Form.Label column sm="8">
+                                {realPrice}
+                              </Form.Label>
+                            </Col>
+                          </Form.Group>
+                        </Form>
+                        <Button
+                          variant="primary"
+                          type="Calculate"
+                          onClick={() => {
+                            calculateRpKm()
+                          }}
+                        >
+                          Calculate
+                        </Button>
                       </Col>
                     </Row>
                   </Col>
