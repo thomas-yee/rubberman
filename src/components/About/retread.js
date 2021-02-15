@@ -18,6 +18,10 @@ import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
 import Form from "react-bootstrap/Form"
 import Button from "react-bootstrap/Button"
+import Popover from "react-bootstrap/Popover"
+import OverlayTrigger from "react-bootstrap/OverlayTrigger"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faQuestionCircle } from "@fortawesome/free-regular-svg-icons"
 
 const Info = props => {
   let content = {
@@ -39,10 +43,10 @@ const Info = props => {
         stepOne: {
           title: "savings from price and quality",
           crown: {
-            title: "crown",
-            mileage: "Mileage = 70000 km",
-            price: "Price = 1,000,000",
-            rp: "Rp/km = Rp 1,000,000/70,000",
+            title: "Crown",
+            mileage: "70000 km",
+            price: "1,000,000",
+            rp: "Rp 1,000,000/70,000",
           },
           otherBrand: {
             title: "Other brand",
@@ -50,6 +54,15 @@ const Info = props => {
             price: "Price =",
             rp: "Rp/km =",
             realPrice: "Real Price =",
+          },
+          savings: {
+            title: "Savings",
+            monthly: "Monthly =",
+            yearly: "Yearly =",
+          },
+          other: {
+            difference: "Differences in Real Prices =",
+            tireChanges: "Number of Tire Changes/Month =",
           },
         },
         stepTwo: "savings from inner tube",
@@ -78,10 +91,10 @@ const Info = props => {
         stepOne: {
           title: "savings from price and quality",
           crown: {
-            title: "crown",
-            mileage: "Mileage = 70000 km",
-            price: "Price = 1,000,000",
-            rp: "Rp/km = Rp 1,000,000/70,000",
+            title: "Crown",
+            mileage: "70000 km",
+            price: "1,000,000",
+            rp: "Rp 1,000,000/70,000",
           },
           otherBrand: {
             title: "Other brand",
@@ -89,6 +102,15 @@ const Info = props => {
             price: "Price =",
             rp: "Rp/km =",
             realPrice: "Real Price =",
+          },
+          savings: {
+            title: "Savings",
+            monthly: "Monthly",
+            yearly: "Yearly",
+          },
+          other: {
+            difference: "Differences in Real Prices =",
+            tireChanges: "Number of Tire Changes/Month =",
           },
         },
         stepTwo: "savings from inner tube",
@@ -105,6 +127,10 @@ const Info = props => {
   const [price, setPrice] = useState(0)
   const [rpkm, setRpKm] = useState(0)
   const [realPrice, setRealPrice] = useState(0)
+  const [difference, setDifference] = useState(0)
+  const [tires, setTiresChanges] = useState(0)
+  const [priceMonthlySavings, setPriceMonthlySavings] = useState(0)
+  const [priceYearlySavings, setPriceYearlySavings] = useState(0)
 
   const checkLanguage = () => {
     props.language === "English"
@@ -112,11 +138,43 @@ const Info = props => {
       : (content = content.Indonesian)
   }
 
-  const calculateRpKm = () => {
+  const realPricePopover = (
+    <Popover id="popover-basic">
+      <Popover.Title as="h3">Real Price</Popover.Title>
+      <Popover.Content>
+        Crown milage x Other brand Rp/km = Real Price
+      </Popover.Content>
+    </Popover>
+  )
+  const differencePricePopover = (
+    <Popover id="popover-basic">
+      <Popover.Title as="h3">Differences in Real Prices</Popover.Title>
+      <Popover.Content>
+        Other Brand Real Price - Crown Price = Real Price Difference
+      </Popover.Content>
+    </Popover>
+  )
+
+  const monthlySavingsPopover = (
+    <Popover id="popover-basic">
+      <Popover.Title as="h3">Monthly Savings</Popover.Title>
+      <Popover.Content>
+        Number of Tire Changes x Real Price Difference = Monthly Savings
+      </Popover.Content>
+    </Popover>
+  )
+
+  const calculatePriceAndQuality = () => {
     const rpkm = price / mileage
     setRpKm(rpkm)
     const newPrice = 70000 * rpkm
     setRealPrice(newPrice)
+    const differencePrice = newPrice - 1000000
+    setDifference(differencePrice)
+    const monthlySavings = tires * differencePrice
+    setPriceMonthlySavings(monthlySavings)
+    const yearlySavings = monthlySavings * 12
+    setPriceYearlySavings(yearlySavings)
   }
 
   return (
@@ -191,11 +249,44 @@ const Info = props => {
                 <Row>
                   <Col className="col-md-8">
                     <Row>
-                      <Col className="col-md-5">
+                      <Col className="col-md-5 pl-5">
                         <h4>{content.steps.stepOne.crown.title}</h4>
-                        <p>{content.steps.stepOne.crown.mileage}</p>
-                        <p>{content.steps.stepOne.crown.price}</p>
-                        <p>{content.steps.stepOne.crown.rp}</p>
+                        <Form>
+                          <Form.Group as={Row} controlId="formCrownMileage">
+                            <Form.Label column sm="5">
+                              {content.steps.stepOne.otherBrand.mileage}
+                            </Form.Label>
+                            <Col sm="7">
+                              <Form.Label column sm="12">
+                                {content.steps.stepOne.crown.mileage}
+                              </Form.Label>
+                            </Col>
+                          </Form.Group>
+                        </Form>
+                        <Form>
+                          <Form.Group as={Row} controlId="formCrownMileage">
+                            <Form.Label column sm="5">
+                              {content.steps.stepOne.otherBrand.price}
+                            </Form.Label>
+                            <Col sm="7">
+                              <Form.Label column sm="12">
+                                {content.steps.stepOne.crown.price}
+                              </Form.Label>
+                            </Col>
+                          </Form.Group>
+                        </Form>
+                        <Form>
+                          <Form.Group as={Row} controlId="formCrownMileage">
+                            <Form.Label column sm="5">
+                              {content.steps.stepOne.otherBrand.rp}
+                            </Form.Label>
+                            <Col sm="7">
+                              <Form.Label column sm="12">
+                                {content.steps.stepOne.crown.rp}
+                              </Form.Label>
+                            </Col>
+                          </Form.Group>
+                        </Form>
                       </Col>
                       <Col className="col-md-7">
                         <h4>{content.steps.stepOne.otherBrand.title}</h4>
@@ -226,8 +317,6 @@ const Info = props => {
                               />
                             </Col>
                           </Form.Group>
-                        </Form>
-                        <Form>
                           <Form.Group as={Row} controlId="formPlainRpkm">
                             <Form.Label column sm="4">
                               {content.steps.stepOne.otherBrand.rp}
@@ -250,19 +339,116 @@ const Info = props => {
                             <Col sm="8">
                               <Form.Label column sm="8">
                                 {realPrice}
+                                <OverlayTrigger
+                                  trigger="click"
+                                  placement="right"
+                                  overlay={realPricePopover}
+                                >
+                                  <FontAwesomeIcon
+                                    icon={faQuestionCircle}
+                                    className="fa-1x ml-3"
+                                  />
+                                </OverlayTrigger>
                               </Form.Label>
                             </Col>
                           </Form.Group>
                         </Form>
-                        <Button
-                          variant="primary"
-                          type="Calculate"
-                          onClick={() => {
-                            calculateRpKm()
-                          }}
+                      </Col>
+                    </Row>
+                    <Row>
+                      <Col className="col-md-12 pl-5">
+                        <Form.Group
+                          as={Row}
+                          controlId="formPlaintextDifferenceInPrice"
                         >
-                          Calculate
-                        </Button>
+                          <Form.Label column sm="4">
+                            {content.steps.stepOne.other.difference}
+                          </Form.Label>
+                          <Col sm="8">
+                            <Form.Label column sm="8">
+                              {difference}
+                              <OverlayTrigger
+                                trigger="click"
+                                placement="right"
+                                overlay={differencePricePopover}
+                              >
+                                <FontAwesomeIcon
+                                  icon={faQuestionCircle}
+                                  className="fa-1x ml-3"
+                                />
+                              </OverlayTrigger>
+                            </Form.Label>
+                          </Col>
+                        </Form.Group>
+                      </Col>
+                    </Row>
+                    <Row>
+                      <Col className="col-md-12 pl-5">
+                        <Form.Group
+                          as={Row}
+                          controlId="formPlaintextDifferenceInPrice"
+                        >
+                          <Form.Label column sm="4">
+                            {content.steps.stepOne.other.tireChanges}
+                          </Form.Label>
+                          <Col sm="8">
+                            <Form.Control
+                              type="tireChanges"
+                              placeholder="Tire Changes"
+                              onChange={e => {
+                                setTiresChanges(e.target.value)
+                              }}
+                            />
+                          </Col>
+                        </Form.Group>
+                      </Col>
+                    </Row>
+                    <Row>
+                      <Col className="col-md-12 pl-5">
+                        <h4>{content.steps.stepOne.savings.title}</h4>
+
+                        <Form.Group
+                          as={Row}
+                          controlId="formPlaintextDifferenceInPrice"
+                        >
+                          <Form.Label column sm="2">
+                            {content.steps.stepOne.savings.monthly}
+                          </Form.Label>
+                          <Col sm="4">
+                            <Form.Label column sm="12">
+                              {priceMonthlySavings}
+                              <OverlayTrigger
+                                trigger="click"
+                                placement="right"
+                                overlay={monthlySavingsPopover}
+                              >
+                                <FontAwesomeIcon
+                                  icon={faQuestionCircle}
+                                  className="fa-1x"
+                                  className="ml-3"
+                                />
+                              </OverlayTrigger>
+                            </Form.Label>
+                          </Col>
+                          <Form.Label column sm="2">
+                            {content.steps.stepOne.savings.yearly}
+                          </Form.Label>
+                          <Col sm="4">
+                            <Form.Label column sm="12">
+                              {priceYearlySavings}
+                            </Form.Label>
+                          </Col>
+                          <Button
+                            variant="primary"
+                            className="ml-3 mt-3"
+                            type="Calculate"
+                            onClick={() => {
+                              calculatePriceAndQuality()
+                            }}
+                          >
+                            Calculate
+                          </Button>
+                        </Form.Group>
                       </Col>
                     </Row>
                   </Col>
