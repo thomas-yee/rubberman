@@ -22,6 +22,7 @@ import Popover from "react-bootstrap/Popover"
 import OverlayTrigger from "react-bootstrap/OverlayTrigger"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faQuestionCircle } from "@fortawesome/free-regular-svg-icons"
+import ChangesCrown from "../../images/numberChangesCrownPop.jpg"
 
 const Info = props => {
   let content = {
@@ -46,7 +47,7 @@ const Info = props => {
             title: "Crown",
             mileage: "70000 km",
             price: "1,000,000",
-            rp: "Rp 1,000,000/70,000",
+            rp: "14.2857",
           },
           otherBrand: {
             title: "Other brand",
@@ -65,7 +66,17 @@ const Info = props => {
             tireChanges: "Number of Tire Changes/Month =",
           },
         },
-        stepTwo: "savings from inner tube",
+        stepTwo: {
+          title: "savings from inner tube",
+          changes: "Number of Changes with Crown =",
+          difference: "Difference in Changes =",
+          cost: "Cost of Inner Tube =",
+          savings: {
+            title: "Savings",
+            monthly: "Monthly =",
+            yearly: "Yearly =",
+          },
+        },
         stepThree: "savings from flap",
         stepFour: "savings from maintenance",
         stepFive: "savings from bolts",
@@ -94,7 +105,7 @@ const Info = props => {
             title: "Crown",
             mileage: "70000 km",
             price: "1,000,000",
-            rp: "Rp 1,000,000/70,000",
+            rp: "14.2857",
           },
           otherBrand: {
             title: "Other brand",
@@ -113,7 +124,17 @@ const Info = props => {
             tireChanges: "Number of Tire Changes/Month =",
           },
         },
-        stepTwo: "savings from inner tube",
+        stepTwo: {
+          title: "savings from inner tube",
+          changes: "Number of Changes with Crown =",
+          difference: "Difference in Changes =",
+          cost: "Cost of Inner Tube =",
+          savings: {
+            title: "Savings",
+            monthly: "Monthly =",
+            yearly: "Yearly =",
+          },
+        },
         stepThree: "savings from flap",
         stepFour: "savings from maintenance",
         stepFive: "savings from bolts",
@@ -131,6 +152,11 @@ const Info = props => {
   const [tires, setTiresChanges] = useState(0)
   const [priceMonthlySavings, setPriceMonthlySavings] = useState(0)
   const [priceYearlySavings, setPriceYearlySavings] = useState(0)
+  const [crownChanges, setCrownChanges] = useState(0)
+  const [differenceChanges, setDifferenceChanges] = useState(0)
+  const [innerTube, setInnerTube] = useState(0)
+  const [tubeMonthlySavings, setTubeMonthlySavings] = useState(0)
+  const [tubeYearlySavings, setTubeYearlySavings] = useState(0)
 
   const checkLanguage = () => {
     props.language === "English"
@@ -155,11 +181,38 @@ const Info = props => {
     </Popover>
   )
 
-  const monthlySavingsPopover = (
+  const priceMonthlySavingsPopover = (
     <Popover id="popover-basic">
       <Popover.Title as="h3">Monthly Savings</Popover.Title>
       <Popover.Content>
         Number of Tire Changes x Real Price Difference = Monthly Savings
+      </Popover.Content>
+    </Popover>
+  )
+
+  const numberChangesCrownPopover = (
+    <Popover id="popover-basic">
+      <Popover.Title as="h3">Number of Changes with Crown</Popover.Title>
+      <Popover.Content className="popoverChangesCrown">
+        <Image src={ChangesCrown} fluid></Image>
+      </Popover.Content>
+    </Popover>
+  )
+
+  const differenceChangesPopover = (
+    <Popover id="popover-basic">
+      <Popover.Title as="h3">Difference in Changes</Popover.Title>
+      <Popover.Content>
+        Number of Tire Changes - Number of Changes (Crown) = Difference
+      </Popover.Content>
+    </Popover>
+  )
+
+  const tubeMonthlySavingsPopover = (
+    <Popover id="popover-basic">
+      <Popover.Title as="h3">Monthly Savings</Popover.Title>
+      <Popover.Content>
+        Difference x Price of inner tube = Monthly Savings
       </Popover.Content>
     </Popover>
   )
@@ -175,6 +228,17 @@ const Info = props => {
     setPriceMonthlySavings(monthlySavings)
     const yearlySavings = monthlySavings * 12
     setPriceYearlySavings(yearlySavings)
+  }
+
+  const calculateInnerTube = () => {
+    const changesWithCrown = (mileage / 70000) * tires
+    setCrownChanges(changesWithCrown)
+    const differenceInChanges = tires - crownChanges
+    setDifferenceChanges(differenceInChanges)
+    const monthlySavings = differenceInChanges * innerTube
+    setTubeMonthlySavings(monthlySavings)
+    const yearlySavings = monthlySavings * 12
+    setTubeYearlySavings(yearlySavings)
   }
 
   return (
@@ -406,7 +470,6 @@ const Info = props => {
                     <Row>
                       <Col className="col-md-12 pl-5">
                         <h4>{content.steps.stepOne.savings.title}</h4>
-
                         <Form.Group
                           as={Row}
                           controlId="formPlaintextDifferenceInPrice"
@@ -420,7 +483,7 @@ const Info = props => {
                               <OverlayTrigger
                                 trigger="click"
                                 placement="right"
-                                overlay={monthlySavingsPopover}
+                                overlay={priceMonthlySavingsPopover}
                               >
                                 <FontAwesomeIcon
                                   icon={faQuestionCircle}
@@ -465,12 +528,130 @@ const Info = props => {
               eventKey="1"
               className="stepHeaderFont"
             >
-              {content.steps.stepTwo}
+              {content.steps.stepTwo.title}
             </Accordion.Toggle>
             <Accordion.Collapse eventKey="1">
               <Card.Body>
                 <Row>
-                  <Col className="col-md-8"></Col>
+                  <Col className="col-md-8">
+                    <Row>
+                      <Col className="col-md-12 pl-5">
+                        <Form.Group
+                          as={Row}
+                          controlId="formPlaintextDifferenceInPrice"
+                        >
+                          <Form.Label column sm="2">
+                            {content.steps.stepTwo.changes}
+                          </Form.Label>
+                          <Col sm="4">
+                            <Form.Label column sm="12">
+                              {priceMonthlySavings}
+                              <OverlayTrigger
+                                trigger="click"
+                                placement="right"
+                                overlay={numberChangesCrownPopover}
+                              >
+                                <FontAwesomeIcon
+                                  icon={faQuestionCircle}
+                                  className="fa-1x"
+                                  className="ml-3"
+                                />
+                              </OverlayTrigger>
+                            </Form.Label>
+                          </Col>
+                        </Form.Group>
+                      </Col>
+                    </Row>
+                    <Row>
+                      <Col className="col-md-12 pl-5">
+                        <Form.Group
+                          as={Row}
+                          controlId="formPlaintextDifferenceInPrice"
+                        >
+                          <Form.Label column sm="2">
+                            {content.steps.stepTwo.difference}
+                          </Form.Label>
+                          <Col sm="4">
+                            <Form.Label column sm="12">
+                              {differenceChanges}
+                              <OverlayTrigger
+                                trigger="click"
+                                placement="right"
+                                overlay={differenceChangesPopover}
+                              >
+                                <FontAwesomeIcon
+                                  icon={faQuestionCircle}
+                                  className="fa-1x"
+                                  className="ml-3"
+                                />
+                              </OverlayTrigger>
+                            </Form.Label>
+                          </Col>
+                        </Form.Group>
+                        <Form>
+                          <Form.Group as={Row} controlId="mileage">
+                            <Form.Label column sm="4">
+                              {content.steps.stepTwo.cost}
+                            </Form.Label>
+                            <Col sm="8">
+                              <Form.Control
+                                type="Inner Tube"
+                                placeholder="Inner Tube"
+                                onChange={e => setInnerTube(e.target.value)}
+                              />
+                            </Col>
+                          </Form.Group>
+                        </Form>
+                      </Col>
+                    </Row>
+                    <Row>
+                      <Col className="col-md-12 pl-5">
+                        <h4>{content.steps.stepTwo.savings.title}</h4>
+                        <Form.Group
+                          as={Row}
+                          controlId="formPlaintextDifferenceInPrice"
+                        >
+                          <Form.Label column sm="2">
+                            {content.steps.stepTwo.savings.monthly}
+                          </Form.Label>
+                          <Col sm="4">
+                            <Form.Label column sm="12">
+                              {tubeMonthlySavings}
+                              <OverlayTrigger
+                                trigger="click"
+                                placement="right"
+                                overlay={tubeMonthlySavingsPopover}
+                              >
+                                <FontAwesomeIcon
+                                  icon={faQuestionCircle}
+                                  className="fa-1x"
+                                  className="ml-3"
+                                />
+                              </OverlayTrigger>
+                            </Form.Label>
+                          </Col>
+                          <Form.Label column sm="2">
+                            {content.steps.stepTwo.savings.yearly}
+                          </Form.Label>
+                          <Col sm="4">
+                            <Form.Label column sm="12">
+                              {tubeYearlySavings}
+                            </Form.Label>
+                          </Col>
+                          <Button
+                            variant="primary"
+                            className="ml-3 mt-3"
+                            type="Calculate"
+                            onClick={() => {
+                              calculateInnerTube()
+                            }}
+                          >
+                            Calculate
+                          </Button>
+                        </Form.Group>
+                      </Col>
+                    </Row>
+                  </Col>
                   <Col className="col-md-4">
                     <Image src={InnerTube} fluid></Image>
                   </Col>
@@ -489,7 +670,24 @@ const Info = props => {
             <Accordion.Collapse eventKey="2">
               <Card.Body>
                 <Row>
-                  <Col className="col-md-8"></Col>
+                  <Col className="col-md-8">
+                    <Col className="col-md-12 pl-5">
+                      <Form>
+                        <Form.Group as={Row} controlId="mileage">
+                          <Form.Label column sm="4">
+                            {content.steps.stepTwo.cost}
+                          </Form.Label>
+                          <Col sm="8">
+                            <Form.Control
+                              type="Inner Tube"
+                              placeholder="Inner Tube"
+                              onChange={e => setInnerTube(e.target.value)}
+                            />
+                          </Col>
+                        </Form.Group>
+                      </Form>
+                    </Col>
+                  </Col>
                   <Col className="col-md-4">
                     <Image src={Flap} fluid></Image>
                   </Col>
