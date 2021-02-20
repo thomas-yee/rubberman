@@ -207,6 +207,11 @@ body {
   padding-right: 100px;
 }
 
+.popoverChangesCrown {
+  max-width: 800px !important;
+  max-height: 800px !important;
+}
+
 /** MYTH PAGE **/
 
 .mythTitle {
