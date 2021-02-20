@@ -77,7 +77,15 @@ const Info = props => {
             yearly: "Yearly =",
           },
         },
-        stepThree: "savings from flap",
+        stepThree: {
+          title: "savings from flap",
+          cost: "Cost of Flap =",
+          savings: {
+            title: "Savings",
+            monthly: "Monthly =",
+            yearly: "Yearly =",
+          },
+        },
         stepFour: "savings from maintenance",
         stepFive: "savings from bolts",
         stepSix: "savings from downtime",
@@ -135,7 +143,15 @@ const Info = props => {
             yearly: "Yearly =",
           },
         },
-        stepThree: "savings from flap",
+        stepThree: {
+          title: "savings from flap",
+          cost: "Cost of Flap =",
+          savings: {
+            title: "Savings",
+            monthly: "Monthly =",
+            yearly: "Yearly =",
+          },
+        },
         stepFour: "savings from maintenance",
         stepFive: "savings from bolts",
         stepSix: "savings from downtime",
@@ -157,6 +173,9 @@ const Info = props => {
   const [innerTube, setInnerTube] = useState(0)
   const [tubeMonthlySavings, setTubeMonthlySavings] = useState(0)
   const [tubeYearlySavings, setTubeYearlySavings] = useState(0)
+  const [flap, setFlap] = useState(0)
+  const [flapMonthlySavings, setFlapMonthlySavings] = useState(0)
+  const [flapYearlySavings, setFlapYearlySavings] = useState(0)
 
   const checkLanguage = () => {
     props.language === "English"
@@ -217,6 +236,15 @@ const Info = props => {
     </Popover>
   )
 
+  const flapMonthlySavingsPopover = (
+    <Popover id="popover-basic">
+      <Popover.Title as="h3">Monthly Savings</Popover.Title>
+      <Popover.Content>
+        Difference in tire change frequency x price of flap = Monthly Savings
+      </Popover.Content>
+    </Popover>
+  )
+
   const calculatePriceAndQuality = () => {
     const rpkm = price / mileage
     setRpKm(rpkm)
@@ -239,6 +267,13 @@ const Info = props => {
     setTubeMonthlySavings(monthlySavings)
     const yearlySavings = monthlySavings * 12
     setTubeYearlySavings(yearlySavings)
+  }
+
+  const calculateFlap = () => {
+    const monthlySavings = differenceChanges * flap
+    setFlapMonthlySavings(monthlySavings)
+    const yearlySavings = monthlySavings * 12
+    setFlapYearlySavings(yearlySavings)
   }
 
   return (
@@ -665,28 +700,77 @@ const Info = props => {
               eventKey="2"
               className="stepHeaderFont"
             >
-              {content.steps.stepThree}
+              {content.steps.stepThree.title}
             </Accordion.Toggle>
             <Accordion.Collapse eventKey="2">
               <Card.Body>
                 <Row>
                   <Col className="col-md-8">
-                    <Col className="col-md-12 pl-5">
-                      <Form>
-                        <Form.Group as={Row} controlId="mileage">
-                          <Form.Label column sm="4">
-                            {content.steps.stepTwo.cost}
+                    <Row>
+                      <Col className="col-md-12 pl-5">
+                        <Form>
+                          <Form.Group as={Row} controlId="mileage">
+                            <Form.Label column sm="4">
+                              {content.steps.stepThree.cost}
+                            </Form.Label>
+                            <Col sm="8">
+                              <Form.Control
+                                type="Inner Tube"
+                                placeholder="Inner Tube"
+                                onChange={e => setFlap(e.target.value)}
+                              />
+                            </Col>
+                          </Form.Group>
+                        </Form>
+                      </Col>
+                    </Row>
+                    <Row>
+                      <Col className="col-md-12 pl-5">
+                        <h4>{content.steps.stepThree.savings.title}</h4>
+                        <Form.Group
+                          as={Row}
+                          controlId="formPlaintextDifferenceInPrice"
+                        >
+                          <Form.Label column sm="2">
+                            {content.steps.stepThree.savings.monthly}
                           </Form.Label>
-                          <Col sm="8">
-                            <Form.Control
-                              type="Inner Tube"
-                              placeholder="Inner Tube"
-                              onChange={e => setInnerTube(e.target.value)}
-                            />
+                          <Col sm="4">
+                            <Form.Label column sm="12">
+                              {flapMonthlySavings}
+                              <OverlayTrigger
+                                trigger="click"
+                                placement="right"
+                                overlay={flapMonthlySavingsPopover}
+                              >
+                                <FontAwesomeIcon
+                                  icon={faQuestionCircle}
+                                  className="fa-1x"
+                                  className="ml-3"
+                                />
+                              </OverlayTrigger>
+                            </Form.Label>
                           </Col>
+                          <Form.Label column sm="2">
+                            {content.steps.stepThree.savings.yearly}
+                          </Form.Label>
+                          <Col sm="4">
+                            <Form.Label column sm="12">
+                              {flapYearlySavings}
+                            </Form.Label>
+                          </Col>
+                          <Button
+                            variant="primary"
+                            className="ml-3 mt-3"
+                            type="Calculate"
+                            onClick={() => {
+                              calculateFlap()
+                            }}
+                          >
+                            Calculate
+                          </Button>
                         </Form.Group>
-                      </Form>
-                    </Col>
+                      </Col>
+                    </Row>
                   </Col>
                   <Col className="col-md-4">
                     <Image src={Flap} fluid></Image>
