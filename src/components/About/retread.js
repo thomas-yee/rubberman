@@ -86,7 +86,15 @@ const Info = props => {
             yearly: "Yearly =",
           },
         },
-        stepFour: "savings from maintenance",
+        stepFour: {
+          title: "savings from maintenance",
+          cost: "Fee per Tire =",
+          savings: {
+            title: "Savings",
+            monthly: "Monthly =",
+            yearly: "Yearly =",
+          },
+        },
         stepFive: "savings from bolts",
         stepSix: "savings from downtime",
         stepSeven: "grand total savings",
@@ -152,7 +160,15 @@ const Info = props => {
             yearly: "Yearly =",
           },
         },
-        stepFour: "savings from maintenance",
+        stepFour: {
+          title: "savings from maintenance",
+          cost: "Fee per Tire =",
+          savings: {
+            title: "Savings",
+            monthly: "Monthly =",
+            yearly: "Yearly =",
+          },
+        },
         stepFive: "savings from bolts",
         stepSix: "savings from downtime",
         stepSeven: "grand total savings",
@@ -176,6 +192,9 @@ const Info = props => {
   const [flap, setFlap] = useState(0)
   const [flapMonthlySavings, setFlapMonthlySavings] = useState(0)
   const [flapYearlySavings, setFlapYearlySavings] = useState(0)
+  const [maintenance, setMaintenance] = useState(0)
+  const [maintenanceMonthlySavings, setMaintenanceMonthlySavings] = useState(0)
+  const [maintenanceYearlySavings, setMaintenanceYearlySavings] = useState(0)
 
   const checkLanguage = () => {
     props.language === "English"
@@ -245,6 +264,15 @@ const Info = props => {
     </Popover>
   )
 
+  const maintenanceMonthlySavingsPopover = (
+    <Popover id="popover-basic">
+      <Popover.Title as="h3">Monthly Savings</Popover.Title>
+      <Popover.Content>
+        Difference x fee per tire = Monthly Savings
+      </Popover.Content>
+    </Popover>
+  )
+
   const calculatePriceAndQuality = () => {
     const rpkm = price / mileage
     setRpKm(rpkm)
@@ -274,6 +302,13 @@ const Info = props => {
     setFlapMonthlySavings(monthlySavings)
     const yearlySavings = monthlySavings * 12
     setFlapYearlySavings(yearlySavings)
+  }
+
+  const calculateMaintenance = () => {
+    const monthlySavings = differenceChanges * maintenance
+    setMaintenanceMonthlySavings(monthlySavings)
+    const yearlySavings = monthlySavings * 12
+    setMaintenanceYearlySavings(yearlySavings)
   }
 
   return (
@@ -785,12 +820,78 @@ const Info = props => {
               eventKey="3"
               className="stepHeaderFont"
             >
-              {content.steps.stepFour}
+              {content.steps.stepFour.title}
             </Accordion.Toggle>
             <Accordion.Collapse eventKey="3">
               <Card.Body>
                 <Row>
-                  <Col className="col-md-8"></Col>
+                  <Col className="col-md-8">
+                    <Row>
+                      <Col className="col-md-12 pl-5">
+                        <Form>
+                          <Form.Group as={Row} controlId="mileage">
+                            <Form.Label column sm="4">
+                              {content.steps.stepFour.cost}
+                            </Form.Label>
+                            <Col sm="8">
+                              <Form.Control
+                                type="Maintenance"
+                                placeholder="Maintenance"
+                                onChange={e => setMaintenance(e.target.value)}
+                              />
+                            </Col>
+                          </Form.Group>
+                        </Form>
+                      </Col>
+                    </Row>
+                    <Row>
+                      <Col className="col-md-12 pl-5">
+                        <h4>{content.steps.stepFour.savings.title}</h4>
+                        <Form.Group
+                          as={Row}
+                          controlId="formPlaintextDifferenceInPrice"
+                        >
+                          <Form.Label column sm="2">
+                            {content.steps.stepFour.savings.monthly}
+                          </Form.Label>
+                          <Col sm="4">
+                            <Form.Label column sm="12">
+                              {maintenanceMonthlySavings}
+                              <OverlayTrigger
+                                trigger="click"
+                                placement="right"
+                                overlay={maintenanceMonthlySavingsPopover}
+                              >
+                                <FontAwesomeIcon
+                                  icon={faQuestionCircle}
+                                  className="fa-1x"
+                                  className="ml-3"
+                                />
+                              </OverlayTrigger>
+                            </Form.Label>
+                          </Col>
+                          <Form.Label column sm="2">
+                            {content.steps.stepFour.savings.yearly}
+                          </Form.Label>
+                          <Col sm="4">
+                            <Form.Label column sm="12">
+                              {maintenanceYearlySavings}
+                            </Form.Label>
+                          </Col>
+                          <Button
+                            variant="primary"
+                            className="ml-3 mt-3"
+                            type="Calculate"
+                            onClick={() => {
+                              calculateMaintenance()
+                            }}
+                          >
+                            Calculate
+                          </Button>
+                        </Form.Group>
+                      </Col>
+                    </Row>
+                  </Col>
                   <Col className="col-md-4">
                     <Image src={Maintenance} fluid></Image>
                   </Col>
