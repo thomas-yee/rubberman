@@ -95,7 +95,18 @@ const Info = props => {
             yearly: "Yearly =",
           },
         },
-        stepFive: "savings from bolts",
+        stepFive: {
+          title: "savings from bolts",
+          replaced: "Bolts Replaced/Month =",
+          replacedCrown: "Bolts Replaced with Crown/Month =",
+          difference: "Difference =",
+          price: "Bolt Price =",
+          savings: {
+            title: "Savings",
+            monthly: "Monthly =",
+            yearly: "Yearly =",
+          },
+        },
         stepSix: "savings from downtime",
         stepSeven: "grand total savings",
       },
@@ -169,7 +180,18 @@ const Info = props => {
             yearly: "Yearly =",
           },
         },
-        stepFive: "savings from bolts",
+        stepFive: {
+          title: "savings from bolts",
+          replaced: "Bolts Replaced/Month =",
+          replacedCrown: "Bolts Replaced with Crown/Month =",
+          difference: "Difference =",
+          price: "Bolt Price =",
+          savings: {
+            title: "Savings",
+            monthly: "Monthly =",
+            yearly: "Yearly =",
+          },
+        },
         stepSix: "savings from downtime",
         stepSeven: "grand total savings",
       },
@@ -195,6 +217,12 @@ const Info = props => {
   const [maintenance, setMaintenance] = useState(0)
   const [maintenanceMonthlySavings, setMaintenanceMonthlySavings] = useState(0)
   const [maintenanceYearlySavings, setMaintenanceYearlySavings] = useState(0)
+  const [boltsReplaced, setBoltsReplaced] = useState(0)
+  const [boltsReplacedCrown, setBoltsReplacedCrown] = useState(0)
+  const [boltsDifference, setBoltsDifference] = useState(0)
+  const [boltsPrice, setBoltsPrice] = useState(0)
+  const [boltsMonthlySavings, setBoltsMonthlySavings] = useState(0)
+  const [boltsYearlySavings, setBoltsYearlySavings] = useState(0)
 
   const checkLanguage = () => {
     props.language === "English"
@@ -273,6 +301,24 @@ const Info = props => {
     </Popover>
   )
 
+  const boltsReplacedCrownPopover = (
+    <Popover id="popover-basic">
+      <Popover.Title as="h3">Bolts Replaced with Crown</Popover.Title>
+      <Popover.Content>
+        (Other brand milage / Crown milage) x bolts replaced/month
+      </Popover.Content>
+    </Popover>
+  )
+
+  const boltsMonthlySavingsPopover = (
+    <Popover id="popover-basic">
+      <Popover.Title as="h3">Monthly Savings</Popover.Title>
+      <Popover.Content>
+        Difference x bolts price = Monthly Savings
+      </Popover.Content>
+    </Popover>
+  )
+
   const calculatePriceAndQuality = () => {
     const rpkm = price / mileage
     setRpKm(rpkm)
@@ -309,6 +355,17 @@ const Info = props => {
     setMaintenanceMonthlySavings(monthlySavings)
     const yearlySavings = monthlySavings * 12
     setMaintenanceYearlySavings(yearlySavings)
+  }
+
+  const calculateBolts = () => {
+    const replaced = (mileage / 70000) * boltsReplaced
+    setBoltsReplacedCrown(replaced)
+    const differenceInBolts = boltsReplaced - replaced
+    setBoltsDifference(differenceInBolts)
+    const monthlySavings = differenceInBolts * boltsPrice
+    setBoltsMonthlySavings(monthlySavings)
+    const yearlySavings = monthlySavings * 12
+    setBoltsYearlySavings(yearlySavings)
   }
 
   return (
@@ -905,12 +962,145 @@ const Info = props => {
               eventKey="4"
               className="stepHeaderFont"
             >
-              {content.steps.stepFive}
+              {content.steps.stepFive.title}
             </Accordion.Toggle>
             <Accordion.Collapse eventKey="4">
               <Card.Body>
                 <Row>
-                  <Col className="col-md-8"></Col>
+                  <Col className="col-md-8">
+                    <Row>
+                      <Col className="col-md-12 pl-5">
+                        <Form>
+                          <Form.Group as={Row} controlId="mileage">
+                            <Form.Label column sm="4">
+                              {content.steps.stepFive.replaced}
+                            </Form.Label>
+                            <Col sm="8">
+                              <Form.Control
+                                type="Maintenance"
+                                placeholder="Input"
+                                onChange={e => setBoltsReplaced(e.target.value)}
+                              />
+                            </Col>
+                          </Form.Group>
+                        </Form>
+                      </Col>
+                    </Row>
+                    <Row>
+                      <Col className="col-md-12 pl-5">
+                        <Form>
+                          <Form.Group
+                            as={Row}
+                            controlId="formPlaintextDifferenceInPrice"
+                          >
+                            <Form.Label column sm="2">
+                              {content.steps.stepFive.replacedCrown}
+                            </Form.Label>
+                            <Col sm="4">
+                              <Form.Label column sm="12">
+                                {boltsReplacedCrown}
+                                <OverlayTrigger
+                                  trigger="click"
+                                  placement="right"
+                                  overlay={boltsReplacedCrownPopover}
+                                >
+                                  <FontAwesomeIcon
+                                    icon={faQuestionCircle}
+                                    className="fa-1x"
+                                    className="ml-3"
+                                  />
+                                </OverlayTrigger>
+                              </Form.Label>
+                            </Col>
+                          </Form.Group>
+                        </Form>
+                      </Col>
+                    </Row>
+                    <Row>
+                      <Col className="col-md-12 pl-5">
+                        <Form>
+                          <Form.Group
+                            as={Row}
+                            controlId="formPlaintextDifferenceInPrice"
+                          >
+                            <Form.Label column sm="2">
+                              {content.steps.stepFive.difference}
+                            </Form.Label>
+                            <Col sm="4">
+                              <Form.Label column sm="12">
+                                {boltsDifference}
+                              </Form.Label>
+                            </Col>
+                          </Form.Group>
+                        </Form>
+                      </Col>
+                    </Row>
+                    <Row>
+                      <Col className="col-md-12 pl-5">
+                        <Form>
+                          <Form.Group as={Row} controlId="mileage">
+                            <Form.Label column sm="4">
+                              {content.steps.stepFive.price}
+                            </Form.Label>
+                            <Col sm="8">
+                              <Form.Control
+                                type="Maintenance"
+                                placeholder="Input"
+                                onChange={e => setBoltsPrice(e.target.value)}
+                              />
+                            </Col>
+                          </Form.Group>
+                        </Form>
+                      </Col>
+                    </Row>
+                    <Row>
+                      <Col className="col-md-12 pl-5">
+                        <h4>{content.steps.stepFive.savings.title}</h4>
+                        <Form.Group
+                          as={Row}
+                          controlId="formPlaintextDifferenceInPrice"
+                        >
+                          <Form.Label column sm="2">
+                            {content.steps.stepFive.savings.monthly}
+                          </Form.Label>
+                          <Col sm="4">
+                            <Form.Label column sm="12">
+                              {boltsMonthlySavings}
+                              <OverlayTrigger
+                                trigger="click"
+                                placement="right"
+                                overlay={boltsMonthlySavingsPopover}
+                              >
+                                <FontAwesomeIcon
+                                  icon={faQuestionCircle}
+                                  className="fa-1x"
+                                  className="ml-3"
+                                />
+                              </OverlayTrigger>
+                            </Form.Label>
+                          </Col>
+                          <Form.Label column sm="2">
+                            {content.steps.stepFive.savings.yearly}
+                          </Form.Label>
+                          <Col sm="4">
+                            <Form.Label column sm="12">
+                              {boltsYearlySavings}
+                            </Form.Label>
+                          </Col>
+                          <Button
+                            variant="primary"
+                            className="ml-3 mt-3"
+                            type="Calculate"
+                            onClick={() => {
+                              calculateBolts()
+                            }}
+                          >
+                            Calculate
+                          </Button>
+                        </Form.Group>
+                      </Col>
+                    </Row>
+                  </Col>
                   <Col className="col-md-4">
                     <Image src={Bolts} fluid></Image>
                   </Col>
