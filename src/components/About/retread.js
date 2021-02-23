@@ -107,8 +107,26 @@ const Info = props => {
             yearly: "Yearly =",
           },
         },
-        stepSix: "savings from downtime",
-        stepSeven: "grand total savings",
+        stepSix: {
+          title: "savings from downtime",
+          overhaul: {
+            assumption: "*Assuming overhead time is 30 minutes",
+            monthly: "Monthly Overhaul Time (Hours) =",
+            yearly: "Yearly Overhaul Time =",
+          },
+          assumptionOperation: "*Assuming truck/bus operating for 10 hours",
+          loss: "Loss of Operational Days (Monthly/Yearly) =",
+          earnings: "Earnings per Day =",
+          savings: {
+            title: "Savings",
+            monthly: "Monthly =",
+            yearly: "Yearly =",
+          },
+        },
+        stepSeven: {
+          title: "savings from downtime",
+          savings: "yearly savings =",
+        },
       },
     },
     Indonesian: {
@@ -192,8 +210,26 @@ const Info = props => {
             yearly: "Yearly =",
           },
         },
-        stepSix: "savings from downtime",
-        stepSeven: "grand total savings",
+        stepSix: {
+          title: "savings from downtime",
+          overhaul: {
+            assumption: "*Assuming overhead time is 30 minutes",
+            monthly: "Monthly Overhaul Time (Hours) =",
+            yearly: "Yearly Overhaul Time =",
+          },
+          assumptionOperation: "*Assuming truck/bus operating for 10 hours",
+          loss: "Loss of Operational Days (Monthly/Yearly) =",
+          earnings: "Earnings per Day =",
+          savings: {
+            title: "Savings",
+            monthly: "Monthly =",
+            yearly: "Yearly =",
+          },
+        },
+        stepSeven: {
+          title: "savings from downtime",
+          savings: "yearly savings =",
+        },
       },
     },
   }
@@ -223,6 +259,8 @@ const Info = props => {
   const [boltsPrice, setBoltsPrice] = useState(0)
   const [boltsMonthlySavings, setBoltsMonthlySavings] = useState(0)
   const [boltsYearlySavings, setBoltsYearlySavings] = useState(0)
+  const [overhaulMonthlyTime, setOverhaulMonthlyTime] = useState(0)
+  const [overhaulYearlyTime, setOverhaulYearlyTime] = useState(0)
 
   const checkLanguage = () => {
     props.language === "English"
@@ -315,6 +353,33 @@ const Info = props => {
       <Popover.Title as="h3">Monthly Savings</Popover.Title>
       <Popover.Content>
         Difference x bolts price = Monthly Savings
+      </Popover.Content>
+    </Popover>
+  )
+
+  const overhaulPopover = (
+    <Popover id="popover-basic">
+      <Popover.Title as="h3">Monthly Overhaul Time</Popover.Title>
+      <Popover.Content>1/2 x Changes/Month = Overhaul Time</Popover.Content>
+    </Popover>
+  )
+
+  const lossOperationPopover = (
+    <Popover id="popover-basic">
+      <Popover.Title as="h3">
+        Loss of Operational Days (Monthly/Yearly)
+      </Popover.Title>
+      <Popover.Content>
+        Monthly Overhaul Time/10 = Loss of Operational Days
+      </Popover.Content>
+    </Popover>
+  )
+
+  const downtimeMonthlySavingsPopover = (
+    <Popover id="popover-basic">
+      <Popover.Title as="h3">Monthly Savings</Popover.Title>
+      <Popover.Content>
+        Coss of operational days x Earnings per day = savings
       </Popover.Content>
     </Popover>
   )
@@ -1114,12 +1179,172 @@ const Info = props => {
               eventKey="5"
               className="stepHeaderFont"
             >
-              {content.steps.stepSix}
+              {content.steps.stepSix.title}
             </Accordion.Toggle>
             <Accordion.Collapse eventKey="5">
               <Card.Body>
                 <Row>
-                  <Col className="col-md-8"></Col>
+                  <Col className="col-md-8">
+                    <Row>
+                      <Col className="col-md-12 pl-5">
+                        <Form>
+                          <Form.Group
+                            as={Row}
+                            controlId="formPlaintextDifferenceInPrice"
+                          >
+                            <Form.Label column sm="12">
+                              {content.steps.stepSix.overhaul.assumption}
+                            </Form.Label>
+                          </Form.Group>
+                        </Form>
+                      </Col>
+                    </Row>
+                    <Row>
+                      <Col className="col-md-12 pl-5">
+                        <Form.Group
+                          as={Row}
+                          controlId="formPlaintextDifferenceInPrice"
+                        >
+                          <Form.Label column sm="2">
+                            {content.steps.stepSix.overhaul.monthly}
+                          </Form.Label>
+                          <Col sm="4">
+                            <Form.Label column sm="12">
+                              {overhaulMonthlyTime}
+                              <OverlayTrigger
+                                trigger="click"
+                                placement="right"
+                                overlay={overhaulPopover}
+                              >
+                                <FontAwesomeIcon
+                                  icon={faQuestionCircle}
+                                  className="fa-1x"
+                                  className="ml-3"
+                                />
+                              </OverlayTrigger>
+                            </Form.Label>
+                          </Col>
+                          <Form.Label column sm="2">
+                            {content.steps.stepSix.overhaul.yearly}
+                          </Form.Label>
+                          <Col sm="4">
+                            <Form.Label column sm="12">
+                              {overhaulYearlyTime}
+                            </Form.Label>
+                          </Col>
+                        </Form.Group>
+                      </Col>
+                    </Row>
+                    <Row>
+                      <Col className="col-md-12 pl-5">
+                        <Form>
+                          <Form.Group
+                            as={Row}
+                            controlId="formPlaintextDifferenceInPrice"
+                          >
+                            <Form.Label column sm="12">
+                              {content.steps.stepSix.assumptionOperation}
+                            </Form.Label>
+                          </Form.Group>
+                        </Form>
+                      </Col>
+                    </Row>
+                    <Row>
+                      <Col className="col-md-12 pl-5">
+                        <Form>
+                          <Form.Group
+                            as={Row}
+                            controlId="formPlaintextDifferenceInPrice"
+                          >
+                            <Form.Label column sm="2">
+                              {content.steps.stepSix.loss}
+                            </Form.Label>
+                            <Col sm="4">
+                              <Form.Label column sm="12">
+                                {boltsReplacedCrown}
+                                <OverlayTrigger
+                                  trigger="click"
+                                  placement="right"
+                                  overlay={lossOperationPopover}
+                                >
+                                  <FontAwesomeIcon
+                                    icon={faQuestionCircle}
+                                    className="fa-1x"
+                                    className="ml-3"
+                                  />
+                                </OverlayTrigger>
+                              </Form.Label>
+                            </Col>
+                          </Form.Group>
+                        </Form>
+                      </Col>
+                    </Row>
+                    <Row>
+                      <Col className="col-md-12 pl-5">
+                        <Form>
+                          <Form.Group as={Row} controlId="mileage">
+                            <Form.Label column sm="4">
+                              {content.steps.stepSix.earnings}
+                            </Form.Label>
+                            <Col sm="8">
+                              <Form.Control
+                                type="Maintenance"
+                                placeholder="Input"
+                                onChange={e => setBoltsReplaced(e.target.value)}
+                              />
+                            </Col>
+                          </Form.Group>
+                        </Form>
+                      </Col>
+                    </Row>
+                    <Row>
+                      <Col className="col-md-12 pl-5">
+                        <h4>{content.steps.stepFive.savings.title}</h4>
+                        <Form.Group
+                          as={Row}
+                          controlId="formPlaintextDifferenceInPrice"
+                        >
+                          <Form.Label column sm="2">
+                            {content.steps.stepFive.savings.monthly}
+                          </Form.Label>
+                          <Col sm="4">
+                            <Form.Label column sm="12">
+                              {boltsMonthlySavings}
+                              <OverlayTrigger
+                                trigger="click"
+                                placement="right"
+                                overlay={downtimeMonthlySavingsPopover}
+                              >
+                                <FontAwesomeIcon
+                                  icon={faQuestionCircle}
+                                  className="fa-1x"
+                                  className="ml-3"
+                                />
+                              </OverlayTrigger>
+                            </Form.Label>
+                          </Col>
+                          <Form.Label column sm="2">
+                            {content.steps.stepFive.savings.yearly}
+                          </Form.Label>
+                          <Col sm="4">
+                            <Form.Label column sm="12">
+                              {boltsYearlySavings}
+                            </Form.Label>
+                          </Col>
+                          <Button
+                            variant="primary"
+                            className="ml-3 mt-3"
+                            type="Calculate"
+                            onClick={() => {
+                              calculateBolts()
+                            }}
+                          >
+                            Calculate
+                          </Button>
+                        </Form.Group>
+                      </Col>
+                    </Row>
+                  </Col>
                   <Col className="col-md-4">
                     <Image src={Downtime} fluid></Image>
                   </Col>
@@ -1133,7 +1358,7 @@ const Info = props => {
               eventKey="6"
               className="stepHeaderFont"
             >
-              {content.steps.stepSeven}
+              {content.steps.stepSeven.title}
             </Accordion.Toggle>
             <Accordion.Collapse eventKey="6">
               <Card.Body>
