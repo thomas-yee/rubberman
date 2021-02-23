@@ -749,6 +749,8 @@ const Info = props => {
               </Card.Body>
             </Accordion.Collapse>
           </Card>
+        </Accordion>
+        <Accordion defaultActiveKey="0">
           <Card>
             <Accordion.Toggle
               as={Card.Header}
@@ -886,6 +888,8 @@ const Info = props => {
               </Card.Body>
             </Accordion.Collapse>
           </Card>
+        </Accordion>
+        <Accordion defaultActiveKey="0">
           <Card>
             <Accordion.Toggle
               as={Card.Header}
@@ -971,6 +975,8 @@ const Info = props => {
               </Card.Body>
             </Accordion.Collapse>
           </Card>
+        </Accordion>
+        <Accordion defaultActiveKey="0">
           <Card>
             <Accordion.Toggle
               as={Card.Header}
@@ -1056,6 +1062,8 @@ const Info = props => {
               </Card.Body>
             </Accordion.Collapse>
           </Card>
+        </Accordion>
+        <Accordion defaultActiveKey="0">
           <Card>
             <Accordion.Toggle
               as={Card.Header}
@@ -1208,6 +1216,8 @@ const Info = props => {
               </Card.Body>
             </Accordion.Collapse>
           </Card>
+        </Accordion>
+        <Accordion defaultActiveKey="0">
           <Card>
             <Accordion.Toggle
               as={Card.Header}
@@ -1387,6 +1397,8 @@ const Info = props => {
               </Card.Body>
             </Accordion.Collapse>
           </Card>
+        </Accordion>
+        <Accordion defaultActiveKey="0">
           <Card>
             <Accordion.Toggle
               as={Card.Header}
