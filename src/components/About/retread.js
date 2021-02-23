@@ -265,6 +265,7 @@ const Info = props => {
   const [earnings, setEarnings] = useState(0)
   const [downtimeMonthlySavings, setDowntimeMonthlySavings] = useState(0)
   const [downtimeYearlySavings, setDowntimeYearlySavings] = useState(0)
+  const [yearlySavings, setYearlySavings] = useState(0)
 
   const checkLanguage = () => {
     props.language === "English"
@@ -388,6 +389,17 @@ const Info = props => {
     </Popover>
   )
 
+  const calculateYearlySavings = () => {
+    const savings =
+      priceYearlySavings +
+      tubeYearlySavings +
+      flapYearlySavings +
+      maintenanceYearlySavings +
+      boltsYearlySavings +
+      downtimeYearlySavings
+    setYearlySavings(savings)
+  }
+
   const calculatePriceAndQuality = () => {
     const rpkm = price / mileage
     setRpKm(rpkm)
@@ -399,6 +411,7 @@ const Info = props => {
     setPriceMonthlySavings(monthlySavings)
     const yearlySavings = monthlySavings * 12
     setPriceYearlySavings(yearlySavings)
+    calculateYearlySavings()
   }
 
   const calculateInnerTube = () => {
@@ -410,6 +423,7 @@ const Info = props => {
     setTubeMonthlySavings(monthlySavings)
     const yearlySavings = monthlySavings * 12
     setTubeYearlySavings(yearlySavings)
+    calculateYearlySavings()
   }
 
   const calculateFlap = () => {
@@ -417,6 +431,7 @@ const Info = props => {
     setFlapMonthlySavings(monthlySavings)
     const yearlySavings = monthlySavings * 12
     setFlapYearlySavings(yearlySavings)
+    calculateYearlySavings()
   }
 
   const calculateMaintenance = () => {
@@ -424,6 +439,7 @@ const Info = props => {
     setMaintenanceMonthlySavings(monthlySavings)
     const yearlySavings = monthlySavings * 12
     setMaintenanceYearlySavings(yearlySavings)
+    calculateYearlySavings()
   }
 
   const calculateBolts = () => {
@@ -435,6 +451,7 @@ const Info = props => {
     setBoltsMonthlySavings(monthlySavings)
     const yearlySavings = monthlySavings * 12
     setBoltsYearlySavings(yearlySavings)
+    calculateYearlySavings()
   }
 
   const calculateDowntime = () => {
@@ -448,6 +465,7 @@ const Info = props => {
     setDowntimeMonthlySavings(monthlySavings)
     const yearlySavings = monthlySavings * 12
     setDowntimeYearlySavings(yearlySavings)
+    calculateYearlySavings()
   }
 
   return (
@@ -1278,7 +1296,7 @@ const Info = props => {
                             </Form.Label>
                             <Col sm="4">
                               <Form.Label column sm="12">
-                                {boltsReplacedCrown}
+                                {lossOperationalDays}
                                 <OverlayTrigger
                                   trigger="click"
                                   placement="right"
@@ -1391,18 +1409,7 @@ const Info = props => {
                         </Form.Label>
                         <Col sm="4">
                           <Form.Label column sm="12">
-                            {boltsReplacedCrown}
-                            <OverlayTrigger
-                              trigger="click"
-                              placement="right"
-                              overlay={lossOperationPopover}
-                            >
-                              <FontAwesomeIcon
-                                icon={faQuestionCircle}
-                                className="fa-1x"
-                                className="ml-3"
-                              />
-                            </OverlayTrigger>
+                            {yearlySavings}
                           </Form.Label>
                         </Col>
                       </Form.Group>
