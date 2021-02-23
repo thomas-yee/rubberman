@@ -124,7 +124,7 @@ const Info = props => {
           },
         },
         stepSeven: {
-          title: "savings from downtime",
+          title: "Grand total savings",
           savings: "yearly savings =",
         },
       },
@@ -227,7 +227,7 @@ const Info = props => {
           },
         },
         stepSeven: {
-          title: "savings from downtime",
+          title: "Grand total savings",
           savings: "yearly savings =",
         },
       },
@@ -261,6 +261,10 @@ const Info = props => {
   const [boltsYearlySavings, setBoltsYearlySavings] = useState(0)
   const [overhaulMonthlyTime, setOverhaulMonthlyTime] = useState(0)
   const [overhaulYearlyTime, setOverhaulYearlyTime] = useState(0)
+  const [lossOperationalDays, setLossOperationalDays] = useState(0)
+  const [earnings, setEarnings] = useState(0)
+  const [downtimeMonthlySavings, setDowntimeMonthlySavings] = useState(0)
+  const [downtimeYearlySavings, setDowntimeYearlySavings] = useState(0)
 
   const checkLanguage = () => {
     props.language === "English"
@@ -431,6 +435,19 @@ const Info = props => {
     setBoltsMonthlySavings(monthlySavings)
     const yearlySavings = monthlySavings * 12
     setBoltsYearlySavings(yearlySavings)
+  }
+
+  const calculateDowntime = () => {
+    const monthOverhaul = 0.5 * tires
+    setOverhaulMonthlyTime(monthOverhaul)
+    const yearOverhaul = 12 * monthOverhaul
+    setOverhaulYearlyTime(yearOverhaul)
+    const loss = monthOverhaul / 10
+    setLossOperationalDays(loss)
+    const monthlySavings = loss * earnings
+    setDowntimeMonthlySavings(monthlySavings)
+    const yearlySavings = monthlySavings * 12
+    setDowntimeYearlySavings(yearlySavings)
   }
 
   return (
@@ -1290,7 +1307,7 @@ const Info = props => {
                               <Form.Control
                                 type="Maintenance"
                                 placeholder="Input"
-                                onChange={e => setBoltsReplaced(e.target.value)}
+                                onChange={e => setEarnings(e.target.value)}
                               />
                             </Col>
                           </Form.Group>
@@ -1309,7 +1326,7 @@ const Info = props => {
                           </Form.Label>
                           <Col sm="4">
                             <Form.Label column sm="12">
-                              {boltsMonthlySavings}
+                              {downtimeMonthlySavings}
                               <OverlayTrigger
                                 trigger="click"
                                 placement="right"
@@ -1328,7 +1345,7 @@ const Info = props => {
                           </Form.Label>
                           <Col sm="4">
                             <Form.Label column sm="12">
-                              {boltsYearlySavings}
+                              {downtimeYearlySavings}
                             </Form.Label>
                           </Col>
                           <Button
@@ -1336,7 +1353,7 @@ const Info = props => {
                             className="ml-3 mt-3"
                             type="Calculate"
                             onClick={() => {
-                              calculateBolts()
+                              calculateDowntime()
                             }}
                           >
                             Calculate
@@ -1363,8 +1380,34 @@ const Info = props => {
             <Accordion.Collapse eventKey="6">
               <Card.Body>
                 <Row>
-                  <Col className="col-md-8"></Col>
-                  <Col className="col-md-4"></Col>
+                  <Col className="col-md-12 pl-5">
+                    <Form>
+                      <Form.Group
+                        as={Row}
+                        controlId="formPlaintextDifferenceInPrice"
+                      >
+                        <Form.Label column sm="2">
+                          {content.steps.stepSeven.savings}
+                        </Form.Label>
+                        <Col sm="4">
+                          <Form.Label column sm="12">
+                            {boltsReplacedCrown}
+                            <OverlayTrigger
+                              trigger="click"
+                              placement="right"
+                              overlay={lossOperationPopover}
+                            >
+                              <FontAwesomeIcon
+                                icon={faQuestionCircle}
+                                className="fa-1x"
+                                className="ml-3"
+                              />
+                            </OverlayTrigger>
+                          </Form.Label>
+                        </Col>
+                      </Form.Group>
+                    </Form>
+                  </Col>
                 </Row>
               </Card.Body>
             </Accordion.Collapse>
