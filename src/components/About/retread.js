@@ -769,10 +769,10 @@ const Info = props => {
                           as={Row}
                           controlId="formPlaintextDifferenceInPrice"
                         >
-                          <Form.Label column sm="2">
+                          <Form.Label column sm="4">
                             {content.steps.stepTwo.changes}
                           </Form.Label>
-                          <Col sm="4">
+                          <Col sm="8">
                             <Form.Label column sm="12">
                               {priceMonthlySavings}
                               <OverlayTrigger
@@ -797,10 +797,10 @@ const Info = props => {
                           as={Row}
                           controlId="formPlaintextDifferenceInPrice"
                         >
-                          <Form.Label column sm="2">
+                          <Form.Label column sm="4">
                             {content.steps.stepTwo.difference}
                           </Form.Label>
-                          <Col sm="4">
+                          <Col sm="8">
                             <Form.Label column sm="12">
                               {differenceChanges}
                               <OverlayTrigger
@@ -911,8 +911,8 @@ const Info = props => {
                             </Form.Label>
                             <Col sm="8">
                               <Form.Control
-                                type="Inner Tube"
-                                placeholder="Inner Tube"
+                                type="Flap"
+                                placeholder="Flap"
                                 onChange={e => setFlap(e.target.value)}
                               />
                             </Col>
@@ -1101,10 +1101,10 @@ const Info = props => {
                             as={Row}
                             controlId="formPlaintextDifferenceInPrice"
                           >
-                            <Form.Label column sm="2">
+                            <Form.Label column sm="4">
                               {content.steps.stepFive.replacedCrown}
                             </Form.Label>
-                            <Col sm="4">
+                            <Col sm="8">
                               <Form.Label column sm="12">
                                 {boltsReplacedCrown}
                                 <OverlayTrigger
@@ -1250,10 +1250,10 @@ const Info = props => {
                           as={Row}
                           controlId="formPlaintextDifferenceInPrice"
                         >
-                          <Form.Label column sm="2">
+                          <Form.Label column sm="4">
                             {content.steps.stepSix.overhaul.monthly}
                           </Form.Label>
-                          <Col sm="4">
+                          <Col sm="8">
                             <Form.Label column sm="12">
                               {overhaulMonthlyTime}
                               <OverlayTrigger
@@ -1269,10 +1269,10 @@ const Info = props => {
                               </OverlayTrigger>
                             </Form.Label>
                           </Col>
-                          <Form.Label column sm="2">
+                          <Form.Label column sm="4">
                             {content.steps.stepSix.overhaul.yearly}
                           </Form.Label>
-                          <Col sm="4">
+                          <Col sm="8">
                             <Form.Label column sm="12">
                               {overhaulYearlyTime}
                             </Form.Label>
@@ -1301,10 +1301,10 @@ const Info = props => {
                             as={Row}
                             controlId="formPlaintextDifferenceInPrice"
                           >
-                            <Form.Label column sm="2">
+                            <Form.Label column sm="4">
                               {content.steps.stepSix.loss}
                             </Form.Label>
-                            <Col sm="4">
+                            <Col sm="8">
                               <Form.Label column sm="12">
                                 {lossOperationalDays}
                                 <OverlayTrigger
@@ -1410,18 +1410,18 @@ const Info = props => {
             <Accordion.Collapse eventKey="6">
               <Card.Body>
                 <Row>
-                  <Col className="col-md-12 pl-5">
+                  <Col className="col-md-12 pl-5 text-uppercase retreadGrandTotal">
                     <Form>
                       <Form.Group
                         as={Row}
                         controlId="formPlaintextDifferenceInPrice"
                       >
-                        <Form.Label column sm="2">
-                          {content.steps.stepSeven.savings}
+                        <Form.Label column sm="4">
+                          <h1>{content.steps.stepSeven.savings}</h1>
                         </Form.Label>
-                        <Col sm="4">
+                        <Col sm="8">
                           <Form.Label column sm="12">
-                            {yearlySavings}
+                            <h1>{yearlySavings}</h1>
                           </Form.Label>
                         </Col>
                       </Form.Group>
