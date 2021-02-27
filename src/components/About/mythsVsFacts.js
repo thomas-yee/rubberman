@@ -3,6 +3,11 @@ import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
 import Image from "react-bootstrap/Image"
 import Shield from "../../images/myth1.png"
+import Wheel from "../../images/myth2.png"
+import Piggy from "../../images/myth3.png"
+import Chain from "../../images/myth4.png"
+import Temp from "../../images/myth5.png"
+import Form from "../../images/myth6.png"
 
 const Intro = props => {
   let content = {
@@ -150,13 +155,13 @@ const Intro = props => {
                 </h4>
                 <Image
                   className="centerHorizon mythSize pt-4"
-                  src={Shield}
+                  src={Wheel}
                   fluid
                 ></Image>
                 <h4 className="centerHorizon pt-4 text-uppercase">
                   {content.myths.myth2.descriptionTitle}
                 </h4>
-                <h4 className="centerHorizon">
+                <h4 className="centerHorizon h-100">
                   {content.myths.myth2.description}
                 </h4>
               </Row>
@@ -171,7 +176,7 @@ const Intro = props => {
                 </h4>
                 <Image
                   className="centerHorizon mythSize pt-4"
-                  src={Shield}
+                  src={Piggy}
                   fluid
                 ></Image>
                 <h4 className="centerHorizon pt-4 text-uppercase">
@@ -194,7 +199,7 @@ const Intro = props => {
                 </h4>
                 <Image
                   className="centerHorizon mythSize pt-4"
-                  src={Shield}
+                  src={Chain}
                   fluid
                 ></Image>
                 <h4 className="centerHorizon pt-4 text-uppercase">
@@ -215,7 +220,7 @@ const Intro = props => {
                 </h4>
                 <Image
                   className="centerHorizon mythSize pt-4"
-                  src={Shield}
+                  src={Temp}
                   fluid
                 ></Image>
                 <h4 className="centerHorizon pt-4 text-uppercase">
@@ -236,7 +241,7 @@ const Intro = props => {
                 </h4>
                 <Image
                   className="centerHorizon mythSize pt-4"
-                  src={Shield}
+                  src={Form}
                   fluid
                 ></Image>
                 <h4 className="centerHorizon pt-4 text-uppercase">
