@@ -33,7 +33,7 @@ const Intro = props => {
         <div className="container-fluid">
           <div className="row">
             <Row>
-              <Image className="homeImage" src={Background} fluid></Image>
+              <Image src={Background} fluid></Image>
             </Row>
           </div>
         </div>
