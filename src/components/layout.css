@@ -63,6 +63,26 @@ body {
   padding-top: 10rem !important;
 }
 
+.pr-6 {
+  padding-right: 6rem !important;
+}
+
+.pl-6 {
+  padding-left: 6rem !important;
+}
+
+.pr-7 {
+  padding-right: 7rem !important;
+}
+
+.pl-7 {
+  padding-left: 7rem !important;
+}
+
+.pb-6 {
+  padding-bottom: 6rem !important;
+}
+
 /**FOOTER */
 .footer {
   background: var(--mainWhite);
@@ -233,7 +253,12 @@ body {
 }
 
 .mythBackground {
-  background: linear-gradient(0deg, var(--mainBlue), var(--mainWhite) 85%);
+  background: linear-gradient(
+    0deg,
+    rgba(2, 81, 160, 255) 40%,
+    rgba(190, 211, 230, 255) 100%
+  );
+  background-clip: content-box;
 }
 
 .mythSize {
@@ -241,6 +266,10 @@ body {
   width: 35%;
   margin-left: auto;
   margin-right: auto;
+}
+
+.mythHeight {
+  height: 725px;
 }
 
 /**Contact Section on Index Page */
