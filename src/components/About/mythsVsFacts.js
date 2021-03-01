@@ -123,13 +123,13 @@ const Intro = props => {
           <Row className="mythTitle pl-3 pb-3">
             <h2>{content.title}</h2>
           </Row>
-          <Row className="mythHeight">
-            <Col className="col-lg-4 col-md-6 text-center mythBackground pl-3 pr-2">
+          <Row className="">
+            <Col className="col-xl-4 col-md-6 col-sm-12 col-12 text-center mythBackground pl-2 pr-2 mb-5">
               <Row className="ml-2 mr-2 pt-4">
                 <h4 className="mythTitle centerHorizon">
                   {content.myths.myth1.title}
                 </h4>
-                <h4 className="mythTitle centerHorizon pb-4">
+                <h4 className="mythTitle centerHorizon mythTitleSize pt-1">
                   {content.myths.myth1.subtitle}
                 </h4>
                 <Image
@@ -137,20 +137,20 @@ const Intro = props => {
                   src={Shield}
                   fluid
                 ></Image>
-                <h4 className="centerHorizon pt-4 text-uppercase text-white">
+                <h4 className="centerHorizon pt-5 text-uppercase text-white">
                   {content.myths.myth1.descriptionTitle}
                 </h4>
-                <h4 className="centerHorizon pb-2 text-white">
+                <h4 className="centerHorizon pb-5 text-white">
                   {content.myths.myth1.description}
                 </h4>
               </Row>
             </Col>
-            <Col className="col-lg-4 col-md-6 text-center mythBackground pl-2 pr-2">
+            <Col className="col-xl-4 col-md-6 col-sm-12 col-12 text-center mythBackground pl-2 pr-2 mb-5">
               <Row className="ml-2 mr-2 pt-4">
                 <h4 className="mythTitle centerHorizon">
                   {content.myths.myth2.title}
                 </h4>
-                <h4 className="mythTitle centerHorizon pr-6 pl-6">
+                <h4 className="mythTitle centerHorizon mythTitleSize pt-1">
                   {content.myths.myth2.subtitle}
                 </h4>
                 <Image
@@ -158,7 +158,7 @@ const Intro = props => {
                   src={Wheel}
                   fluid
                 ></Image>
-                <h4 className="centerHorizon pt-4 text-uppercase text-white">
+                <h4 className="centerHorizon pt-5 text-uppercase text-white">
                   {content.myths.myth2.descriptionTitle}
                 </h4>
                 <h4 className="centerHorizon text-white">
@@ -166,12 +166,12 @@ const Intro = props => {
                 </h4>
               </Row>
             </Col>
-            <Col className="col-lg-4 col-md-6 text-center mythBackground pl-2 pr-3">
+            <Col className="col-xl-4 col-md-6 col-sm-12 col-12 text-center mythBackground pl-2 pr-2 mb-5">
               <Row className="ml-2 mr-2 pt-4">
                 <h4 className="mythTitle centerHorizon">
                   {content.myths.myth3.title}
                 </h4>
-                <h4 className="mythTitle centerHorizon pr-7 pl-7">
+                <h4 className="mythTitle centerHorizon mythTitleSize pt-1">
                   {content.myths.myth3.subtitle}
                 </h4>
                 <Image
@@ -179,7 +179,7 @@ const Intro = props => {
                   src={Piggy}
                   fluid
                 ></Image>
-                <h4 className="centerHorizon pt-4 text-uppercase text-white">
+                <h4 className="centerHorizon pt-5 text-uppercase text-white">
                   {content.myths.myth3.descriptionTitle}
                 </h4>
                 <h4 className="centerHorizon text-white">
@@ -188,13 +188,13 @@ const Intro = props => {
               </Row>
             </Col>
           </Row>
-          <Row className="mythHeight mt-5 mb-5">
-            <Col className="col-lg-4 col-md-6 text-center mythBackground pl-3 pr-2">
+          <Row className="">
+            <Col className="col-xl-4 col-md-6 col-sm-12 col-12 text-center mythBackground pl-2 pr-2 mb-5">
               <Row className="ml-2 mr-2 pt-4">
                 <h4 className="mythTitle centerHorizon">
                   {content.myths.myth4.title}
                 </h4>
-                <h4 className="mythTitle centerHorizon pl-5 pr-5">
+                <h4 className="mythTitle centerHorizon mythTitleSize pt-1">
                   {content.myths.myth4.subtitle}
                 </h4>
                 <Image
@@ -202,20 +202,20 @@ const Intro = props => {
                   src={Chain}
                   fluid
                 ></Image>
-                <h4 className="centerHorizon pt-4 text-uppercase text-white">
+                <h4 className="centerHorizon pt-5 text-uppercase text-white">
                   {content.myths.myth4.descriptionTitle}
                 </h4>
-                <h4 className="centerHorizon pr-4 text-white">
+                <h4 className="centerHorizon pb-5 pr-4 text-white">
                   {content.myths.myth4.description}
                 </h4>
               </Row>
             </Col>
-            <Col className="col-lg-4 col-md-6 text-center mythBackground pl-2 pr-2">
+            <Col className="col-xl-4 col-md-6 col-sm-12 col-12 text-center mythBackground pl-2 pr-2 mb-5">
               <Row className="ml-2 mr-2 pt-4">
                 <h4 className="mythTitle centerHorizon">
                   {content.myths.myth5.title}
                 </h4>
-                <h4 className="mythTitle centerHorizon pb-4">
+                <h4 className="mythTitle centerHorizon mythTitleSize pt-1">
                   {content.myths.myth5.subtitle}
                 </h4>
                 <Image
@@ -223,7 +223,7 @@ const Intro = props => {
                   src={Temp}
                   fluid
                 ></Image>
-                <h4 className="centerHorizon pt-4 text-uppercase text-white">
+                <h4 className="centerHorizon pt-5 text-uppercase text-white">
                   {content.myths.myth5.descriptionTitle}
                 </h4>
                 <h4 className="centerHorizon text-white">
@@ -231,12 +231,12 @@ const Intro = props => {
                 </h4>
               </Row>
             </Col>
-            <Col className="col-lg-4 col-md-6 text-center mythBackground pl-2 pr-3">
+            <Col className="col-xl-4 col-md-6 col-sm-12 col-12 text-center mythBackground pl-2 pr-2 mb-5">
               <Row className="ml-2 mr-2 pt-4">
                 <h4 className="mythTitle centerHorizon">
                   {content.myths.myth6.title}
                 </h4>
-                <h4 className="mythTitle centerHorizon pb-4">
+                <h4 className="mythTitle centerHorizon mythTitleSize pt-1">
                   {content.myths.myth6.subtitle}
                 </h4>
                 <Image
@@ -244,7 +244,7 @@ const Intro = props => {
                   src={Form}
                   fluid
                 ></Image>
-                <h4 className="centerHorizon pt-4 text-uppercase text-white">
+                <h4 className="centerHorizon pt-5 text-uppercase text-white">
                   {content.myths.myth6.descriptionTitle}
                 </h4>
                 <h4 className="centerHorizon text-white">
