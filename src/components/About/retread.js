@@ -483,7 +483,7 @@ const Info = props => {
           <h2>{content.quality.title}</h2>
         </Row>
         <Row>
-          <Col className="col-sm-6 pt-10 col-12 col-md-6 col-lg pr-5 pl-5 text-center">
+          <Col className="pt-5 col-12 col-md-6 col-xl pr-5 pl-5 text-center">
             <Row>
               <Image className="logoSize" src={Crown} fluid></Image>
               <h5 className="retreadTitleTwo pt-lg-4 centerHorizon">
@@ -491,7 +491,7 @@ const Info = props => {
               </h5>
             </Row>
           </Col>
-          <Col className="col-sm-6 pt-10 col-12 col-md-6 col-lg pr-5 pl-5 text-center">
+          <Col className="pt-5 col-12 col-md-6 col-xl pr-5 pl-5 text-center">
             <Row>
               <Image className="logoSize" src={Super} fluid></Image>
               <h5 className="retreadTitleTwo pt-lg-4  centerHorizon">
@@ -499,7 +499,7 @@ const Info = props => {
               </h5>
             </Row>
           </Col>
-          <Col className="col-sm-6 pt-10 col-12 col-md-6 col-lg pr-5 pl-5 text-center">
+          <Col className="pt-5 col-12 col-md-6 col-xl pr-5 pl-5 text-center">
             <Row>
               <Image className="logoSize" src={Classic} fluid></Image>
               <h5 className="retreadTitleTwo pt-4 centerHorizon">
@@ -507,7 +507,7 @@ const Info = props => {
               </h5>
             </Row>
           </Col>
-          <Col className="col-sm-6 pt-10 col-12 col-md-6 col-lg pr-5 pl-5 text-center">
+          <Col className="pt-5 col-12 col-md-6 col-xl pr-5 pl-5 text-center">
             <Row>
               <Image className="logoSize" src={Green} fluid></Image>
               <h5 className="retreadTitleTwo pt-4 centerHorizon">
@@ -515,7 +515,7 @@ const Info = props => {
               </h5>
             </Row>
           </Col>
-          <Col className="col-sm-12 pt-10 col-12 col-md-12 col-lg pr-5 pl-5 text-center">
+          <Col className="pt-5 col-12 col-md-12 col-xl pr-5 pl-5 text-center">
             <Row>
               <Image className="logoSize" src={Blackbelt} fluid></Image>
               <h5 className="retreadTitleTwo pt-4 centerHorizon">

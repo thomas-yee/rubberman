@@ -200,6 +200,8 @@ body {
 .logoSize {
   width: auto;
   height: 100px;
+  display: block;
+  margin: auto;
 }
 
 .centerHorizon {
