@@ -475,7 +475,7 @@ const Info = props => {
         <Row>
           <Image src={Background} fluid></Image>
           <h1 className="retreadTitle text-capitalize">{content.title}</h1>
-          <div className="retreadLine1">{content.informationLine1}</div>
+          <span className="retreadLine1">{content.informationLine1}</span>
         </Row>
       </div>
       <div className="container-fluid paddingSides">
@@ -485,8 +485,8 @@ const Info = props => {
         <Row>
           <Col className="col-sm-6 pt-10 col-12 col-md-6 col-lg pr-5 pl-5 text-center">
             <Row>
-              <Image src={Crown} fluid></Image>
-              <h5 className="retreadTitleTwo pt-5 centerHorizon">
+              <Image className="logoSize" src={Crown} fluid></Image>
+              <h5 className="retreadTitleTwo pt-lg-4 centerHorizon">
                 {content.quality.crown}
               </h5>
             </Row>
@@ -494,14 +494,14 @@ const Info = props => {
           <Col className="col-sm-6 pt-10 col-12 col-md-6 col-lg pr-5 pl-5 text-center">
             <Row>
               <Image className="logoSize" src={Super} fluid></Image>
-              <h5 className="retreadTitleTwo pt-3 centerHorizon">
+              <h5 className="retreadTitleTwo pt-lg-4  centerHorizon">
                 {content.quality.super}
               </h5>
             </Row>
           </Col>
-          <Col className="col-sm-6 pt-9 col-12 col-md-6 col-lg pr-5 pl-5 text-center">
+          <Col className="col-sm-6 pt-10 col-12 col-md-6 col-lg pr-5 pl-5 text-center">
             <Row>
-              <Image className="logoSizeTwo" src={Classic} fluid></Image>
+              <Image className="logoSize" src={Classic} fluid></Image>
               <h5 className="retreadTitleTwo pt-4 centerHorizon">
                 {content.quality.classic}
               </h5>
@@ -515,9 +515,9 @@ const Info = props => {
               </h5>
             </Row>
           </Col>
-          <Col className="col-sm-12 pt-5 col-12 col-md-12 col-lg pr-5 pl-5 text-center">
+          <Col className="col-sm-12 pt-10 col-12 col-md-12 col-lg pr-5 pl-5 text-center">
             <Row>
-              <Image className="logoSizeThree" src={Blackbelt} fluid></Image>
+              <Image className="logoSize" src={Blackbelt} fluid></Image>
               <h5 className="retreadTitleTwo pt-4 centerHorizon">
                 {content.quality.blackbelt}
               </h5>
