@@ -60,36 +60,36 @@ const Header = props => {
       home: {
         id: 2,
         path: "/",
-        text: "XXX",
+        text: "Rumah",
       },
       products: {
         id: 3,
-        text: "products",
+        text: "Produk",
         tires: {
           path: "/products",
-          text: "tires",
+          text: "Ban",
         },
         process: {
           path: "/process",
-          text: "the process",
+          text: "The Proses",
         },
       },
       about: {
         id: 4,
-        text: "about",
+        text: "Tentang",
         retread: {
           path: "/whyRetread",
-          text: "why retread",
+          text: "Mengapa Vulkanisir?",
         },
         myths: {
           path: "/myths",
-          text: "myths",
+          text: "Mitos",
         },
       },
       contact: {
         id: 5,
         path: "/contact",
-        text: "contact",
+        text: "Kontak",
       },
     },
   }
