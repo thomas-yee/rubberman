@@ -22,7 +22,6 @@ import Popover from "react-bootstrap/Popover"
 import OverlayTrigger from "react-bootstrap/OverlayTrigger"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faQuestionCircle } from "@fortawesome/free-regular-svg-icons"
-import ChangesCrown from "../../images/numberChangesCrownPop.jpg"
 
 const Info = props => {
   let content = {
@@ -302,9 +301,7 @@ const Info = props => {
   const numberChangesCrownPopover = (
     <Popover id="popover-basic">
       <Popover.Title as="h3">Number of Changes with Crown</Popover.Title>
-      <Popover.Content className="popoverChangesCrown">
-        <Image src={ChangesCrown} fluid></Image>
-      </Popover.Content>
+      <Popover.Content className="popoverChangesCrown"></Popover.Content>
     </Popover>
   )
 
