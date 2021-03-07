@@ -535,17 +535,25 @@ const Info = props => {
             <Accordion.Collapse eventKey="0">
               <Card.Body>
                 <Row>
-                  <Col className="col-md-8">
+                  <Col className="col-lg-8 col-12">
                     <Row>
-                      <Col className="col-md-5 pl-5">
+                      <Col className="col-md-5 pl-5 col-xs-12 col-sm-12">
                         <h4>{content.steps.stepOne.crown.title}</h4>
                         <Form>
                           <Form.Group as={Row} controlId="formCrownMileage">
-                            <Form.Label column sm="5">
+                            <Form.Label
+                              column
+                              xs="4"
+                              sm="4"
+                              md="5"
+                              lg="6"
+                              xl="5"
+                              className="pr-0"
+                            >
                               {content.steps.stepOne.otherBrand.mileage}
                             </Form.Label>
-                            <Col sm="7">
-                              <Form.Label column sm="12">
+                            <Col xs="8" sm="8" md="7" lg="6" xl="7">
+                              <Form.Label column className="no-padding-sides">
                                 {content.steps.stepOne.crown.mileage}
                               </Form.Label>
                             </Col>
@@ -553,11 +561,19 @@ const Info = props => {
                         </Form>
                         <Form>
                           <Form.Group as={Row} controlId="formCrownMileage">
-                            <Form.Label column sm="5">
+                            <Form.Label
+                              column
+                              xs="4"
+                              sm="4"
+                              md="5"
+                              lg="6"
+                              xl="5"
+                              className="pr-0"
+                            >
                               {content.steps.stepOne.otherBrand.price}
                             </Form.Label>
-                            <Col sm="7">
-                              <Form.Label column sm="12">
+                            <Col xs="8" sm="8" md="7" lg="6" xl="7">
+                              <Form.Label column className="no-padding-sides">
                                 {content.steps.stepOne.crown.price}
                               </Form.Label>
                             </Col>
@@ -565,18 +581,26 @@ const Info = props => {
                         </Form>
                         <Form>
                           <Form.Group as={Row} controlId="formCrownMileage">
-                            <Form.Label column sm="5">
+                            <Form.Label
+                              column
+                              xs="4"
+                              sm="4"
+                              md="5"
+                              lg="6"
+                              xl="5"
+                              className="pr-0"
+                            >
                               {content.steps.stepOne.otherBrand.rp}
                             </Form.Label>
-                            <Col sm="7">
-                              <Form.Label column sm="12">
+                            <Col xs="8" sm="8" md="7" lg="6" xl="7">
+                              <Form.Label column className="no-padding-sides">
                                 {content.steps.stepOne.crown.rp}
                               </Form.Label>
                             </Col>
                           </Form.Group>
                         </Form>
                       </Col>
-                      <Col className="col-md-7">
+                      <Col className="col-md-7 pl-5 col-xs-12 col-sm-12">
                         <h4>{content.steps.stepOne.otherBrand.title}</h4>
                         <Form>
                           <Form.Group as={Row} controlId="mileage">
@@ -610,7 +634,7 @@ const Info = props => {
                               {content.steps.stepOne.otherBrand.rp}
                             </Form.Label>
                             <Col sm="8">
-                              <Form.Label column sm="8">
+                              <Form.Label column sm="8" className="pl-0">
                                 {rpkm}
                               </Form.Label>
                             </Col>
@@ -625,7 +649,7 @@ const Info = props => {
                               {content.steps.stepOne.otherBrand.realPrice}
                             </Form.Label>
                             <Col sm="8">
-                              <Form.Label column sm="8">
+                              <Form.Label column sm="8" className="pl-0">
                                 {realPrice}
                                 <OverlayTrigger
                                   trigger="click"
@@ -644,7 +668,7 @@ const Info = props => {
                       </Col>
                     </Row>
                     <Row>
-                      <Col className="col-md-12 pl-5">
+                      <Col className="col-md-12 pl-5 col-xs-12 col-sm-12">
                         <Form.Group
                           as={Row}
                           controlId="formPlaintextDifferenceInPrice"
@@ -653,7 +677,7 @@ const Info = props => {
                             {content.steps.stepOne.other.difference}
                           </Form.Label>
                           <Col sm="8">
-                            <Form.Label column sm="8">
+                            <Form.Label column sm="8" className="pl-0">
                               {difference}
                               <OverlayTrigger
                                 trigger="click"
@@ -671,7 +695,7 @@ const Info = props => {
                       </Col>
                     </Row>
                     <Row>
-                      <Col className="col-md-12 pl-5">
+                      <Col className="col-md-12 pl-5 col-xs-12 col-sm-12">
                         <Form.Group
                           as={Row}
                           controlId="formPlaintextDifferenceInPrice"
@@ -692,17 +716,17 @@ const Info = props => {
                       </Col>
                     </Row>
                     <Row>
-                      <Col className="col-md-12 pl-5">
+                      <Col className="col-md-12 pl-5 col-xs-12 col-sm-12">
                         <h4>{content.steps.stepOne.savings.title}</h4>
                         <Form.Group
                           as={Row}
                           controlId="formPlaintextDifferenceInPrice"
                         >
-                          <Form.Label column sm="2">
+                          <Form.Label column sm="4" md="3">
                             {content.steps.stepOne.savings.monthly}
                           </Form.Label>
-                          <Col sm="4">
-                            <Form.Label column sm="12">
+                          <Col sm="8" md="3">
+                            <Form.Label column className="pl-0">
                               {priceMonthlySavings}
                               <OverlayTrigger
                                 trigger="click"
@@ -717,11 +741,17 @@ const Info = props => {
                               </OverlayTrigger>
                             </Form.Label>
                           </Col>
-                          <Form.Label column sm="2">
+                          <Form.Label
+                            column
+                            sm="4"
+                            xs="3"
+                            md="3"
+                            className="pr-0"
+                          >
                             {content.steps.stepOne.savings.yearly}
                           </Form.Label>
-                          <Col sm="4">
-                            <Form.Label column sm="12">
+                          <Col sm="8" xs="9" md="3">
+                            <Form.Label column className="pl-0">
                               {priceYearlySavings}
                             </Form.Label>
                           </Col>
@@ -739,7 +769,7 @@ const Info = props => {
                       </Col>
                     </Row>
                   </Col>
-                  <Col className="col-md-4">
+                  <Col className="col-lg-4 col-12">
                     <Image src={Price} fluid></Image>
                   </Col>
                 </Row>
@@ -759,7 +789,7 @@ const Info = props => {
             <Accordion.Collapse eventKey="1">
               <Card.Body>
                 <Row>
-                  <Col className="col-md-8">
+                  <Col className="col-lg-8 col-12">
                     <Row>
                       <Col className="col-md-12 pl-5">
                         <Form.Group
@@ -878,7 +908,7 @@ const Info = props => {
                       </Col>
                     </Row>
                   </Col>
-                  <Col className="col-md-4">
+                  <Col className="col-lg-4 col-12">
                     <Image src={InnerTube} fluid></Image>
                   </Col>
                 </Row>
@@ -898,7 +928,7 @@ const Info = props => {
             <Accordion.Collapse eventKey="2">
               <Card.Body>
                 <Row>
-                  <Col className="col-md-8">
+                  <Col className="col-lg-8 col-12">
                     <Row>
                       <Col className="col-md-12 pl-5">
                         <Form>
@@ -965,7 +995,7 @@ const Info = props => {
                       </Col>
                     </Row>
                   </Col>
-                  <Col className="col-md-4">
+                  <Col className="col-lg-4 col-12">
                     <Image src={Flap} fluid></Image>
                   </Col>
                 </Row>
@@ -985,7 +1015,7 @@ const Info = props => {
             <Accordion.Collapse eventKey="3">
               <Card.Body>
                 <Row>
-                  <Col className="col-md-8">
+                  <Col className="col-lg-8 col-12">
                     <Row>
                       <Col className="col-md-12 pl-5">
                         <Form>
@@ -1052,7 +1082,7 @@ const Info = props => {
                       </Col>
                     </Row>
                   </Col>
-                  <Col className="col-md-4">
+                  <Col className="col-lg-4 col-12">
                     <Image src={Maintenance} fluid></Image>
                   </Col>
                 </Row>
@@ -1072,7 +1102,7 @@ const Info = props => {
             <Accordion.Collapse eventKey="4">
               <Card.Body>
                 <Row>
-                  <Col className="col-md-8">
+                  <Col className="col-lg-8 col-12">
                     <Row>
                       <Col className="col-md-12 pl-5">
                         <Form>
@@ -1206,7 +1236,7 @@ const Info = props => {
                       </Col>
                     </Row>
                   </Col>
-                  <Col className="col-md-4">
+                  <Col className="col-lg-4 col-12">
                     <Image src={Bolts} fluid></Image>
                   </Col>
                 </Row>
@@ -1226,7 +1256,7 @@ const Info = props => {
             <Accordion.Collapse eventKey="5">
               <Card.Body>
                 <Row>
-                  <Col className="col-md-8">
+                  <Col className="col-lg-8 col-12">
                     <Row>
                       <Col className="col-md-12 pl-5">
                         <Form>
@@ -1387,7 +1417,7 @@ const Info = props => {
                       </Col>
                     </Row>
                   </Col>
-                  <Col className="col-md-4">
+                  <Col className="col-lg-4 col-12">
                     <Image src={Downtime} fluid></Image>
                   </Col>
                 </Row>
@@ -1407,7 +1437,7 @@ const Info = props => {
             <Accordion.Collapse eventKey="6">
               <Card.Body>
                 <Row>
-                  <Col className="col-md-12 pl-5 text-uppercase retreadGrandTotal">
+                  <Col className="col-12 pl-5 text-uppercase retreadGrandTotal">
                     <Form>
                       <Form.Group
                         as={Row}
