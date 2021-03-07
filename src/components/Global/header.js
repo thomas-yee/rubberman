@@ -149,14 +149,14 @@ const Header = props => {
               id="basic-nav-dropdown"
               className="mr-5 pt-5"
             >
-              <NavDropdown.Item>
+              {/* <NavDropdown.Item>
                 <Link
                   to={links.products.tires.path}
                   className="dropdown-item text-capitalize"
                 >
                   {links.products.tires.text}
                 </Link>
-              </NavDropdown.Item>
+              </NavDropdown.Item> */}
               <NavDropdown.Item>
                 <Link
                   to={links.products.process.path}
