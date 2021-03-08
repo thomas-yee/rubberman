@@ -60,50 +60,50 @@ const Intro = props => {
       },
     },
     Indonesian: {
-      title: "myths vs facts",
+      title: "mitos vs fakta",
       myths: {
         myth1: {
-          title: "Myth 1",
-          subtitle: "Retreads are not safe",
-          descriptionTitle: "fact 1",
+          title: "Mitos 1",
+          subtitle: "Vulkanisir tidak aman",
+          descriptionTitle: "fakta 1",
           description:
-            "Safety of retreads depends a lot on two things: the quality of the casing and the quality of the retreading by the manufacturer. Our retreading uses advanced technology, equipment, and comprehensive inspection techniques to ensure that only qualified casings are retreaded. Once qualified they are retreaded with the utmost seriousnes.",
+            "Keamanan vulkanisir sangat bergantung pada dua hal: kualitas casing dan kualitas vulkanisir oleh pabrikan. Vulkanisir kami menggunakan teknologi canggih, peralatan, dan teknik inspeksi komprehensif untuk memastikan bahwa hanya casing yang memenuhi syarat yang di-vulkanisir. Setelah memenuhi syarat, mereka akan menjalani vulkanisir dengan sangat serius.",
         },
         myth2: {
-          title: "Myth 2",
-          subtitle: "Retreads don't perform as well as new tires",
-          descriptionTitle: "fact 2",
+          title: "Mitos 2",
+          subtitle: "Vulkanisir tidak bekerja sebaik ban baru",
+          descriptionTitle: "fakta 2",
           description:
-            "Did you know that more than 80% of all aircraft tires in use in the US are retreads? Fighter jets and school buses use them too! If retreads don't perform, then why would they be used every day across various industries?",
+            "Tahukah Anda bahwa lebih dari 80% dari semua ban pesawat yang digunakan di AS adalah vulkanisir? Jet tempur dan bus sekolah juga menggunakannya! Jika vulkanisir tidak berhasil, lalu mengapa vulkanisir digunakan setiap hari di berbagai industri?",
         },
         myth3: {
-          title: "Myth 3",
-          subtitle: "Retreads will end up costing you more",
-          descriptionTitle: "fact 3",
+          title: "Mitos 3",
+          subtitle: "Vulkanisir pada akhirnya akan membebani Anda lebih banyak",
+          descriptionTitle: "fakta 3",
           description:
-            "Retreads cost much less than new tires upfront because retreads are made using existing casings. But they also save in the long run, because the performance of our retreads are comparable to new tires meaning that you will receive similar mileage with a significantly lower cost.",
+            "Biaya vulkanisir jauh lebih murah daripada ban baru dimuka karena vulkanisir dibuat menggunakan casing yang ada. Tetapi mereka juga menghemat dalam jangka panjang, karena kinerja vulkanisir kami sebanding dengan ban baru yang berarti Anda akan mendapatkan jarak tempuh yang sama dengan biaya yang jauh lebih rendah.",
         },
         myth4: {
-          title: "Myth 4",
+          title: "Mitos 4",
           subtitle:
-            "retreads will wear out faster and cause more blowouts than new tires",
-          descriptionTitle: "fact 4",
+            "vulkanisir akan lebih cepat aus dan menyebabkan lebih banyak ledakan daripada ban baru",
+          descriptionTitle: "Fakta 4",
           description:
-            "Retreads will wear out similarly to new tires and blowouts are usually caused by lack of proper maintenance of the tire.",
+            "Vulkanisir akan aus seperti halnya ban baru dan ledakan biasanya disebabkan oleh kurangnya perawatan yang tepat pada ban.",
         },
         myth5: {
-          title: "Myth 5",
-          subtitle: "Heat easily ruins retreads",
-          descriptionTitle: "fact 5",
+          title: "Mitos 5",
+          subtitle: "Panas dengan mudah merusak vulkanisir",
+          descriptionTitle: "Fakta 5",
           description:
-            "Too much heat can ruin any tire whether new or retreaded. The main cause of het damage is underinflation so proper maintenance of the tire is required.",
+            "Terlalu banyak panas dapat merusak ban baik baru maupun vulkanisir. Penyebab utama kerusakan ban adalah kurangnya inflasi sehingga ban perlu dirawat dengan benar.",
         },
         myth6: {
-          title: "Myth 6",
-          subtitle: "Retreads are illegal",
-          descriptionTitle: "fact 6",
+          title: "Mitos 6",
+          subtitle: "Vulkanisir ilegal",
+          descriptionTitle: "fakta 6",
           description:
-            "Retreads are legal in many countries and are definitely legal in Indonesia",
+            "Vulkanisir legal di banyak negara dan pasti legal di Indonesia",
         },
       },
     },
