@@ -17,9 +17,9 @@ const Info = props => {
     },
     Indonesian: {
       mainSection: {
-        experience: "35 Years Experience",
-        operations: "30+ Tire Retreading Plants",
-        certification: "ISO 9001:2015 Certified",
+        experience: "Pengalaman 35 Tahun",
+        operations: "30+ Pabrik Vulkanisir Ban",
+        certification: "Sertifikasi ISO 9001: 2015",
       },
     },
   }
