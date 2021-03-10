@@ -482,7 +482,7 @@ const Info = props => {
       {checkLanguage()}
       <div className="container-fluid containerStyle">
         <Row>
-          <Image src={Background} fluid></Image>
+          <Image className="retreadBackground" src={Background} fluid></Image>
           <h1 className="retreadTitle text-capitalize">{content.title}</h1>
           <span className="retreadLine1">{content.informationLine1}</span>
         </Row>

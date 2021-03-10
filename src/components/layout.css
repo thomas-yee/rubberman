@@ -154,8 +154,17 @@ body {
 
 /** INDEX PAGE **/
 .indexPagePicture {
-  overflow-x: hidden !important;
-  overflow-y: scroll !important;
+  height: 700px;
+  width: 2000px;
+  overflow: hidden;
+  object-fit: cover;
+}
+
+.howItWorksBackground {
+  height: 700px;
+  width: 2100px;
+  overflow: hidden;
+  object-fit: cover;
 }
 
 /** RETREAD PAGE **/
@@ -179,6 +188,13 @@ body {
 .containerStyle {
   position: relative;
   color: var(--mainWhite);
+}
+
+.retreadBackground {
+  height: 700px;
+  width: 2000px;
+  overflow: hidden;
+  object-fit: cover;
 }
 
 .retreadQualitiesTitle {
