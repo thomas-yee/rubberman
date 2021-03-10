@@ -224,6 +224,12 @@ body {
   color: var(--mainGrey);
 }
 
+.arrowImage {
+  height: 50px;
+  width: auto;
+  float: right;
+}
+
 /** MYTH PAGE **/
 
 .mythTitle {

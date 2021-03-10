@@ -22,6 +22,8 @@ import Popover from "react-bootstrap/Popover"
 import OverlayTrigger from "react-bootstrap/OverlayTrigger"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faQuestionCircle } from "@fortawesome/free-regular-svg-icons"
+import ArrowUp from "../../images/arrow_up.png"
+import ArrowDown from "../../images/arrow_down.png"
 
 const Info = props => {
   let content = {
@@ -234,6 +236,15 @@ const Info = props => {
     },
   }
 
+  const [priceAccordionOpen, setPriceAccordionOpen] = useState(false)
+  const [tubeAccordionOpen, setTubeAccordionOpen] = useState(false)
+  const [flapAccordionOpen, setFlapAccordionOpen] = useState(false)
+  const [maintenanceAccordionOpen, setMaintenanceAccordionOpen] = useState(
+    false
+  )
+  const [boltsAccordionOpen, setBoltsAccordionOpen] = useState(false)
+  const [downtimeAccordionOpen, setDowntimeAccordionOpen] = useState(false)
+  const [grandAccordionOpen, setGrandAccordionOpen] = useState(false)
   const [mileage, setMileage] = useState(0)
   const [price, setPrice] = useState(0)
   const [rpkm, setRpKm] = useState(0)
@@ -530,8 +541,16 @@ const Info = props => {
               as={Card.Header}
               eventKey="0"
               className="stepHeaderFont btn-step"
+              onClick={() => setPriceAccordionOpen(!priceAccordionOpen)}
             >
-              {content.steps.stepOne.title}
+              <span>{content.steps.stepOne.title}</span>
+              <span>
+                {priceAccordionOpen ? (
+                  <Image className="arrowImage" src={ArrowUp} fluid />
+                ) : (
+                  <Image className="arrowImage" src={ArrowDown} fluid />
+                )}
+              </span>
             </Accordion.Toggle>
             <Accordion.Collapse eventKey="0">
               <Card.Body>
@@ -784,8 +803,16 @@ const Info = props => {
               as={Card.Header}
               eventKey="1"
               className="stepHeaderFont"
+              onClick={() => setTubeAccordionOpen(!tubeAccordionOpen)}
             >
-              {content.steps.stepTwo.title}
+              <span>{content.steps.stepTwo.title}</span>
+              <span>
+                {tubeAccordionOpen ? (
+                  <Image className="arrowImage" src={ArrowDown} fluid />
+                ) : (
+                  <Image className="arrowImage" src={ArrowUp} fluid />
+                )}
+              </span>
             </Accordion.Toggle>
             <Accordion.Collapse eventKey="1">
               <Card.Body>
@@ -923,8 +950,16 @@ const Info = props => {
               as={Card.Header}
               eventKey="2"
               className="stepHeaderFont"
+              onClick={() => setFlapAccordionOpen(!flapAccordionOpen)}
             >
-              {content.steps.stepThree.title}
+              <span>{content.steps.stepThree.title}</span>
+              <span>
+                {flapAccordionOpen ? (
+                  <Image className="arrowImage" src={ArrowDown} fluid />
+                ) : (
+                  <Image className="arrowImage" src={ArrowUp} fluid />
+                )}
+              </span>
             </Accordion.Toggle>
             <Accordion.Collapse eventKey="2">
               <Card.Body>
@@ -1010,8 +1045,18 @@ const Info = props => {
               as={Card.Header}
               eventKey="3"
               className="stepHeaderFont"
+              onClick={() =>
+                setMaintenanceAccordionOpen(!maintenanceAccordionOpen)
+              }
             >
-              {content.steps.stepFour.title}
+              <span>{content.steps.stepFour.title}</span>
+              <span>
+                {maintenanceAccordionOpen ? (
+                  <Image className="arrowImage" src={ArrowDown} fluid />
+                ) : (
+                  <Image className="arrowImage" src={ArrowUp} fluid />
+                )}
+              </span>
             </Accordion.Toggle>
             <Accordion.Collapse eventKey="3">
               <Card.Body>
@@ -1097,8 +1142,16 @@ const Info = props => {
               as={Card.Header}
               eventKey="4"
               className="stepHeaderFont"
+              onClick={() => setBoltsAccordionOpen(!boltsAccordionOpen)}
             >
-              {content.steps.stepFive.title}
+              <span>{content.steps.stepFive.title}</span>
+              <span>
+                {boltsAccordionOpen ? (
+                  <Image className="arrowImage" src={ArrowDown} fluid />
+                ) : (
+                  <Image className="arrowImage" src={ArrowUp} fluid />
+                )}
+              </span>
             </Accordion.Toggle>
             <Accordion.Collapse eventKey="4">
               <Card.Body>
@@ -1251,8 +1304,16 @@ const Info = props => {
               as={Card.Header}
               eventKey="5"
               className="stepHeaderFont"
+              onClick={() => setDowntimeAccordionOpen(!downtimeAccordionOpen)}
             >
-              {content.steps.stepSix.title}
+              <span>{content.steps.stepSix.title}</span>
+              <span>
+                {downtimeAccordionOpen ? (
+                  <Image className="arrowImage" src={ArrowDown} fluid />
+                ) : (
+                  <Image className="arrowImage" src={ArrowUp} fluid />
+                )}
+              </span>
             </Accordion.Toggle>
             <Accordion.Collapse eventKey="5">
               <Card.Body>
@@ -1432,8 +1493,16 @@ const Info = props => {
               as={Card.Header}
               eventKey="6"
               className="stepHeaderFont"
+              onClick={() => setGrandAccordionOpen(!grandAccordionOpen)}
             >
-              {content.steps.stepSeven.title}
+              <span>{content.steps.stepSeven.title}</span>
+              <span>
+                {grandAccordionOpen ? (
+                  <Image className="arrowImage" src={ArrowDown} fluid />
+                ) : (
+                  <Image className="arrowImage" src={ArrowUp} fluid />
+                )}
+              </span>
             </Accordion.Toggle>
             <Accordion.Collapse eventKey="6">
               <Card.Body>
