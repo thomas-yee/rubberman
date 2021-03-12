@@ -86,6 +86,8 @@ body {
 /**FOOTER */
 .footer {
   background: var(--mainWhite);
+  position: relative;
+  bottom: 0;
 }
 
 .footerFont {
@@ -300,11 +302,19 @@ body {
 /**CONTACT */
 
 .contactMapBackground {
-  background-image: url("../images/contact_1.jpg");
-  background-size: 100% auto;
-  background-position: center top;
-  height: 80vh;
   background-repeat: no-repeat;
+  height: 700px;
+  width: 2000px;
+  object-fit: cover;
+}
+
+.contactForm {
+  position: absolute;
+  width: 100%;
+}
+
+.contactMap {
+  position: absolute;
 }
 
 .contactReferralBackground {

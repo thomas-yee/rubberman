@@ -1,5 +1,7 @@
 import React from "react"
 import Map from "./googleMap"
+import Col from "react-bootstrap/Col"
+import Row from "react-bootstrap/Row"
 
 import "./contact.css"
 
@@ -391,17 +393,17 @@ const Locations = () => {
   return (
     <section className="py-5">
       <div className="container-fluid">
-        <div className="row">
-          <div className="col">
+        <Row>
+          <Col>
             <Map
               location={locations[0]}
               options={locationSettings[0].options}
               style={locationSettings[0].style}
             />
-          </div>
-        </div>
+          </Col>
+        </Row>
         <div className="row listFont">
-          <div className="col">
+          <Col>
             <ul className="list-unstyled">
               {Object.keys(locations[0])
                 .slice(0, 9)
@@ -413,8 +415,8 @@ const Locations = () => {
                   )
                 })}
             </ul>
-          </div>
-          <div className="col">
+          </Col>
+          <Col>
             <ul className="list-unstyled">
               {Object.keys(locations[0])
                 .slice(9, 18)
@@ -426,8 +428,8 @@ const Locations = () => {
                   )
                 })}
             </ul>
-          </div>
-          <div className="col">
+          </Col>
+          <Col>
             <ul className="list-unstyled">
               {Object.keys(locations[0])
                 .slice(18, 27)
@@ -439,8 +441,8 @@ const Locations = () => {
                   )
                 })}
             </ul>
-          </div>
-          <div className="col">
+          </Col>
+          <Col>
             <ul className="list-unstyled">
               {Object.keys(locations[0])
                 .slice(27, 36)
@@ -452,8 +454,8 @@ const Locations = () => {
                   )
                 })}
             </ul>
-          </div>
-          <div className="col">
+          </Col>
+          <Col>
             <ul className="list-unstyled">
               {Object.keys(locations[0])
                 .slice(36, 45)
@@ -465,7 +467,7 @@ const Locations = () => {
                   )
                 })}
             </ul>
-          </div>
+          </Col>
         </div>
       </div>
     </section>
