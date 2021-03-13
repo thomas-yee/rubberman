@@ -483,8 +483,14 @@ const Info = props => {
       <div className="container-fluid containerStyle">
         <Row>
           <Image className="retreadBackground" src={Background} fluid></Image>
-          <h1 className="retreadTitle text-capitalize">{content.title}</h1>
-          <span className="retreadLine1">{content.informationLine1}</span>
+          <Col className="retreadTitle text-capitalize">
+            <h1>{content.title}</h1>
+          </Col>
+        </Row>
+        <Row>
+          <Col className="retreadLine1">
+            <h5 className="retreadInfoLine">{content.informationLine1}</h5>
+          </Col>
         </Row>
       </div>
       <div className="container-fluid paddingSides">
